@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sqlserver_ado.sql_app',
     'company',
 )
 
@@ -60,6 +61,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+
+    'sqlserver': {
+        'NAME': 'DB_Baise',
+        'ENGINE': 'sqlserver_ado',
+        'HOST': '127.0.0.1',
+        'USER': '',
+        'PASSWORD': '',
     }
 }
 

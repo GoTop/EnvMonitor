@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -63,18 +64,29 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
 
+    # 'sqlserver': {
+    #     'NAME': 'DB_Baise',
+    #     'ENGINE': 'sqlserver_ado',
+    #     'HOST': '127.0.0.1',
+    #     'USER': '',
+    #     'PASSWORD': '',
+    # }
+
+
     'sqlserver': {
-        'NAME': 'DB_Baise',
-        'ENGINE': 'sqlserver_ado',
-        'HOST': '127.0.0.1',
-        'USER': '',
-        'PASSWORD': '',
+        'ENGINE': "django_pyodbc",
+        'HOST': "127.0.0.1,1433",
+        'USER': "mssql_user",
+        'PASSWORD': "mssql_password",
+        'NAME': "django",
+        'OPTIONS': {
+            'host_is_server': True
+        }
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

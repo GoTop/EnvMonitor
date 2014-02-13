@@ -72,16 +72,34 @@ DATABASES = {
     # }
 
 
+    # 'sqlserver': {
+    #     'NAME': 'DB_Baise',
+    #     'ENGINE': 'sqlserver_ado',
+    #     'HOST': '127.0.0.1',
+    #     'USER': '',
+    #     'PASSWORD': '',
+    # }
+
+
+    # 'sqlserver': {
+    #     'ENGINE': "django_pyodbc",
+    #     'HOST': "127.0.0.1,1433",
+    #     'USER': "bi",
+    #     'PASSWORD': "bsjkzx2832156",
+    #     'NAME': "django",
+    #     'OPTIONS': {
+    #         'host_is_server': True
+    #     }
+    # }
+
     'sqlserver': {
-        'ENGINE': "django_pyodbc",
-        'HOST': "127.0.0.1,1433",
-        'USER': "mssql_user",
-        'PASSWORD': "mssql_password",
-        'NAME': "django",
-        'OPTIONS': {
-            'host_is_server': True
-        }
-    }
+        'ENGINE': 'django.db.backends.django_pyodbc',
+        'NAME': 'django',
+        'USER': 'bi',
+        'PASSWORD': 'bsjkzx2832156',
+        'HOST': '127.0.0.1',
+        'PORT': '',
+    },
 }
 
 # Internationalization

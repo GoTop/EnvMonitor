@@ -1,0 +1,28 @@
+<html>
+<ul>
+{% for entry in entries %}
+    <li>title:{{ entry.title|safe }}</li>
+    <li>url:{{ entry.url }}</li>
+    <li>sumary:{{ entry.summary|safe }}</li>
+    <br>
+
+
+
+  {% comment %}
+    {% for e in entry.content %}
+			<li>description:{{ e.value|safe }}</li>
+    {% endfor %}
+  {% endcomment %}
+
+
+   
+{% endfor %}
+<li>error: {{ error_message }}</li>
+
+</ul>
+</html>
+
+
+
+
+

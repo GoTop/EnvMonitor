@@ -218,3 +218,8 @@ pip-log.txt
 ## PyCharm
 #############
 .idea/
+
+#############
+## EnvMonitor
+#############
+local_settings.py

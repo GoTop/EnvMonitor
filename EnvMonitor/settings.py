@@ -62,44 +62,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-
-    # 'sqlserver': {
-    #     'NAME': 'DB_Baise',
-    #     'ENGINE': 'sqlserver_ado',
-    #     'HOST': '127.0.0.1',
-    #     'USER': '',
-    #     'PASSWORD': '',
-    # }
-
-
-    # 'sqlserver': {
-    #     'NAME': 'DB_Baise',
-    #     'ENGINE': 'sqlserver_ado',
-    #     'HOST': '127.0.0.1',
-    #     'USER': '',
-    #     'PASSWORD': '',
-    # }
-
-
-    # 'sqlserver': {
-    #     'ENGINE': "django_pyodbc",
-    #     'HOST': "127.0.0.1,1433",
-    #     'USER': "bi",
-    #     'PASSWORD': "bsjkzx2832156",
-    #     'NAME': "django",
-    #     'OPTIONS': {
-    #         'host_is_server': True
-    #     }
-    # }
-
-    'sqlserver': {
-        'ENGINE': 'django.db.backends.django_pyodbc',
-        'NAME': 'django',
-        'USER': 'bi',
-        'PASSWORD': 'bsjkzx2832156',
-        'HOST': '127.0.0.1',
-        'PORT': '',
-    },
 }
 
 # Internationalization
@@ -119,3 +81,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+'''This code will try to find a file named local_settings.py in the same directory as the
+settings file. If it succeeds, it will import everything defined in the file. If no such file exists,
+nothing will happen.'''
+try:
+    from local_settings import *
+except ImportError:
+    pass

@@ -20,7 +20,7 @@ class SqlServerDB:
         self.charset = charset
 
         try:
-            str_conn = 'DRIVER={SQLServer};SERVER=' + self.host + ';PORT='+ self.port + ';DATABASE=' + self.db + ';UID=' + self.user + ';PWD=' + self.password + ''
+            str_conn = 'DRIVER={SQL Server};SERVER=' + self.host + ';PORT='+ self.port + ';DATABASE=' + self.db + ';UID=' + self.user + ';PWD=' + self.password + ''
             self.conn = pyodbc.connect(str_conn,unicode_results=True)
             self.cur = self.conn.cursor()
         except:

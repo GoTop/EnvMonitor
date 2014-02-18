@@ -217,9 +217,14 @@ pip-log.txt
 #############
 ## PyCharm
 #############
-.idea/
+/.idea/
 
 #############
 ## EnvMonitor
 #############
 local_settings.py
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]

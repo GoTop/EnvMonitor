@@ -1,6 +1,7 @@
 from django.shortcuts import render, render_to_response
 from function.db import SqlServerDB
 import pyodbc
+from company.function.convert import *
 
 # Create your views here.
 def test_db(request):
@@ -31,4 +32,14 @@ def test_db(request):
         print row
 
     return render_to_response('article_list.html', {'error_message': row})
+
+
+def get_station_info(request):
+    """
+
+    :param request:
+    """
+
+    all_t_station = get_station_info_func()
+    return render_to_response('article_list.html', {'row': all_t_station })
 

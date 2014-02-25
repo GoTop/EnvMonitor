@@ -1,3 +1,5 @@
+# coding=utf8
+
 from django.shortcuts import render, render_to_response
 from function.db import SqlServerDB
 import pyodbc

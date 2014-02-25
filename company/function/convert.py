@@ -1,8 +1,12 @@
-#coding=utf8
+#coding=utf-8
 __author__ = 'GoTop'
 
 from company.models import Company, Station
-from company.db_baise_models import T_Compinfo, T_AllStation, TAdminarea
+from company.db_baise_models import T_Compinfo, T_AllStation, T_Adminarea
+import sys
+
+reload(sys)
+sys.setdefaultencoding('gb2312')
 
 
 def get_company_info_func():
@@ -34,18 +38,37 @@ def get_station_info_func():
     保存到EnvMonitor数据库的Station表中
     """
 
-    #all_t_station = TAdminarea.objects.using('DB_baise').all()
+    all_t_station = T_Adminarea.objects.using('DB_baise').all()
+
+
+
     all_t_station = T_AllStation.objects.using('DB_baise').all()
     for t_station in all_t_station:
+        #r = isinstance(t_station.area_name, 'utf-8' )
 
-        if t_station.kindid == '32':
-            type = 'water'
-        else:
-            type = 'gas'
+        # s = t_station.area_name
+        #
+        # if isinstance(s, unicode):
+        #     #s=u"中文"
+        #     print s.encode('gb2312')
+        # else:
+        #     #s="中文"
+        #     print s.decode('utf-8').encode('gb2312')
+        # t_station.area_name = s
 
-        new_station = Station(mn=t_station.station_id,
-                              name=t_station.station_name,
-                              type=type,
-        )
-        new_station.save()
+        t_station.station_name = t_station.station_name.encode('utf-8')
+        #Code = t_station.area_name.__class__
+
+        #= t_station.area_name.encode('UTF-8')
+
+    # if t_station.kindid == '32':
+    #     type = 'water'
+    # else:
+    #     type = 'gas'
+    #
+    # new_station = Station(mn=t_station.station_id,
+    #                       name=t_station.station_name,
+    #                       type=type,
+    # )
+    #new_station.save()
     return all_t_station

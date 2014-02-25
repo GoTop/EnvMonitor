@@ -1,4 +1,7 @@
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
 <ul>
 {% for entry in entries %}
     <li>title:{{ entry.title|safe }}</li>
@@ -19,7 +22,8 @@
 {% endfor %}
 
 {% for rowli in row %}
-    <li>title:{{ rowli }}</li>
+    <li>areaname:{{ rowli.station_name }}</li>
+    <li>higherareaid:{{ rowli.higherareaid }}</li>
 {% endfor %}
 
 

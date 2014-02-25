@@ -3,10 +3,10 @@ from django.db import models
 from para_models import *
 
 
-class TAdminarea(models.Model):
+class T_Adminarea(models.Model):
     areaid = models.IntegerField(db_column='AreaID', primary_key=True)  # Field name made lowercase.
     higherareaid = models.IntegerField(db_column='HigherAreaID', blank=True, null=True)  # Field name made lowercase.
-    areaname = models.TextField(db_column='AreaName')  # Field name made lowercase.
+    area_name = models.TextField(db_column='AreaName')  # Field name made lowercase.
     clientx = models.TextField(db_column='ClientX', blank=True)  # Field name made lowercase.
     clienty = models.TextField(db_column='ClientY', blank=True)  # Field name made lowercase.
     zoomlevel = models.IntegerField(db_column='ZoomLevel', blank=True, null=True)  # Field name made lowercase.
@@ -108,7 +108,7 @@ class T_AllStation(models.Model):
                                  null=True)  # Field name made lowercase.
     transfersid = models.ForeignKey('TTransfers', db_column='TransfersID', blank=True,
                                     null=True)  # Field name made lowercase.
-    area_id = models.ForeignKey(TAdminarea, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
+    area_id = models.ForeignKey(T_Adminarea, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
     station_name = models.TextField(db_column='StationName', blank=True)  # Field name made lowercase.
     tradeid = models.ForeignKey('TTrade', db_column='TradeID', blank=True, null=True)  # Field name made lowercase.
     orderid = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.

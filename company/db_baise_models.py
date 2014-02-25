@@ -4,7 +4,7 @@ from para_models import *
 
 
 class TAdminarea(models.Model):
-    areaid = models.IntegerField(db_column='AreaID')  # Field name made lowercase.
+    areaid = models.IntegerField(db_column='AreaID', primary_key=True)  # Field name made lowercase.
     higherareaid = models.IntegerField(db_column='HigherAreaID', blank=True, null=True)  # Field name made lowercase.
     areaname = models.TextField(db_column='AreaName')  # Field name made lowercase.
     clientx = models.TextField(db_column='ClientX', blank=True)  # Field name made lowercase.
@@ -17,7 +17,7 @@ class TAdminarea(models.Model):
 
 
 class T_Compinfo(models.Model):
-    compid = models.IntegerField(db_column='CompID')  # Field name made lowercase.
+    compid = models.IntegerField(db_column='CompID', primary_key=True)  # Field name made lowercase.
     compname = models.CharField(db_column='CompName', max_length=100)  # Field name made lowercase.
     tel = models.TextField(db_column='Tel', blank=True)  # Field name made lowercase.
     fax = models.TextField(db_column='Fax', blank=True)  # Field name made lowercase.
@@ -100,7 +100,7 @@ class T_Compinfo(models.Model):
 
 
 class T_AllStation(models.Model):
-    station_id = models.TextField(db_column='StationID')  # Field name made lowercase.
+    station_id = models.TextField(db_column='StationID', primary_key=True)  # Field name made lowercase.
     kindid = models.ForeignKey('TStationkind', db_column='KindID', blank=True, null=True)  # Field name made lowercase.
     watershedid = models.ForeignKey('TWatershed', db_column='WaterShedID', blank=True,
                                     null=True)  # Field name made lowercase.
@@ -145,4 +145,3 @@ class T_AllStation(models.Model):
     class Meta:
         managed = False
         db_table = 'T_AllStation'
-

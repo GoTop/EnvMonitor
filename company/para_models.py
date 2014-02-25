@@ -31,7 +31,7 @@ class TWatershed(models.Model):
 
 
 class TStationkind(models.Model):
-    kindid = models.IntegerField(db_column='KindID')  # Field name made lowercase.
+    kindid = models.IntegerField(db_column='KindID', primary_key=True)  # Field name made lowercase.
     kindname = models.CharField(db_column='KindName', max_length=30, blank=True)  # Field name made lowercase.
     ismobile = models.NullBooleanField(db_column='IsMobile', blank=True, null=True)  # Field name made lowercase.
 

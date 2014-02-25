@@ -2,7 +2,7 @@
 __author__ = 'GoTop'
 
 from company.models import Company, Station
-from company.db_baise_models import T_Compinfo, T_AllStation
+from company.db_baise_models import T_Compinfo, T_AllStation, TAdminarea
 
 
 def get_company_info_func():
@@ -27,21 +27,25 @@ def get_company_info_func():
         new_company.save()
         return all_t_company
 
+
 def get_station_info_func():
     """
     从DB_balse数据库的T_Allstation表中读取监测点位的信息，
     保存到EnvMonitor数据库的Station表中
     """
+
+    #all_t_station = TAdminarea.objects.using('DB_baise').all()
     all_t_station = T_AllStation.objects.using('DB_baise').all()
     for t_station in all_t_station:
-        if t_station['kindid'] == '32':
+
+        if t_station.kindid == '32':
             type = 'water'
         else:
             type = 'gas'
 
         new_station = Station(mn=t_station.station_id,
                               name=t_station.station_name,
-                              type = type,
-                              )
+                              type=type,
+        )
         new_station.save()
     return all_t_station

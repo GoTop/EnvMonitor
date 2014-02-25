@@ -63,14 +63,29 @@ DATABASES = {
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
 
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'envmonitor',
-    #     'USER': 'root',
-    #     'PASSWORD': 'the305',
-    #     'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
-    #     'PORT': '3306',
-    # }
+    'default': {
+        'ENGINE': "django_pyodbc",
+        'HOST': "127.0.0.1,1433",
+        'USER': "sa",
+        'PASSWORD': "the305",
+        'NAME': "EnvMonitor",
+        'OPTIONS': {
+            'autocommit': True,
+            'host_is_server': True
+        },
+    },
+
+    'DB_baise': {
+        'ENGINE': "django_pyodbc",
+        'HOST': "127.0.0.1,1433",
+        'USER': "sa",
+        'PASSWORD': "the305",
+        'NAME': "DB_baise",
+        'OPTIONS': {
+            'autocommit': True,
+            'host_is_server': True
+        },
+    }
 }
 
 # Internationalization
@@ -94,7 +109,7 @@ STATIC_URL = '/static/'
 '''This code will try to find a file named local_settings.py in the same directory as the
 settings file. If it succeeds, it will import everything defined in the file. If no such file exists,
 nothing will happen.'''
-try:
-    from local_settings import *
-except ImportError:
-    pass
+# try:
+#     from local_settings import *
+# except ImportError:
+#     pass

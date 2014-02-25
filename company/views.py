@@ -24,9 +24,9 @@ def test_db(request):
 #     resuslt = db.query(sql)
 #     rowcount = db.rowcount()
 
-    cnxn = pyodbc.connect(DRIVER='{SQL Native Client}',SERVER='localhost',DATABASE='EnvMonitor',UID='bi',PWD='the305')
+    cnxn = pyodbc.connect(DRIVER='{SQL Native Client}',SERVER='localhost',DATABASE='EnvMonitor',UID='sa',PWD='the305')
     cursor = cnxn.cursor()
-    cursor.execute("select company_id from Company")
+    cursor.execute("select id from Company")
     row = cursor.fetchall()
     if row:
         print row

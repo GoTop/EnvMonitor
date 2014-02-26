@@ -87,7 +87,7 @@ class Station(models.Model):
     )
     mn = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
     type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
-    company = models.ForeignKey(Company)
+    company = models.ForeignKey(Company, blank=True)
     name = models.TextField(blank=True)
     in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='出口')
     maintain_company = models.ForeignKey(MaintainCompany, db_column='maintain_company_id')  # Field name made lowercase.

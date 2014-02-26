@@ -101,46 +101,46 @@ class T_Compinfo(models.Model):
 
 class T_AllStation(models.Model):
     station_id = models.TextField(db_column='StationID', primary_key=True)  # Field name made lowercase.
-    kindid = models.ForeignKey('TStationkind', db_column='KindID', blank=True, null=True)  # Field name made lowercase.
-    watershedid = models.ForeignKey('TWatershed', db_column='WaterShedID', blank=True,
-                                    null=True)  # Field name made lowercase.
-    attendid = models.ForeignKey('TAttenddegree', db_column='AttendID', blank=True,
-                                 null=True)  # Field name made lowercase.
-    transfersid = models.ForeignKey('TTransfers', db_column='TransfersID', blank=True,
-                                    null=True)  # Field name made lowercase.
+    kind_id = models.ForeignKey('TStationkind', db_column='KindID', blank=True, null=True)  # Field name made lowercase.
+    watershed_id = models.ForeignKey('TWatershed', db_column='WaterShedID', blank=True,
+                                     null=True)  # Field name made lowercase.
+    attend_id = models.ForeignKey('TAttenddegree', db_column='AttendID', blank=True,
+                                  null=True)  # Field name made lowercase.
+    transfers_id = models.ForeignKey('TTransfers', db_column='TransfersID', blank=True,
+                                     null=True)  # Field name made lowercase.
     area_id = models.ForeignKey(T_Adminarea, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
     station_name = models.TextField(db_column='StationName', blank=True)  # Field name made lowercase.
-    tradeid = models.ForeignKey('TTrade', db_column='TradeID', blank=True, null=True)  # Field name made lowercase.
-    orderid = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
+    trade_id = models.ForeignKey('TTrade', db_column='TradeID', blank=True, null=True)  # Field name made lowercase.
+    order_id = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
     ionline = models.IntegerField(db_column='IOnline', blank=True, null=True)  # Field name made lowercase.
     comp_id = models.IntegerField(db_column='CompID', blank=True, null=True)  # Field name made lowercase.
-    shortname = models.CharField(db_column='ShortName', max_length=60, blank=True)  # Field name made lowercase.
-    mnpwd = models.TextField(db_column='MNPwd', blank=True)  # Field name made lowercase.
-    standarddemo = models.TextField(db_column='StandardDemo', blank=True)  # Field name made lowercase.
-    higheroutid = models.TextField(db_column='HigherOutID', blank=True)  # Field name made lowercase.
-    isfacility = models.NullBooleanField(db_column='IsFacility', blank=True, null=True)  # Field name made lowercase.
-    isemergency = models.NullBooleanField(db_column='IsEmergency', blank=True, null=True)  # Field name made lowercase.
-    isshow = models.NullBooleanField(db_column='IsShow', blank=True, null=True)  # Field name made lowercase.
+    short_name = models.CharField(db_column='ShortName', max_length=60, blank=True)  # Field name made lowercase.
+    mn_pwd = models.TextField(db_column='MNPwd', blank=True)  # Field name made lowercase.
+    standard_demo = models.TextField(db_column='StandardDemo', blank=True)  # Field name made lowercase.
+    higherout_id = models.TextField(db_column='HigherOutID', blank=True)  # Field name made lowercase.
+    is_facility = models.NullBooleanField(db_column='IsFacility', blank=True, null=True)  # Field name made lowercase.
+    is_emergency = models.NullBooleanField(db_column='IsEmergency', blank=True, null=True)  # Field name made lowercase.
+    is_show = models.NullBooleanField(db_column='IsShow', blank=True, null=True)  # Field name made lowercase.
     longitude = models.TextField(db_column='Longitude', blank=True)  # Field name made lowercase.
     latitude = models.TextField(db_column='Latitude', blank=True)  # Field name made lowercase.
-    isimportexport = models.IntegerField(db_column='IsImportexport', blank=True,
-                                         null=True)  # Field name made lowercase.
-    paramcodes = models.TextField(db_column='ParamCodes', blank=True)  # Field name made lowercase.
-    pollutelevelindex = models.IntegerField(db_column='PolluteLevelIndex', blank=True,
-                                            null=True)  # Field name made lowercase.
+    is_import_export = models.IntegerField(db_column='IsImportexport', blank=True,
+                                           null=True)  # Field name made lowercase.
+    param_codes = models.TextField(db_column='ParamCodes', blank=True)  # Field name made lowercase.
+    pollute_level_index = models.IntegerField(db_column='PolluteLevelIndex', blank=True,
+                                              null=True)  # Field name made lowercase.
     longwarp = models.DecimalField(db_column='LongWarp', max_digits=12, decimal_places=9, blank=True,
                                    null=True)  # Field name made lowercase.
     latwarp = models.DecimalField(db_column='LatWarp', max_digits=12, decimal_places=9, blank=True,
                                   null=True)  # Field name made lowercase.
-    iscountrycontrol = models.NullBooleanField(db_column='IsCountryControl', blank=True,
-                                               null=True)  # Field name made lowercase.
-    is1015building = models.NullBooleanField(db_column='Is1015Building', blank=True,
+    is_country_control = models.NullBooleanField(db_column='IsCountryControl', blank=True,
+                                                 null=True)  # Field name made lowercase.
+    is_1015building = models.NullBooleanField(db_column='Is1015Building', blank=True,
+                                              null=True)  # Field name made lowercase.
+    is_pass_accept = models.NullBooleanField(db_column='IsPassAccept', blank=True,
                                              null=True)  # Field name made lowercase.
-    ispassaccept = models.NullBooleanField(db_column='IsPassAccept', blank=True,
-                                           null=True)  # Field name made lowercase.
-    passaccepttime = models.DateTimeField(db_column='PassAcceptTime', blank=True,
-                                          null=True)  # Field name made lowercase.
-    stateyear = models.TextField(db_column='StateYear', blank=True)  # Field name made lowercase.
+    pass_accept_time = models.DateTimeField(db_column='PassAcceptTime', blank=True,
+                                            null=True)  # Field name made lowercase.
+    state_year = models.TextField(db_column='StateYear', blank=True)  # Field name made lowercase.
 
     class Meta:
         managed = False

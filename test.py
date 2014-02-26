@@ -1,0 +1,14 @@
+__author__ = 'GoTop'
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf_8')
+#text = u"('23000', '''[23000] [Microsoft][SQL Native Client][SQL Server]\xb2\xbb\xc4\xdc\xbd\xab\xd6\xb5 NULL \xb2\xe5\xc8\xeb\xc1\xd0 'company_id'\xa3\xac\xb1\xed 'EnvMonitor.dbo.Station'\xa3\xbb\xc1\xd0\xb2\xbb\xd4\xca\xd0\xed\xd3\xd0\xbf\xd5\xd6\xb5\xa1\xa3INSERT \xca\xa7\xb0\xdc\xa1\xa3 (515) (SQLExecDirectW); [01000] [Microsoft][SQL Native Client][SQL Server]\xd3\xef\xbe\xe4\xd2\xd1\xd6\xd5\xd6\xb9\xa1\xa3 (3621)''')"
+
+text = u'\xb2\xbb\xc4\xdc\xbd\xab\xd6\xb5'
+
+textencode = text.encode('utf_8')
+print textencode
+
+
+

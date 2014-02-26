@@ -5,8 +5,8 @@ from company.models import Company, Station
 from company.db_baise_models import T_Compinfo, T_AllStation, T_Adminarea
 import sys
 
-reload(sys)
-sys.setdefaultencoding('gb2312')
+# reload(sys)
+# sys.setdefaultencoding('latin_1')
 
 
 def get_company_info_func():
@@ -43,7 +43,7 @@ def get_station_info_func():
 
     all_t_station = T_AllStation.objects.using('DB_baise').all()
     for t_station in all_t_station:
-        t_station.station_name = t_station.station_name.encode('utf-8')
+        t_station.station_name = t_station.station_name.encode('latin_1')
 
     if t_station.kind_id == '32':
         type = 'water'

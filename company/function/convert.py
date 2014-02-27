@@ -1,4 +1,5 @@
 #coding=utf-8
+from __future__ import unicode_literals
 __author__ = 'GoTop'
 
 from company.models import Company, Station

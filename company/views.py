@@ -1,9 +1,17 @@
 # coding=utf-8
+from __future__ import unicode_literals
 
 from django.shortcuts import render, render_to_response
+from django.views.generic import ListView
+
 from function.db import SqlServerDB
 import pyodbc
 from company.function.convert import *
+
+
+class CompanyList(ListView):
+    model = Company
+
 
 # Create your views here.
 def test_db(request):
@@ -51,21 +59,18 @@ def test_db(request):
     #     print row
     row = 1
 
-    import sys
-
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
-
     new_station = Station(mn='8',
-                          name=u'哈哈',
+                          name='哈哈',
                           type='water',
     )
 
-    company = Company.
+    name_uni = '中文'
 
-    new_station.save()
+    new_company = Company.objects.create(name=name_uni)
 
-    return render_to_response('article_list.html', {'error_message': new_station.mn})
+    #new_station.save()
+
+    return render_to_response('article_list.html', {'error_message': new_company.name})
 
 
 def get_station_info(request):

@@ -1,4 +1,4 @@
-# coding=utf8
+# coding=utf-8
 
 from django.shortcuts import render, render_to_response
 from function.db import SqlServerDB
@@ -26,31 +26,46 @@ def test_db(request):
     #     resuslt = db.query(sql)
     #     rowcount = db.rowcount()
 
-    cnxn = pyodbc.connect(DRIVER='{SQL Native Client}', SERVER='localhost', DATABASE='EnvMonitor', UID='sa',
-                          PWD='the305')
-    cursor = cnxn.cursor()
-    cursor.execute('''INSERT INTO [EnvMonitor].[dbo].[Station]
-           ([mn]
-           ,[type]
-           ,[company_id]
-           ,[name]
-           ,[in_or_out]
-           ,[maintain_company_id])
-     VALUES
-           (450011111112,
-           'water',
-           NULL,
-           '问问',
-           'in',
-           NULL)''')
-    row =  cursor.rowcount
-    cnxn.commit()
+    # cnxn = pyodbc.connect(DRIVER='{SQL Native Client}', SERVER='localhost', DATABASE='EnvMonitor', UID='sa',
+    #                       PWD='the305')
+    # cursor = cnxn.cursor()
+    # cursor.execute('''INSERT INTO [EnvMonitor].[dbo].[Station]
+    #        ([mn]
+    #        ,[type]
+    #        ,[company_id]
+    #        ,[name]
+    #        ,[in_or_out]
+    #        ,[maintain_company_id])
+    #  VALUES
+    #        (4500111111121,
+    #        'water',
+    #        NULL,
+    #        '问问',
+    #        'in',
+    #        NULL)''')
+    # row =  cursor.rowcount
+    # cnxn.commit()
 
     # row = cursor.fetchall()
     # if row:
     #     print row
     row = 1
-    return render_to_response('article_list.html', {'error_message': row})
+
+    import sys
+
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+
+    new_station = Station(mn='8',
+                          name=u'哈哈',
+                          type='water',
+    )
+
+    company = Company.
+
+    new_station.save()
+
+    return render_to_response('article_list.html', {'error_message': new_station.mn})
 
 
 def get_station_info(request):

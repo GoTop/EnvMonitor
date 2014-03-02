@@ -1,7 +1,7 @@
 #coding=utf-8
 from django.conf.urls import patterns, include, url
 
-from company.views import CompanyList
+from company.views import CompanyList, StationList
 
 from company.models import Company, Station
 
@@ -20,4 +20,8 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('',
     url(r'^company/$', CompanyList.as_view()),
+)
+
+urlpatterns += patterns('',
+    url(r'^station/$', StationList.as_view()),
 )

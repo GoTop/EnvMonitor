@@ -38,21 +38,19 @@ def get_station_info_func():
     保存到EnvMonitor数据库的Station表中
     """
 
-
-    #all_t_station = T_Adminarea.objects.using('DB_baise').all()
-
     all_t_station = T_AllStation.objects.using('DB_baise').all()
     for t_station in all_t_station:
-        t_station.station_name = t_station.station_name.encode('utf-8')
+        t_station.station_name = t_station.station_name
 
-    if t_station.kind_id == '32':
-        type = 'water'
-    else:
-        type = 'gas'
-
-        new_station = Station(mn=t_station.station_id,
+        kind_id =t_station.kind_id
+        if t_station.kind_id == 32:
+            type = 'water'
+        elif t_station.kind_id== 35:
+            type = 'gas'
+        else:
+            type = 'no'
+        new_station = Station.objects.create(mn=t_station.station_id,
                               name=t_station.station_name,
                               type=type,
         )
-        new_station.save()
     return all_t_station

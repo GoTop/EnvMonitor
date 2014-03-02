@@ -12,6 +12,9 @@ from company.function.convert import *
 class CompanyList(ListView):
     model = Company
 
+class StationList(ListView):
+    model = Station
+
 
 # Create your views here.
 def test_db(request):
@@ -64,7 +67,7 @@ def test_db(request):
                           type='water',
     )
 
-    name_uni = '中文'
+    name_uni = '什么中文的偶崩溃了'
 
     new_company = Company.objects.create(name=name_uni)
 

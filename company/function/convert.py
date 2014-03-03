@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 __author__ = 'GoTop'
 
 from company.models import Company, Station
-from company.db_baise_models import T_Compinfo, T_AllStation, T_Adminarea
+from company.db_baise_models import *
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')

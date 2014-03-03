@@ -1,9 +1,10 @@
+#coding=utf8
 __author__ = 'GoTop'
 from django.db import models
 from para_models import *
 
 
-class T_Adminarea(models.Model):
+class T_Admin_area(models.Model):
     area_id = models.IntegerField(db_column='AreaID', primary_key=True)  # Field name made lowercase.
     higherareaid = models.IntegerField(db_column='HigherAreaID', blank=True, null=True)  # Field name made lowercase.
     area_name = models.TextField(db_column='AreaName')  # Field name made lowercase.
@@ -16,7 +17,7 @@ class T_Adminarea(models.Model):
         db_table = 'T_AdminArea'
 
 
-class T_Compinfo(models.Model):
+class T_Comp_info(models.Model):
     comp_id = models.IntegerField(db_column='CompID', primary_key=True)  # Field name made lowercase.
     comp_name = models.CharField(db_column='CompName', max_length=100)  # Field name made lowercase.
     tel = models.TextField(db_column='Tel', blank=True)  # Field name made lowercase.
@@ -99,16 +100,16 @@ class T_Compinfo(models.Model):
         db_table = 'T_CompInfo'
 
 
-class T_AllStation(models.Model):
+class T_All_station(models.Model):
     station_id = models.TextField(db_column='StationID', primary_key=True)  # Field name made lowercase.
     kind = models.ForeignKey('T_Station_kind', db_column='KindID', blank=True, null=True)  # Field name made lowercase.
-    watershed_id = models.ForeignKey('T_Watershed', db_column='WaterShedID', blank=True,
+    watershed_id = models.ForeignKey('T_Water_shed', db_column='WaterShedID', blank=True,
                                      null=True)  # Field name made lowercase.
     attend_id = models.ForeignKey('T_Attend_degree', db_column='AttendID', blank=True,
                                   null=True)  # Field name made lowercase.
     transfers_id = models.ForeignKey('T_Transfers', db_column='TransfersID', blank=True,
                                      null=True)  # Field name made lowercase.
-    area_id = models.ForeignKey(T_Adminarea, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
+    area_id = models.ForeignKey(T_Admin_area, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
     station_name = models.TextField(db_column='StationName', blank=True)  # Field name made lowercase.
     trade_id = models.ForeignKey('T_Trade', db_column='TradeID', blank=True, null=True)  # Field name made lowercase.
     order_id = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
@@ -145,3 +146,66 @@ class T_AllStation(models.Model):
     class Meta:
         managed = False
         db_table = 'T_AllStation'
+
+
+class T_Exam_project(models.Model):
+    '''
+    监测项目
+    '''
+    exam_parm_id = models.IntegerField(db_column='ExamParmID', primary_key=True)  # Field name made lowercase.
+    station_id = models.ForeignKey(T_All_station, db_column='StationID')  # Field name made lowercase.
+    param_code = models.ForeignKey(T_Data_param, db_column='ParamCode', blank=True,
+                                   null=True)  # Field name made lowercase.
+    manufacturer_id = models.ForeignKey('T_Manufacturer', db_column='ManufacturerID', blank=True,
+                                        null=True)  # Field name made lowercase.
+    low_limit_value = models.DecimalField(db_column='LowLimitValue', max_digits=18, decimal_places=4, blank=True,
+                                         null=True)  # Field name made lowercase.
+    high_limit_value = models.DecimalField(db_column='HighLimitValue', max_digits=18, decimal_places=4,
+                                          blank=True, null=True)  # Field name made lowercase.
+    data_precision = models.IntegerField(db_column='DataPrecision', blank=True,
+                                         null=True)  # Field name made lowercase.
+    param_unit = models.TextField(db_column='ParamUnit', blank=True)  # Field name made lowercase.
+    k_unit = models.DecimalField(db_column='kUnit', max_digits=8, decimal_places=2, blank=True,
+                                 null=True)  # Field name made lowercase.
+    is_send = models.NullBooleanField(db_column='IsSend', blank=True, null=True)  # Field name made lowercase.
+    total_unit = models.TextField(db_column='TotalUnit', blank=True)  # Field name made lowercase.
+    sort_id = models.IntegerField(db_column='SortID', blank=True, null=True)  # Field name made lowercase.
+    is_used = models.NullBooleanField(db_column='IsUsed', blank=True, null=True)  # Field name made lowercase.
+    asc_id = models.NullBooleanField(db_column='AscID', blank=True, null=True)  # Field name made lowercase.
+    analyse_id = models.SmallIntegerField(db_column='AnalyseID', blank=True,
+                                          null=True)  # Field name made lowercase.
+    model = models.TextField(db_column='Model', blank=True)  # Field name made lowercase.
+    number = models.TextField(db_column='Number', blank=True)  # Field name made lowercase.
+    minimum_level = models.DecimalField(db_column='MinimumLevel', max_digits=18, decimal_places=4, blank=True,
+                                        null=True)  # Field name made lowercase.
+    error_max_value = models.DecimalField(db_column='ErrorMaxValue', max_digits=10, decimal_places=4, blank=True,
+                                          null=True)  # Field name made lowercase.
+    error_min_value = models.DecimalField(db_column='ErrorMinValue', max_digits=10, decimal_places=4, blank=True,
+                                          null=True)  # Field name made lowercase.
+    is_enable = models.NullBooleanField(db_column='IsEnable', blank=True,
+                                        null=True)  # Field name made lowercase.
+    d_min_limit = models.DecimalField(db_column='dMinLimit', max_digits=18, decimal_places=6, blank=True,
+                                     null=True)  # Field name made lowercase.
+    d_max_limit = models.DecimalField(db_column='dMaxLimit', max_digits=18, decimal_places=6, blank=True,
+                                     null=True)  # Field name made lowercase.
+    is_main = models.NullBooleanField(db_column='IsMain', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'T_ExamProject'
+
+class T_Superscale(models.Model):
+    exam_id = models.IntegerField(db_column='ExamID', primary_key=True)  # Field name made lowercase.
+    exam_parm = models.ForeignKey(T_Exam_project, db_column='ExamParmID')  # Field name made lowercase.
+    level_id = models.IntegerField(db_column='LevelID', blank=True, null=True)  # Field name made lowercase.
+    standard_value = models.FloatField(db_column='StandardValue', blank=True,
+                                       null=True)  # Field name made lowercase.
+    standard_demo = models.CharField(db_column='StandardDemo', max_length=100,
+                                     blank=True)  # Field name made lowercase.
+    is_apply = models.NullBooleanField(db_column='IsApply', blank=True, null=True)  # Field name made lowercase.
+    max_value = models.FloatField(db_column='MaxValue', blank=True, null=True)  # Field name made lowercase.
+    data_type = models.TextField(db_column='DataType', blank=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'T_Superscale'

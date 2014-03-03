@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, render_to_response
 from django.views.generic import ListView
-
+from function.standard import *
 from function.db import SqlServerDB
 import pyodbc
 from company.function.convert import *
@@ -11,6 +11,7 @@ from company.function.convert import *
 
 class CompanyList(ListView):
     model = Company
+
 
 class StationList(ListView):
     model = Station
@@ -84,4 +85,11 @@ def get_station_info(request):
 
     all_t_station = get_station_info_func()
     return render_to_response('article_list.html', {'row': all_t_station})
+
+
+def get_standard(request):
+    mn = '45007760002801'
+    t_superscale_list = get_standard_func(mn = mn)
+    return render_to_response('article_list.html', {'row': t_superscale_list})
+
 

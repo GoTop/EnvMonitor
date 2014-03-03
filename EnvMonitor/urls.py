@@ -16,7 +16,11 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^company/test_db', 'company.views.test_db'),
     url(r'^company/get_station_info', 'company.views.get_station_info'),
+    url(r'^company/get_standard', 'company.views.get_standard'),
 )
+
+
+
 
 urlpatterns += patterns('',
     url(r'^company/$', CompanyList.as_view()),

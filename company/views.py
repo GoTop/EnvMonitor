@@ -88,7 +88,7 @@ def get_station_info(request):
 
 def get_standard(request):
     mn = '45007760002801'
-    (station, all_standard_info) = = get_standard_func(mn = mn)
+    (station, all_standard_info) =  get_standard_func(mn = mn)
     return render_to_response('standard_info.html', {'station': station,
                                                     'all_standard_info': all_standard_info
     })

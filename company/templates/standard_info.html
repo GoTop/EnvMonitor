@@ -5,7 +5,7 @@
 
 {{ station.station_name}}
 {% for standard_info in all_standard_info %}
-    <li>监控因子:{{ standard_info.para_remark }}</li>
+    <li>监控因子:{{ standard_info.param_remark }}</li>
     <li>标准值:{{ standard_info.standard_min}} 至 {{ standard_info.standard_max}}</li>
 {% endfor %}
 

@@ -14,8 +14,9 @@ def get_standard_func(mn):
 
     all_standard = []
     for t_exam_project in t_exam_project_set:
+        standard_info = {}
         #监控因子信息
-        t_data_param = T_Data_param.objects.using('DB_baise').get(pk=t_exam_project.param_code)
+        t_data_param = t_exam_project.param_code
 
         #标准信息，ph会有两个标准，一个是6，一个是9
         if t_data_param.param_remark == 'pH':
@@ -24,9 +25,10 @@ def get_standard_func(mn):
             standard_min = t_superscale_set[1].standard_value
         else:
             #COD的标准信息只有一个，60
-            t_superscale = t_exam_project.t_superscale_set.all()
-            standard_max = t_superscale.standard_value
-            standard_min = 0
+            t_superscale_set = t_exam_project.t_superscale_set.all()
+            for t_superscale in t_superscale_set:
+                standard_max = t_superscale.standard_value
+                standard_min = 0
 
         standard_info = {
             'param_remark': t_data_param.param_remark,
@@ -36,8 +38,8 @@ def get_standard_func(mn):
 
         all_standard.append(standard_info)
 
-    return tuple(station, all_standard)
-    #for t_superscale in exam_project.t_superscale_set:
+    return (station, all_standard)
+
 
 
 

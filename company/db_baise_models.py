@@ -4,6 +4,24 @@ from django.db import models
 from para_models import *
 
 
+class T_Data_param(models.Model):
+    param_code = models.CharField(db_column='ParamCode', max_length=3, primary_key=True)  # Field name made lowercase.
+    standard_code = models.TextField(db_column='StandardCode', blank=True)  # Field name made lowercase.
+    param_remark = models.TextField(db_column='ParamRemark', blank=True)  # Field name made lowercase.
+    param_kind = models.IntegerField(db_column='ParamKind', blank=True, null=True)  # Field name made lowercase.
+    order_id = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
+    param_unit = models.TextField(db_column='ParamUnit', blank=True)  # Field name made lowercase.
+    data_precision = models.IntegerField(db_column='DataPrecision', blank=True, null=True)  # Field name made lowercase.
+    is_have_cou = models.NullBooleanField(db_column='IsHaveCou')  # Field name made lowercase.
+    standard_values = models.TextField(db_column='StandardValues', blank=True)  # Field name made lowercase.
+    app_value = models.DecimalField(db_column='AppValue', max_digits=18, decimal_places=5, blank=True,
+                                    null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'T_DataParam'
+
+
 class T_Admin_area(models.Model):
     area_id = models.IntegerField(db_column='AreaID', primary_key=True)  # Field name made lowercase.
     higherareaid = models.IntegerField(db_column='HigherAreaID', blank=True, null=True)  # Field name made lowercase.
@@ -34,16 +52,17 @@ class T_Comp_info(models.Model):
     reg_type = models.CharField(db_column='RegType', max_length=40, blank=True)  # Field name made lowercase.
     sew_fac_cou = models.IntegerField(db_column='SewFacCou', blank=True, null=True)  # Field name made lowercase.
     sfexploit_va = models.DecimalField(db_column='SFexploitVa', max_digits=9, decimal_places=0, blank=True,
-                                      null=True)  # Field name made lowercase.
+                                       null=True)  # Field name made lowercase.
     dispose_ability = models.DecimalField(db_column='DisposeAbility', max_digits=9, decimal_places=0, blank=True,
-                                         null=True)  # Field name made lowercase.
+                                          null=True)  # Field name made lowercase.
     tlfac_cou = models.IntegerField(db_column='TLFacCou', blank=True, null=True)  # Field name made lowercase.
     idnkiln_cou = models.IntegerField(db_column='IdnkilnCou', blank=True, null=True)  # Field name made lowercase.
     tlfac_cap = models.TextField(db_column='TLFacCap', blank=True)  # Field name made lowercase.
-    last_year_fine_money = models.DecimalField(db_column='LastYearFineMoney', max_digits=9, decimal_places=0, blank=True,
-                                            null=True)  # Field name made lowercase.
+    last_year_fine_money = models.DecimalField(db_column='LastYearFineMoney', max_digits=9, decimal_places=0,
+                                               blank=True,
+                                               null=True)  # Field name made lowercase.
     last_year_pay_money = models.DecimalField(db_column='LastYearPayMoney', max_digits=9, decimal_places=0, blank=True,
-                                           null=True)  # Field name made lowercase.
+                                              null=True)  # Field name made lowercase.
     waste_emission_id = models.TextField(db_column='WasteEmissionID', blank=True)  # Field name made lowercase.
     issuing_time = models.DateTimeField(db_column='IssuingTime', blank=True, null=True)  # Field name made lowercase.
     add_time = models.DateTimeField(db_column='AddTime')  # Field name made lowercase.
@@ -55,41 +74,43 @@ class T_Comp_info(models.Model):
     country_attribute = models.TextField(db_column='CountryAttribute', blank=True)  # Field name made lowercase.
     water_shed_id = models.IntegerField(db_column='WaterShedID', blank=True, null=True)  # Field name made lowercase.
     pollute_level_index = models.IntegerField(db_column='PolluteLevelIndex', blank=True,
-                                            null=True)  # Field name made lowercase.
+                                              null=True)  # Field name made lowercase.
     is_facility = models.NullBooleanField(db_column='IsFacility', blank=True, null=True)  # Field name made lowercase.
     organ_code = models.TextField(db_column='OrganCode', blank=True)  # Field name made lowercase.
     build_time = models.DateTimeField(db_column='BuildTime', blank=True, null=True)  # Field name made lowercase.
     factory_area = models.DecimalField(db_column='FactoryArea', max_digits=10, decimal_places=2, blank=True,
-                                      null=True)  # Field name made lowercase.
+                                       null=True)  # Field name made lowercase.
     law_person_mum = models.TextField(db_column='LawPersonMum', blank=True)  # Field name made lowercase.
     site_url = models.TextField(db_column='SiteUrl', blank=True)  # Field name made lowercase.
     comp_properties = models.CharField(db_column='CompProperties', max_length=500,
-                                      blank=True)  # Field name made lowercase.
+                                       blank=True)  # Field name made lowercase.
     linkman_phone = models.TextField(db_column='LinkManPhone', blank=True)  # Field name made lowercase.
     contact_man = models.CharField(db_column='ContactMan', max_length=10, blank=True)  # Field name made lowercase.
     contact_man_phone = models.TextField(db_column='ContactManPhone', blank=True)  # Field name made lowercase.
     industry_park_name = models.CharField(db_column='IndustryParkName', max_length=200,
-                                        blank=True)  # Field name made lowercase.
+                                          blank=True)  # Field name made lowercase.
     is_have_jury_project = models.NullBooleanField(db_column='IsHaveJuryProject', blank=True,
-                                                null=True)  # Field name made lowercase.
+                                                   null=True)  # Field name made lowercase.
     is_gb_judge = models.NullBooleanField(db_column='IsGBJudge', blank=True, null=True)  # Field name made lowercase.
-    is_occur_jury = models.NullBooleanField(db_column='IsOccurJury', blank=True, null=True)  # Field name made lowercase.
+    is_occur_jury = models.NullBooleanField(db_column='IsOccurJury', blank=True,
+                                            null=True)  # Field name made lowercase.
     jury_demo = models.CharField(db_column='JuryDemo', max_length=1000, blank=True)  # Field name made lowercase.
     kiln_type = models.TextField(db_column='kilnType', blank=True)  # Field name made lowercase.
     kiln_have_decoke = models.NullBooleanField(db_column='KilnHaveDecoke', blank=True,
-                                             null=True)  # Field name made lowercase.
+                                               null=True)  # Field name made lowercase.
     kiln_is_run = models.NullBooleanField(db_column='KilnIsRun', blank=True, null=True)  # Field name made lowercase.
     kiln_coal = models.DecimalField(db_column='KilnCoal', max_digits=18, decimal_places=6, blank=True,
-                                   null=True)  # Field name made lowercase.
+                                    null=True)  # Field name made lowercase.
     boiler_cou = models.IntegerField(db_column='BoilerCou', blank=True, null=True)  # Field name made lowercase.
     boiler_ton = models.DecimalField(db_column='BoilerTon', max_digits=18, decimal_places=6, blank=True,
-                                    null=True)  # Field name made lowercase.
+                                     null=True)  # Field name made lowercase.
     boiler_type = models.TextField(db_column='BoilerType', blank=True)  # Field name made lowercase.
     boiler_have_decoke = models.NullBooleanField(db_column='BoilerHaveDecoke', blank=True,
-                                               null=True)  # Field name made lowercase.
-    boiler_is_run = models.NullBooleanField(db_column='BoilerIsRun', blank=True, null=True)  # Field name made lowercase.
+                                                 null=True)  # Field name made lowercase.
+    boiler_is_run = models.NullBooleanField(db_column='BoilerIsRun', blank=True,
+                                            null=True)  # Field name made lowercase.
     boiler_coal = models.DecimalField(db_column='BoilerCoal', max_digits=18, decimal_places=6, blank=True,
-                                     null=True)  # Field name made lowercase.
+                                      null=True)  # Field name made lowercase.
     img_save_path = models.CharField(db_column='ImgSavePath', max_length=500, blank=True)  # Field name made lowercase.
     demo = models.TextField(db_column='Demo', blank=True)  # Field name made lowercase. This field type is a guess.
     out_where_code = models.CharField(db_column='OutWhereCode', max_length=10, blank=True)  # Field name made lowercase.
@@ -130,9 +151,9 @@ class T_All_station(models.Model):
     pollute_level_index = models.IntegerField(db_column='PolluteLevelIndex', blank=True,
                                               null=True)  # Field name made lowercase.
     long_warp = models.DecimalField(db_column='LongWarp', max_digits=12, decimal_places=9, blank=True,
-                                   null=True)  # Field name made lowercase.
+                                    null=True)  # Field name made lowercase.
     lat_warp = models.DecimalField(db_column='LatWarp', max_digits=12, decimal_places=9, blank=True,
-                                  null=True)  # Field name made lowercase.
+                                   null=True)  # Field name made lowercase.
     is_country_control = models.NullBooleanField(db_column='IsCountryControl', blank=True,
                                                  null=True)  # Field name made lowercase.
     is_1015building = models.NullBooleanField(db_column='Is1015Building', blank=True,
@@ -160,10 +181,10 @@ class T_Exam_project(models.Model):
                                         null=True)  # Field name made lowercase.
     #仪器最小检出限
     low_limit_value = models.DecimalField(db_column='LowLimitValue', max_digits=18, decimal_places=4, blank=True,
-                                         null=True)  # Field name made lowercase.
+                                          null=True)  # Field name made lowercase.
     #仪器最高检出限
     high_limit_value = models.DecimalField(db_column='HighLimitValue', max_digits=18, decimal_places=4,
-                                          blank=True, null=True)  # Field name made lowercase.
+                                           blank=True, null=True)  # Field name made lowercase.
     data_precision = models.IntegerField(db_column='DataPrecision', blank=True,
                                          null=True)  # Field name made lowercase.
     param_unit = models.TextField(db_column='ParamUnit', blank=True)  # Field name made lowercase.
@@ -187,14 +208,15 @@ class T_Exam_project(models.Model):
     is_enable = models.NullBooleanField(db_column='IsEnable', blank=True,
                                         null=True)  # Field name made lowercase.
     d_min_limit = models.DecimalField(db_column='dMinLimit', max_digits=18, decimal_places=6, blank=True,
-                                     null=True)  # Field name made lowercase.
+                                      null=True)  # Field name made lowercase.
     d_max_limit = models.DecimalField(db_column='dMaxLimit', max_digits=18, decimal_places=6, blank=True,
-                                     null=True)  # Field name made lowercase.
+                                      null=True)  # Field name made lowercase.
     is_main = models.NullBooleanField(db_column='IsMain', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'T_ExamProject'
+
 
 class T_Superscale(models.Model):
     exam_id = models.IntegerField(db_column='ExamID', primary_key=True)  # Field name made lowercase.

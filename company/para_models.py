@@ -74,33 +74,6 @@ class T_Trade(models.Model):
         db_table = 'T_Trade'
 
 
-class T_Data_param(models.Model):
-    '''
-    监测参数字典
-    '''
-    #力合标准
-    param_code = models.CharField(db_column='ParamCode', max_length=3)  # Field name made lowercase.
-    #国家标准
-    standard_code = models.TextField(db_column='StandardCode', blank=True)  # Field name made lowercase.
-    #参数名称
-    param_remark = models.TextField(db_column='ParamRemark', blank=True)  # Field name made lowercase.
-    #参数类型
-    param_kind = models.IntegerField(db_column='ParamKind', blank=True, null=True)  # Field name made lowercase.
-    order_id = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
-    #统一单位
-    param_unit = models.TextField(db_column='ParamUnit', blank=True)  # Field name made lowercase.
-    #统一数据精度
-    data_precision = models.IntegerField(db_column='DataPrecision', blank=True,
-                                         null=True)  # Field name made lowercase.
-    is_have_cou = models.NullBooleanField(db_column='IsHaveCou')  # Field name made lowercase.
-    standard_values = models.TextField(db_column='StandardValues', blank=True)  # Field name made lowercase.
-    app_value = models.DecimalField(db_column='AppValue', max_digits=18, decimal_places=5, blank=True,
-                                    null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'T_DataParam'
-
 
 
 

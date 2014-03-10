@@ -158,8 +158,10 @@ class T_Exam_project(models.Model):
                                    null=True)  # Field name made lowercase.
     manufacturer_id = models.ForeignKey('T_Manufacturer', db_column='ManufacturerID', blank=True,
                                         null=True)  # Field name made lowercase.
+    #仪器最小检出限
     low_limit_value = models.DecimalField(db_column='LowLimitValue', max_digits=18, decimal_places=4, blank=True,
                                          null=True)  # Field name made lowercase.
+    #仪器最高检出限
     high_limit_value = models.DecimalField(db_column='HighLimitValue', max_digits=18, decimal_places=4,
                                           blank=True, null=True)  # Field name made lowercase.
     data_precision = models.IntegerField(db_column='DataPrecision', blank=True,
@@ -209,3 +211,7 @@ class T_Superscale(models.Model):
     class Meta:
         managed = False
         db_table = 'T_Superscale'
+
+
+
+

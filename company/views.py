@@ -82,14 +82,15 @@ def get_station_info(request):
 
     :param request:
     """
-
     all_t_station = get_station_info_func()
     return render_to_response('article_list.html', {'row': all_t_station})
 
 
 def get_standard(request):
     mn = '45007760002801'
-    t_superscale_list = get_standard_func(mn = mn)
-    return render_to_response('article_list.html', {'row': t_superscale_list})
+    (station, all_standard_info) = = get_standard_func(mn = mn)
+    return render_to_response('standard_info.html', {'station': station,
+                                                    'all_standard_info': all_standard_info
+    })
 
 

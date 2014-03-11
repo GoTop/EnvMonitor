@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<title>{{ date }}</title>
+<table>
+    <tr>
+        <td></td>
+        <td>CODcr[Avg]</td>
+        <td>CODcr[Cou]</td>
+        <td>氨氮[Avg]</td>
+        <td>氨氮[Cou]</td>
+        <td>pH[Avg]</td>
+        <td>废水流量[Cou]</td>
+
+    </tr>
+
+    <tr>
+        <td>监控点位</td>
+        <td>(mg/l)</td>
+        <td>(Kg)</td>
+        <td>(mg/l)</td>
+        <td>(Kg)</td>
+        <td>(-)</td>
+        <td>M3</td>
+
+    </tr>
 
     {% for daily_report in daily_report_list %}
-    <li>时间:{{ daily_report.DataTime }}</li>
-    <li>值:{{ daily_report.dValue}}</li>
-{% endfor %}
-</head>
+        <tr>
+            <td>{{ daily_report.station_name }}</td>
+            <td>{{ daily_report.CODcr_Avg }}</td>
+            <td>{{ daily_report.CODcr_Cou }}</td>
+            <td>{{ daily_report.NH_Avg }}</td>
+            <td>{{ daily_report.NH_Cou }}</td>
+            <td>{{ daily_report.pH_Avg }}</td>
+            <td>{{ daily_report.volume_of_water_Cou }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
 <body>
 
 </body>

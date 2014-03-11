@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^company/test_db', 'company.views.test_db'),
     url(r'^company/get_station_info', 'company.views.get_station_info'),
     url(r'^company/standard_info', 'company.views.get_standard'),
-    url(r'^report/daily_report/(?P<date>\d{8})/$', 'report.views.daily_report_view'),
+    url(r'^report/daily_report/(?P<date>\d{8})/$', 'report.views.water_daily_report_view'),
 )
 
 urlpatterns += patterns('',

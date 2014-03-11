@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     #'bootstrap3',
     'company',
+    'report',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'EnvMonitor.urls'
@@ -67,7 +69,7 @@ DATABASES = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'zh-CN'
 DEFAULT_CHARSET = 'utf-8'
 
 TIME_ZONE = 'UTC'

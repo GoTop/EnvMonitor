@@ -63,6 +63,8 @@ class Company(models.Model):
 
     class Meta:
         db_table = 'Company'
+        verbose_name = '企业'
+        verbose_name_plural = '企业'
 
 
 class MaintainCompany(models.Model):
@@ -72,6 +74,9 @@ class MaintainCompany(models.Model):
 
     class Meta:
         db_table = 'MaintainCompany'
+        verbose_name = '运维商'
+        verbose_name_plural = '运维商'
+
 
 
 class Station(models.Model):
@@ -89,11 +94,13 @@ class Station(models.Model):
     type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
     company = models.ForeignKey(Company, blank=True)
     name = models.TextField(blank=True)
-    in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='出口')
+    in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='out')
     maintain_company = models.ForeignKey(MaintainCompany, db_column='maintain_company_id')  # Field name made lowercase.
 
     class Meta:
         db_table = 'Station'
+        verbose_name = '监控点位'
+        verbose_name_plural = '监控点位'
 
 
 class Datavalidation(models.Model):
@@ -110,6 +117,8 @@ class Datavalidation(models.Model):
 
     class Meta:
         db_table = 'DataValidation'
+        verbose_name = '数据有效性审核'
+        verbose_name_plural = '数据有效性审核'
 
 
 class Equipment(models.Model):
@@ -125,6 +134,8 @@ class Equipment(models.Model):
 
     class Meta:
         db_table = 'Equipment'
+        verbose_name = '分析仪'
+        verbose_name_plural = '分析仪'
 
 
 class ShutdownDate(models.Model):
@@ -137,6 +148,8 @@ class ShutdownDate(models.Model):
 
     class Meta:
         db_table = 'ShutDownDate'
+        verbose_name = '停运时间'
+        verbose_name_plural = '停运时间'
 
 
 class SpecialSuprevision(models.Model):
@@ -154,3 +167,5 @@ class SpecialSuprevision(models.Model):
 
     class Meta:
         db_table = 'SpecialSuprevision'
+        verbose_name = '国控信息'
+        verbose_name_plural = '国控信息'

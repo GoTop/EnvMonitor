@@ -38,7 +38,7 @@ def get_station_info_func():
     保存到EnvMonitor数据库的Station表中
     """
 
-    all_t_station = T_AllStation.objects.using('DB_baise').all()
+    all_t_station = T_All_station.objects.using('DB_baise').all()
     for t_station in all_t_station:
         t_station.station_name = t_station.station_name
 

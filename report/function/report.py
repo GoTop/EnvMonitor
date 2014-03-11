@@ -2,22 +2,35 @@ __author__ = 'GoTop'
 from django.db import connections
 import time
 
+#
+def dictfetchall(cursor):
+    "Returns all rows from a cursor as a dict"
+    desc = cursor.description
+    return [
+        dict(zip([col[0] for col in desc], row))
+        for row in cursor.fetchall()
+    ]
+
 
 def daily_report_func(mn_list, date):
-    date = time.strptime(date, "%Y-%m-%d 00:00:00")
+    timeArray = time.strptime(date, "%Y%m%d")
+    date = time.strftime("%Y/%m/%d %H:%M:%S", timeArray)
 
     for mn in mn_list:
-        Day_mn = 'Day' + mn
-        param = {'Day_mn': Day_mn,
-                 'mn': mn,
-                 'date': date,
-        }
+        table_name = 'Day_' + mn
+        param = (table_name, mn, 'Z02', date,)
         cursor = connections['DB_baise'].cursor()
-        cursor.execute('''SELECT *
-                            FROM %(Day_mn)s
-                            WHERE StationID = %(mn)s
-                            AND ParamCode = %(param_code)s
-                            AND DataType = Cou
-                            AND DataTime = %(date)s''',
-                       param)
-        row = cursor.fetchone()
+
+        query = '''SELECT * FROM %s
+                    WHERE StationID = '%s'
+                    AND
+                    ParamCode = '%s'
+                    AND
+                    DataType = 'Cou'
+                    AND
+                    DataTime = '%s' ''' % param
+
+        cursor.execute(query)
+        dict = dictfetchall(cursor)
+        #row = cursor.fetchall()
+        return dict

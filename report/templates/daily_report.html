@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    {% for daily_report in daily_report_list %}
+    <li>时间:{{ daily_report.DataTime }}</li>
+    <li>值:{{ daily_report.dValue}}</li>
+{% endfor %}
+</head>
+<body>
+
+</body>
+</html>

@@ -7,7 +7,7 @@ from company.models import Station
 class HourReport(models.Model):
     #小时报表
     #id = models.CharField(primary_key=True, max_length=10)
-    mn = models.ForeignKey('Station', db_column='mn')  # Field name made lowercase.
+    mn = models.ForeignKey('company.Station', db_column='mn')  # Field name made lowercase.
     date = models.DateTimeField(blank=True, null=True)
     factor = models.CharField(max_length=10, blank=True)
     value = models.IntegerField(blank=True, null=True)
@@ -20,7 +20,7 @@ class HourReport(models.Model):
 class Standard(models.Model):
     #排放标准
     #id = models.CharField(primary_key=True, max_length=10)
-    mn = models.ForeignKey('Station', db_column='mn')  # Field name made lowercase.
+    mn = models.ForeignKey('company.Station', db_column='mn')  # Field name made lowercase.
     factor = models.CharField(max_length=10, blank=True)
     upper_limit = models.IntegerField(blank=True, null=True)
     lower_limit = models.IntegerField(blank=True, null=True)

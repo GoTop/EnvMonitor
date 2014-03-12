@@ -1,5 +1,6 @@
 # coding=utf-8
 from __future__ import unicode_literals
+from report.function.report import get_param_code
 
 __author__ = 'GoTop'
 
@@ -45,9 +46,13 @@ def get_standard_func(mn):
     return (station, all_standard)
 
 
+def get_station_standard(mn, param_name):
+    #station = T_All_station.objects.using('DB_baise').filter(t_exam_project__t_superscale)
+    param_name = 'CODcr'
+    param_code = get_param_code(param_name)
+    t_superscale_list = T_Superscale.objects.using('DB_baise').filter(t_exam_project__t_data_param=param_code,
+                                                                      t_exam_project__t_all_station__station_id=mn).all()
 
-
-
-
+    return t_superscale_list
 
 

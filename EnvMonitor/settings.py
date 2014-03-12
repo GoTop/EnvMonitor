@@ -103,6 +103,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 '''This code will try to find a file named local_settings.py in the same directory as the
 settings file. If it succeeds, it will import everything defined in the file. If no such file exists,
 nothing will happen.'''

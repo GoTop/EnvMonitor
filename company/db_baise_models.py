@@ -123,16 +123,16 @@ class T_Comp_info(models.Model):
 
 class T_All_station(models.Model):
     station_id = models.TextField(db_column='StationID', primary_key=True)  # Field name made lowercase.
-    kind = models.ForeignKey('T_Station_kind', db_column='KindID', blank=True, null=True)  # Field name made lowercase.
-    watershed_id = models.ForeignKey('T_Water_shed', db_column='WaterShedID', blank=True,
+    t_station_kind = models.ForeignKey('T_Station_kind', db_column='KindID', blank=True, null=True)  # Field name made lowercase.
+    t_water_shed = models.ForeignKey('T_Water_shed', db_column='WaterShedID', blank=True,
                                      null=True)  # Field name made lowercase.
-    attend_id = models.ForeignKey('T_Attend_degree', db_column='AttendID', blank=True,
+    t_attend_degree = models.ForeignKey('T_Attend_degree', db_column='AttendID', blank=True,
                                   null=True)  # Field name made lowercase.
-    transfers_id = models.ForeignKey('T_Transfers', db_column='TransfersID', blank=True,
+    t_transfers = models.ForeignKey('T_Transfers', db_column='TransfersID', blank=True,
                                      null=True)  # Field name made lowercase.
-    area_id = models.ForeignKey(T_Admin_area, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
+    t_admin_area = models.ForeignKey(T_Admin_area, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
     station_name = models.TextField(db_column='StationName', blank=True)  # Field name made lowercase.
-    trade_id = models.ForeignKey('T_Trade', db_column='TradeID', blank=True, null=True)  # Field name made lowercase.
+    t_trade = models.ForeignKey('T_Trade', db_column='TradeID', blank=True, null=True)  # Field name made lowercase.
     order_id = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
     ionline = models.IntegerField(db_column='IOnline', blank=True, null=True)  # Field name made lowercase.
     comp_id = models.IntegerField(db_column='CompID', blank=True, null=True)  # Field name made lowercase.
@@ -174,10 +174,10 @@ class T_Exam_project(models.Model):
     监测项目
     '''
     exam_parm_id = models.IntegerField(db_column='ExamParmID', primary_key=True)  # Field name made lowercase.
-    station_id = models.ForeignKey(T_All_station, db_column='StationID')  # Field name made lowercase.
-    param_code = models.ForeignKey(T_Data_param, db_column='ParamCode', blank=True,
+    t_all_station = models.ForeignKey(T_All_station, db_column='StationID')  # Field name made lowercase.
+    t_data_param = models.ForeignKey(T_Data_param, db_column='ParamCode', blank=True,
                                    null=True)  # Field name made lowercase.
-    manufacturer_id = models.ForeignKey('T_Manufacturer', db_column='ManufacturerID', blank=True,
+    t_manufacturer = models.ForeignKey('T_Manufacturer', db_column='ManufacturerID', blank=True,
                                         null=True)  # Field name made lowercase.
     #仪器最小检出限
     low_limit_value = models.DecimalField(db_column='LowLimitValue', max_digits=18, decimal_places=4, blank=True,
@@ -220,7 +220,7 @@ class T_Exam_project(models.Model):
 
 class T_Superscale(models.Model):
     exam_id = models.IntegerField(db_column='ExamID', primary_key=True)  # Field name made lowercase.
-    exam_parm = models.ForeignKey(T_Exam_project, db_column='ExamParmID')  # Field name made lowercase.
+    t_exam_project = models.ForeignKey(T_Exam_project, db_column='ExamParmID')  # Field name made lowercase.
     level_id = models.IntegerField(db_column='LevelID', blank=True, null=True)  # Field name made lowercase.
     standard_value = models.FloatField(db_column='StandardValue', blank=True,
                                        null=True)  # Field name made lowercase.
@@ -228,7 +228,7 @@ class T_Superscale(models.Model):
                                      blank=True)  # Field name made lowercase.
     is_apply = models.NullBooleanField(db_column='IsApply', blank=True, null=True)  # Field name made lowercase.
     max_value = models.FloatField(db_column='MaxValue', blank=True, null=True)  # Field name made lowercase.
-    data_type = models.TextField(db_column='DataType', blank=True)  # Field name made lowercase.
+    s = models.TextField(db_column='DataType', blank=True)  # Field name made lowercase.
 
     class Meta:
         managed = False

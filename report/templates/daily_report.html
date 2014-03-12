@@ -2,46 +2,142 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <style type='text/css'>
+        body {
+            background-color: #CCC;
+        }
+
+        #content {
+            background-color: #FFF;
+            border-radius: 5px;
+        }
+
+        #content .main {
+            padding: 20px;
+        }
+
+        #content .sidebar {
+            padding: 10px;
+        }
+
+        #content p {
+            line-height: 30px;
+        }
+    </style>
+
+    <title>{{ datetime|date:"Y年m月d日" }}国控企业废水监控记录</title>
 </head>
-<title>{{ date }}</title>
-<table>
-    <tr>
-        <td></td>
-        <td>CODcr[Avg]</td>
-        <td>CODcr[Cou]</td>
-        <td>氨氮[Avg]</td>
-        <td>氨氮[Cou]</td>
-        <td>pH[Avg]</td>
-        <td>废水流量[Cou]</td>
-
-    </tr>
-
-    <tr>
-        <td>监控点位</td>
-        <td>(mg/l)</td>
-        <td>(Kg)</td>
-        <td>(mg/l)</td>
-        <td>(Kg)</td>
-        <td>(-)</td>
-        <td>M3</td>
-
-    </tr>
-
-    {% for daily_report in daily_report_list %}
-        <tr>
-            <td>{{ daily_report.station_name }}</td>
-            <td>{{ daily_report.CODcr_Avg }}</td>
-            <td>{{ daily_report.CODcr_Cou }}</td>
-            <td>{{ daily_report.NH_Avg }}</td>
-            <td>{{ daily_report.NH_Cou }}</td>
-            <td>{{ daily_report.pH_Avg }}</td>
-            <td>{{ daily_report.volume_of_water_Cou }}</td>
-        </tr>
-    {% endfor %}
-</table>
-
-
 <body>
+
+<div class='container'>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div id='content' class='row-fluid'>
+        <div class='span12 main'>
+            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废水监控记录</h2>
+
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                <tr>
+                    <th>监控点位</th>
+                    <th>CODcr[Avg]</th>
+                    <th>CODcr[Cou]</th>
+                    <th>氨氮[Avg]</th>
+                    <th>氨氮[Cou]</th>
+                    <th>pH[Avg]</th>
+                    <th>废水流量[Cou]</th>
+
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>(mg/l)</th>
+                    <th>(Kg)</th>
+                    <th>(mg/l)</th>
+                    <th>(Kg)</th>
+                    <th>(-)</th>
+                    <th>M3</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for daily_report in daily_report_list %}
+                    <tr>
+                        <td>{{ daily_report.station_name }}</td>
+                        <td>{{ daily_report.CODcr_Avg }}</td>
+                        <td>{{ daily_report.CODcr_Cou }}</td>
+                        <td>{{ daily_report.NH_Avg }}</td>
+                        <td>{{ daily_report.NH_Cou }}</td>
+                        <td>{{ daily_report.pH_Avg }}</td>
+                        <td>{{ daily_report.volume_of_water_Cou }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
 
 </body>
 </html>

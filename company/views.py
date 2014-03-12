@@ -1,12 +1,12 @@
 # coding=utf-8
 from __future__ import unicode_literals
-
 from django.shortcuts import render, render_to_response
 from django.views.generic import ListView
 from function.standard import *
 from function.db import SqlServerDB
 import pyodbc
 from company.function.convert import *
+from report.function.report import *
 
 
 class CompanyList(ListView):
@@ -19,62 +19,11 @@ class StationList(ListView):
 
 # Create your views here.
 def test_db(request):
-    #     db = SqlServerDB(host='127.0.0.1', port='1433', user='sa', password='the305', db='EnvMonitor', charset="utf8")
-    #     sql = '''
-    # CREATE TABLE Company(
-    #     company_id    int             IDENTITY(1,1),
-    #     Name          nvarchar(50)    NOT NULL,
-    #     Tel           varchar(12)     NULL,
-    #     OrganCode     varchar(20)     NULL,
-    #     Fax           varchar(12)     NULL,
-    #     Postcode      varchar(6)      NULL,
-    #     LawPerson     nvarchar(10)    NULL,
-    #     Email         varchar(50)     NULL,
-    #     SetUpTime     datetime        NULL,
-    #     LinkMan       nvarchar(10)    NULL,
-    #     Address       nvarchar(80)    NULL,
-    # )
-    # '''
-    #     resuslt = db.query(sql)
-    #     rowcount = db.rowcount()
 
-    # cnxn = pyodbc.connect(DRIVER='{SQL Native Client}', SERVER='localhost', DATABASE='EnvMonitor', UID='sa',
-    #                       PWD='the305')
-    # cursor = cnxn.cursor()
-    # cursor.execute('''INSERT INTO [EnvMonitor].[dbo].[Station]
-    #        ([mn]
-    #        ,[type]
-    #        ,[company_id]
-    #        ,[name]
-    #        ,[in_or_out]
-    #        ,[maintain_company_id])
-    #  VALUES
-    #        (4500111111121,
-    #        'water',
-    #        NULL,
-    #        '问问',
-    #        'in',
-    #        NULL)''')
-    # row =  cursor.rowcount
-    # cnxn.commit()
-
-    # row = cursor.fetchall()
-    # if row:
-    #     print row
-    row = 1
-
-    new_station = Station(mn='8',
-                          name='哈哈',
-                          type='water',
-    )
-
-    name_uni = '什么中文的偶崩溃了'
-
-    new_company = Company.objects.create(name=name_uni)
-
-    #new_station.save()
-
-    return render_to_response('article_list.html', {'error_message': new_company.name})
+    standard_list = get_station_standard(mn='45007760002801', param_name='CODcr')
+    for standard in standard_list:
+        pass
+    return render_to_response('article_list.html', {'error_message': standard_list})
 
 
 def get_station_info(request):
@@ -88,9 +37,9 @@ def get_station_info(request):
 
 def get_standard(request):
     mn = '45007760002801'
-    (station, all_standard_info) =  get_standard_func(mn = mn)
+    (station, all_standard_info) = get_standard_func(mn=mn)
     return render_to_response('standard_info.html', {'station': station,
-                                                    'all_standard_info': all_standard_info
+                                                     'all_standard_info': all_standard_info
     })
 
 

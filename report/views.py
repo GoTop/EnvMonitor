@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.shortcuts import render, render_to_response
+from company.function.standard import get_station_standard
 from report.function.report import *
 from company.db_baise_models import *
 import datetime
@@ -18,5 +19,16 @@ def water_daily_report_view(request, date):
         t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
         #daily_report_value['station_name'] = t_station.station_name.decode('gbk', 'ignore').encode('utf8')
         daily_report_value['station_name'] = t_station.station_name
+
+        CODcr_standard_dict = get_station_standard(mn=mn, param_name='CODcr')
+        NH_standard_dict = get_station_standard(mn=mn, param_name='NH')
+
+        standard_dict = {}
+        if CODcr_standard_dict:
+            daily_report_value['CODcr_standard'] = CODcr_standard_dict['standard_max']
+        if NH_standard_dict:
+            daily_report_value['NH_standard'] = NH_standard_dict['standard_max']
+
         daily_report_list.append(daily_report_value)
-    return render_to_response('daily_report.html', {'datetime': datetime_object, 'daily_report_list': daily_report_list})
+    return render_to_response('water_daily_report.html',
+                              {'datetime': datetime_object, 'daily_report_list': daily_report_list})

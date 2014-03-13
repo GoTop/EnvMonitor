@@ -19,11 +19,10 @@ class StationList(ListView):
 
 # Create your views here.
 def test_db(request):
-
     standard_list = get_station_standard(mn='45007760002801', param_name='CODcr')
     for standard in standard_list:
         pass
-    return render_to_response('article_list.html', {'error_message': standard_list})
+    return render_to_response('article_list.html', {'result_tuple': standard_list.items()})
 
 
 def get_station_info(request):

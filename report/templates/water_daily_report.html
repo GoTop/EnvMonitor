@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>{{ datetime|date:"Y年m月d日" }}国控企业废水监控记录</title>
+    <title>{{ datetime|date:"Y年m月d日" }}国控企业废水监控情况</title>
 </head>
 <body>
 
@@ -93,7 +93,7 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废水监控记录</h2>
+            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废水监控情况</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
@@ -105,7 +105,8 @@
                     <th>氨氮[Cou]</th>
                     <th>pH[Avg]</th>
                     <th>废水流量[Cou]</th>
-
+                    <th>CODcr标准</th>
+                    <th>NH标准</th>
                 </tr>
                 <tr>
                     <th></th>
@@ -115,7 +116,8 @@
                     <th>(Kg)</th>
                     <th>(-)</th>
                     <th>M3</th>
-
+                    <th>(mg/l)</th>
+                    <th>(mg/l)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -128,13 +130,13 @@
                         <td>{{ daily_report.NH_Cou }}</td>
                         <td>{{ daily_report.pH_Avg }}</td>
                         <td>{{ daily_report.volume_of_water_Cou }}</td>
+                        <td>{{ daily_report.CODcr_standard }}</td>
+                        <td>{{ daily_report.NH_standard }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
-
         </div>
-
     </div>
 </div>
 

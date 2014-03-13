@@ -78,7 +78,6 @@ class MaintainCompany(models.Model):
         verbose_name_plural = '运维商'
 
 
-
 class Station(models.Model):
     #监测点位
     TYPE_CHOICES = (
@@ -93,7 +92,7 @@ class Station(models.Model):
     mn = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
     type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
     company = models.ForeignKey(Company, blank=True)
-    name = models.TextField(blank=True)
+    name = models.CharField(max_length=50)
     in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='out')
     maintain_company = models.ForeignKey(MaintainCompany, db_column='maintain_company_id')  # Field name made lowercase.
 
@@ -103,16 +102,30 @@ class Station(models.Model):
         verbose_name_plural = '监控点位'
 
 
-class Datavalidation(models.Model):
+class DataValidation(models.Model):
     #数据有效性审核
+    YEAR_CHOICES = (
+        (u'2012', '2012'),
+        (u'2013', '2013'),
+        (u'2014', '2014'),
+    )
+    SEASON_CHOICES = (
+        (u'1', '1'),
+        (u'2', '2'),
+        (u'3', '3'),
+        (u'4', '4'),
+    )
+
     #id = models.CharField(primary_key=True, max_length=10)
     mn = models.ForeignKey('Station', db_column='MN')  # Field name made lowercase.
-    year = models.CharField(max_length=10, blank=True)
-    season = models.CharField(max_length=10, blank=True)
-    exam_date = models.DateTimeField(blank=True, null=True)
-    is_exam_pass = models.CharField(max_length=10, blank=True)
-    field_field = models.DateTimeField(blank=True, null=True)
-    # Field renamed to remove unsuitable characters. Field renamed because it started with '_'. Field renamed because it ended with '_'.
+    year = models.CharField(max_length=10, choices=YEAR_CHOICES, blank=True)
+    season = models.CharField(max_length=10, choices=SEASON_CHOICES, blank=True)
+    examine_date = models.DateField(blank=True, null=True)
+    is_examine_pass = models.BooleanField(blank=True)
+    examine_comment = models.TextField(blank=True)
+    analyze_date = models.DateField(blank=True, null=True)
+    is_analyze_pass = models.BooleanField(max_length=10, blank=True)
+    analyze_comment = models.TextField(blank=True)
     comment = models.TextField(blank=True)
 
     class Meta:
@@ -126,10 +139,10 @@ class Equipment(models.Model):
     #equipment_id = models.CharField(primary_key=True, max_length=10)
     mn = models.ForeignKey('Station')  # Field name made lowercase.
     equipment_code = models.CharField(max_length=10, blank=True)
-    monitor_factor = models.CharField(max_length=10, blank=True)
+    param_code = models.ForeignKey(T_Data_param, max_length=10, blank=True)
     manufacturer = models.CharField(max_length=10, blank=True)
     acceptance_date = models.DateTimeField(blank=True, null=True)
-    is_use = models.CharField(max_length=10, blank=True)
+    is_use = models.BooleanField(blank=True)
     comment = models.TextField(blank=True)
 
     class Meta:
@@ -160,10 +173,17 @@ class SpecialSuprevision(models.Model):
         (u'metal ', '重金属'),
         (u'wastewater_treatment_plant ', '污水处理厂'),
     )
-    id = models.CharField(primary_key=True, max_length=10)
+
+    YEAR_CHOICES = (
+        (u'2012', '2012'),
+        (u'2013', '2013'),
+        (u'2014', '2014'),
+    )
+
+    #id = models.CharField(primary_key=True, max_length=10)
     mn = models.ForeignKey('Station', db_column='mn')  # Field name made lowercase.
-    year = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
-    type = models.CharField(max_length=10, blank=True)
+    year = models.CharField(max_length=4, blank=True, choices=YEAR_CHOICES)
+    type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
 
     class Meta:
         db_table = 'SpecialSuprevision'

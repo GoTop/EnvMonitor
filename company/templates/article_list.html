@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 {% for rowli in row %}
@@ -8,8 +8,9 @@
     <li>higherareaid:{{ rowli.standard_value }}</li>
 {% endfor %}
 
+result_tuple: {{ result_tuple }}
 
-<li>error: {{ error_message }}</li>
+<li>info: {{ error_message }}</li>
 
 </ul>
 </html>

@@ -47,12 +47,35 @@ def get_standard_func(mn):
 
 
 def get_station_standard(mn, param_name):
-    #station = T_All_station.objects.using('DB_baise').filter(t_exam_project__t_superscale)
-    param_name = 'CODcr'
+    """
+    根据监测点位的mn，获取param_name对应的标准值
+    """
     param_code = get_param_code(param_name)
-    t_superscale_list = T_Superscale.objects.using('DB_baise').filter(t_exam_project__t_data_param=param_code,
-                                                                      t_exam_project__t_all_station__station_id=mn).all()
+    t_superscale_list = T_Superscale.objects.using('DB_baise').filter(
+        t_exam_project__t_data_param__param_code=param_code,
+        t_exam_project__t_all_station__station_id=mn).all()
+    standard = {}
+    if t_superscale_list.exists():
+        if t_superscale_list.count() == 1:
+            standard['standard_max'] = t_superscale_list[0].standard_value
+            standard['standard_min'] = 0
+        elif t_superscale_list.count() == 2:
+            standard['standard_max'] = t_superscale_list[0].standard_value
+            standard['standard_min'] = t_superscale_list[1].standard_value
 
-    return t_superscale_list
+        standard['text'] = str(standard['standard_min']) + '-' + str(standard['standard_max'])
+        standard['param_name'] = param_name
+        standard['param_code'] = param_code
+    else:
+        standard = None
+
+    return standard
 
 
+#TODO 未完成
+def get_all_station_standard(mn):
+    """
+    根据监测点位的mn，获取其所有的标准值
+    """
+    t_superscale_list = T_Superscale.objects.using('DB_baise').filter(
+        t_exam_project__t_all_station__station_id=mn).all()

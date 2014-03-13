@@ -4,7 +4,8 @@ from company.db_baise_models import *
 # Register your models here.
 
 class DatavalidationInline(admin.StackedInline):
-    model = Datavalidation
+    model = DataValidation
+    max_num = 1
 
 
 class Station_Admin(admin.ModelAdmin):
@@ -17,7 +18,6 @@ class Station_Admin(admin.ModelAdmin):
 
 class Company_Admin(admin.ModelAdmin):
     pass
-
 class MaintainCompany_Admin(admin.ModelAdmin):
     pass
 class ShutdownDate_Admin(admin.ModelAdmin):

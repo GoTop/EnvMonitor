@@ -20,31 +20,31 @@ class Company(models.Model):
 
     #监测点位
     DISTRICT_CHOICES = (
-        (u'右江区', '右江区'),
-        (u'田阳', '田阳'),
-        (u'田东', '田东'),
-        (u'平果', '平果'),
-        (u'德保', '德保'),
-        (u'靖西', '靖西'),
-        (u'那坡', '那坡'),
-        (u'凌云', '凌云'),
-        (u'乐业', '乐业'),
-        (u'田林', '田林'),
-        (u'隆林', '隆林'),
-        (u'西林', '西林'),
+        ('右江区', '右江区'),
+        ('田阳', '田阳'),
+        ('田东', '田东'),
+        ('平果', '平果'),
+        ('德保', '德保'),
+        ('靖西', '靖西'),
+        ('那坡', '那坡'),
+        ('凌云', '凌云'),
+        ('乐业', '乐业'),
+        ('田林', '田林'),
+        ('隆林', '隆林'),
+        ('西林', '西林'),
     )
 
     #行业
     TRADE_CHOICES = (
-        (u'糖厂', '糖厂'),
-        (u'造纸厂', '造纸厂'),
-        (u'酒精厂', '酒精厂'),
-        (u'淀粉厂', '淀粉厂'),
-        (u'水泥厂', '水泥厂'),
-        (u'化工厂', '化工厂'),
-        (u'污水处理厂', '污水处理厂'),
-        (u'垃圾填埋厂', '垃圾填埋厂'),
-        (u'其他', '其他'),
+        ('糖厂', '糖厂'),
+        ('造纸厂', '造纸厂'),
+        ('酒精厂', '酒精厂'),
+        ('淀粉厂', '淀粉厂'),
+        ('水泥厂', '水泥厂'),
+        ('化工厂', '化工厂'),
+        ('污水处理厂', '污水处理厂'),
+        ('垃圾填埋厂', '垃圾填埋厂'),
+        ('其他', '其他'),
     )
 
     #company_id = models.IntegerField(primary_key=True)
@@ -81,13 +81,13 @@ class MaintainCompany(models.Model):
 class Station(models.Model):
     #监测点位
     TYPE_CHOICES = (
-        (u'water', '废水'),
-        (u'gas', '废气'),
-        (u'metal ', '重金属'),
+        ('water', '废水'),
+        ('gas', '废气'),
+        ('metal ', '重金属'),
     )
     PORT_CHOICES = (
-        (u'in', '进口'),
-        (u'out', '出口'),
+        ('in', '进口'),
+        ('out', '出口'),
     )
     mn = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
     type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
@@ -105,25 +105,25 @@ class Station(models.Model):
 class DataValidation(models.Model):
     #数据有效性审核
     YEAR_CHOICES = (
-        (u'2012', '2012'),
-        (u'2013', '2013'),
-        (u'2014', '2014'),
+        ('2012', '2012'),
+        ('2013', '2013'),
+        ('2014', '2014'),
     )
     SEASON_CHOICES = (
-        (u'1', '1'),
-        (u'2', '2'),
-        (u'3', '3'),
-        (u'4', '4'),
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
     )
 
     #id = models.CharField(primary_key=True, max_length=10)
     mn = models.ForeignKey('Station', db_column='MN')  # Field name made lowercase.
     year = models.CharField(max_length=10, choices=YEAR_CHOICES, blank=True)
     season = models.CharField(max_length=10, choices=SEASON_CHOICES, blank=True)
-    examine_date = models.DateField(blank=True, null=True)
+    examine_date = models.DateTimeField(blank=True, null=True)
     is_examine_pass = models.BooleanField(blank=True)
     examine_comment = models.TextField(blank=True)
-    analyze_date = models.DateField(blank=True, null=True)
+    analyze_date = models.DateTimeField(blank=True, null=True)
     is_analyze_pass = models.BooleanField(max_length=10, blank=True)
     analyze_comment = models.TextField(blank=True)
     comment = models.TextField(blank=True)
@@ -139,7 +139,7 @@ class Equipment(models.Model):
     #equipment_id = models.CharField(primary_key=True, max_length=10)
     mn = models.ForeignKey('Station')  # Field name made lowercase.
     equipment_code = models.CharField(max_length=10, blank=True)
-    param_code = models.ForeignKey(T_Data_param, max_length=10, blank=True)
+    #data_param = models.ForeignKey('company.DataParam')
     manufacturer = models.CharField(max_length=10, blank=True)
     acceptance_date = models.DateTimeField(blank=True, null=True)
     is_use = models.BooleanField(blank=True)
@@ -154,7 +154,7 @@ class Equipment(models.Model):
 class ShutdownDate(models.Model):
     #停运时间
     #id = models.CharField(primary_key=True, max_length=10)
-    company = models.ForeignKey(Company)
+    company = models.ForeignKey('Company')
     start_date = models.DateTimeField(blank=True, null=True)
     end_date = models.DateTimeField(blank=True, null=True)
     comment = models.TextField(blank=True)
@@ -168,16 +168,16 @@ class ShutdownDate(models.Model):
 class SpecialSuprevision(models.Model):
     #国控信息
     TYPE_CHOICES = (
-        (u'water', '废水'),
-        (u'gas', '废气'),
-        (u'metal ', '重金属'),
-        (u'wastewater_treatment_plant ', '污水处理厂'),
+        ('water', '废水'),
+        ('gas', '废气'),
+        ('metal ', '重金属'),
+        ('wastewater_treatment_plant ', '污水处理厂'),
     )
 
     YEAR_CHOICES = (
-        (u'2012', '2012'),
-        (u'2013', '2013'),
-        (u'2014', '2014'),
+        ('2012', '2012'),
+        ('2013', '2013'),
+        ('2014', '2014'),
     )
 
     #id = models.CharField(primary_key=True, max_length=10)

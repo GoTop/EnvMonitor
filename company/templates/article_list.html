@@ -3,14 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
-{% for rowli in row %}
-    <li>areaname:{{ rowli.exam_parm }}</li>
-    <li>higherareaid:{{ rowli.standard_value }}</li>
+{% for key, value in dict_items %}
+    <li>key:{{ key }}</li>
+    <li>value:{{ value }}</li>
+{% endfor %}
+
+{% for dict_items in list %}
+    {% for key, value in dict_items %}
+        <li>key:{{ key }}</li>
+        <li>value:{{ value }}</li>
+    {% endfor %}
 {% endfor %}
 
 result_tuple: {{ result_tuple }}
 
-<li>info: {{ error_message }}</li>
+<li>text: {{ text }}</li>
 
 </ul>
 </html>

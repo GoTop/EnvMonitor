@@ -19,14 +19,16 @@ class StationList(ListView):
 
 # Create your views here.
 def test(request):
-    list = update_station()
-    return render_to_response('article_list.html', {'list':list})
+    #list = update_station()
+
+    get_data_param_table()
+    return render_to_response('article_list.html', {'list': list})
 
 
 def get_station_info(request):
     """
-
-    :param request:
+    从DB_balse数据库的T_Allstation表中读取监测点位的信息，
+    保存到EnvMonitor数据库的Station表中
     """
     all_t_station = get_station_info_func()
     return render_to_response('article_list.html', {'row': all_t_station})

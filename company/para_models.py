@@ -76,9 +76,6 @@ class T_Trade(models.Model):
 
 
 
-
-
-
 class T_Manufacturer(models.Model):
     manufacturer_id = models.IntegerField(db_column='ManufacturerID', primary_key=True)  # Field name made lowercase.
     #厂商名称

@@ -90,11 +90,11 @@ class Station(models.Model):
         ('out', '出口'),
     )
     mn = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
-    type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
-    company = models.ForeignKey(Company, blank=True)
+    type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES, default='water')
+    company = models.ForeignKey(Company, blank=True, null=True)
     name = models.CharField(max_length=50)
     in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='out')
-    maintain_company = models.ForeignKey(MaintainCompany, db_column='maintain_company_id')  # Field name made lowercase.
+    maintain_company = models.ForeignKey(MaintainCompany, db_column='maintain_company_id',null=True)  # Field name made lowercase.
 
     class Meta:
         db_table = 'Station'

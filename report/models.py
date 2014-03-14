@@ -16,21 +16,19 @@ class DataParam(models.Model):
     param_unit = models.TextField(db_column='ParamUnit', blank=True)  # Field name made lowercase.
     data_precision = models.IntegerField(db_column='DataPrecision', blank=True, null=True)  # Field name made lowercase.
     is_have_cou = models.NullBooleanField(db_column='IsHaveCou')  # Field name made lowercase.
-    standard_values = models.TextField(db_column='StandardValues', blank=True)  # Field name made lowercase.
+    standard_values = models.TextField(db_column='StandardValues', blank=True, null=True)  # Field name made lowercase.
     app_value = models.DecimalField(db_column='AppValue', max_digits=18, decimal_places=5, blank=True,
                                     null=True)  # Field name made lowercase.
-
     class Meta:
-        managed = False
+        #managed = False
         db_table = 'DataParam'
-
 
 class HourReport(models.Model):
     #小时报表
     #id = models.CharField(primary_key=True, max_length=10)
     mn = models.ForeignKey('company.Station', db_column='mn')  # Field name made lowercase.
     date = models.DateTimeField(blank=True, null=True)
-    data_param = models.ForeignKey('DataParam')
+    data_param = models.ForeignKey(DataParam)
     value = models.IntegerField(blank=True, null=True)
     is_abnormal = models.BooleanField(max_length=10, blank=True)
 
@@ -42,7 +40,7 @@ class Standard(models.Model):
     #排放标准
     #id = models.CharField(primary_key=True, max_length=10)
     mn = models.ForeignKey('company.Station', db_column='mn')  # Field name made lowercase.
-    data_param = models.ForeignKey('DataParam')
+    data_param = models.ForeignKey(DataParam)
     upper_limit = models.IntegerField(blank=True, null=True)
     lower_limit = models.IntegerField(blank=True, null=True)
 

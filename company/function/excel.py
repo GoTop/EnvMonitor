@@ -7,14 +7,14 @@ import xlrd
 from xlwt import Workbook
 
 
-def excel_table_by_index(file='file.xls', colname_index=0, by_index=0):
+def excel_table_by_index(file_path='file.xls', colname_index=0, by_index=0):
     """
     根据索引获取Excel表格中的数据
     参数:file：Excel文件路径
         colname_index：表头列名所在行的索引
         by_index：表的索引
     """
-    data = xlrd.open_workbook(file)
+    data = xlrd.open_workbook(file_path)
     table = data.sheets()[by_index]
     nrows = table.nrows  #行数
     ncols = table.ncols  #列数

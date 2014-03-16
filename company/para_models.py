@@ -5,7 +5,6 @@ from company.models import *
 from company.db_baise_models import *
 
 
-
 class T_Water_shed(models.Model):
     water_shed_id = models.IntegerField(db_column='WaterShedID')  # Field name made lowercase.
     higher_water_id = models.BigIntegerField(db_column='HigherWaterID', blank=True,
@@ -75,12 +74,11 @@ class T_Trade(models.Model):
         db_table = 'T_Trade'
 
 
-
 class T_Manufacturer(models.Model):
     manufacturer_id = models.IntegerField(db_column='ManufacturerID', primary_key=True)  # Field name made lowercase.
     #厂商名称
     remark = models.TextField(db_column='Remark', blank=True)  # Field name made lowercase.
-    linkman = models.TextField(db_column='LinkMan', blank=True)  # Field name made lowercase.
+    link_man = models.TextField(db_column='LinkMan', blank=True)  # Field name made lowercase.
     phone = models.TextField(db_column='Phone', blank=True)  # Field name made lowercase.
     #是否有运营资格
     is_have_run_ipmp = models.NullBooleanField(db_column='IsHaveRunIpmp', blank=True,
@@ -89,6 +87,7 @@ class T_Manufacturer(models.Model):
     class Meta:
         managed = False
         db_table = 'T_Manufacturer'
+
 
 
 

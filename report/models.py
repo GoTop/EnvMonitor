@@ -13,15 +13,17 @@ class DataParam(models.Model):
     param_remark = models.TextField(db_column='ParamRemark', blank=True)  # Field name made lowercase.
     param_kind = models.IntegerField(db_column='ParamKind', blank=True, null=True)  # Field name made lowercase.
     order_id = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
-    param_unit = models.TextField(db_column='ParamUnit', blank=True)  # Field name made lowercase.
+    param_unit = models.TextField(db_column='ParamUnit', blank=True, null=True)  # Field name made lowercase.
     data_precision = models.IntegerField(db_column='DataPrecision', blank=True, null=True)  # Field name made lowercase.
     is_have_cou = models.NullBooleanField(db_column='IsHaveCou')  # Field name made lowercase.
     standard_values = models.TextField(db_column='StandardValues', blank=True, null=True)  # Field name made lowercase.
     app_value = models.DecimalField(db_column='AppValue', max_digits=18, decimal_places=5, blank=True,
                                     null=True)  # Field name made lowercase.
+
     class Meta:
         #managed = False
         db_table = 'DataParam'
+
 
 class HourReport(models.Model):
     #小时报表

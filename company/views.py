@@ -21,7 +21,7 @@ class StationList(ListView):
 def test(request):
     #list = update_station()
 
-    get_data_param_table()
+    list = get_company_from_excel()
     return render_to_response('article_list.html', {'list': list})
 
 
@@ -42,3 +42,10 @@ def get_standard(request):
     })
 
 
+def init_database(request):
+    #将T_DataParam表从DB_baise数据库中的数据复制到EnvMonitor数据库的DataParam表中
+    get_data_param_table()
+    #将T_Manufacturer表从DB_baise数据库中的数据复制到EnvMonitor数据库的Manufacturer表中
+    get_manufacturer_table()
+
+    return render_to_response('result.html', {'text': 'success!'})

@@ -7,6 +7,8 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
+# coding=utf-8
+from __future__ import unicode_literals
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -31,16 +33,15 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_ROOT, 'templates').replace('\\','/'),
+    os.path.join(PROJECT_ROOT, 'templates').replace('\\', '/'),
 )
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    #     'django.template.loaders.eggs.Loader',
 )
-
 
 ALLOWED_HOSTS = []
 
@@ -102,7 +103,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
 
 '''This code will try to find a file named local_settings.py in the same directory as the
 settings file. If it succeeds, it will import everything defined in the file. If no such file exists,

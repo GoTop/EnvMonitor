@@ -2,6 +2,10 @@
 from __future__ import unicode_literals
 
 __author__ = 'GoTop'
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 def uni_prt(a, encoding=None):
@@ -39,9 +43,20 @@ def uni_prt(a, encoding=None):
     return ''.join(s)
 
 
-a = '对方答复'
 
-print uni_prt([a] * 3, 'utf8')
+
+
+a = 'MN号'
+a = 'MN号'.encode('utf8')
+print repr(a)
+
+#print uni_prt(a, 'utf8')
+#dicta = {u'\u4e2d\u6587': u'\u4ec0\u4e48', u'\u54c8\u54c8': u'\u4e1c\u897f'}
+
+#dictb = unicode_to_show(dicta, 'utf8')
+#print dicta
+#print dictb
+#print uni_prt([a] * 3, 'utf8')
 
 
 

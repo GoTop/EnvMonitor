@@ -9,6 +9,11 @@ __author__ = 'GoTop'
 from report.models import DataParam
 from company.models import *
 
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 
 def get_station_info_func():
     """
@@ -114,10 +119,10 @@ def get_company_from_excel():
 
     #file_path = file_path.encode('utf8')
     #file_path = unicode(file_path, 'utf8')
-    list = excel_table_by_index(file_path=file_path, colname_index=2, by_index=0)
+    list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
     for row in list:
-        station = Station.objects.get(mn=row['MN号'])
-
+        company_type = None
+        station_type = None
         if row['污染源单位（业主）属性'] == 'A':
             station_type = 'water'
         elif row['污染源单位（业主）属性'] == 'B':
@@ -130,7 +135,7 @@ def get_company_from_excel():
             company_type = 'landfills'
             station_type = 'metal'
 
-        if company_type:
+        if company_type is not None:
             new_company = Company.objects.create(name=row['污染源单位（业主）'],
                                                  organ_code=row['法人代码'],
                                                  district=row['县区'],
@@ -148,11 +153,14 @@ def get_company_from_excel():
         elif row['进口/排放口'] == '进口':
             in_or_out = 'in'
 
-        manufacturer = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
-        equipment = Equipment.objects.get_or_create(manufacturer=manufacturer)
+        manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
+        if manufacturer:
+            equipment, equipment_created = Equipment.objects.get_or_create(manufacturer=manufacturer)
         station = Station.objects.get(mn=row['MN号'])
         if station:
-            station.objects.update(type=type, in_or_out=in_or_out, equipment=equipment)
+            station.objects.update(type=type, in_or_out=in_or_out)
+            if equipment:
+                station.equipment_set.add(equipment)
             new_company.station_set.add(station)
 
     return list

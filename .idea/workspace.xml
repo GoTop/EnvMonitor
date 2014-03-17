@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d123c28c-aad3-498f-ab22-a7f8cafca0b5" name="Default" comment="将DB_baise数据库中的T_Data_param表复制到EnvMonitor数据库中 @work 2014-3-17上午">
+    <list default="true" id="d123c28c-aad3-498f-ab22-a7f8cafca0b5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/company/function/string.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/company/function/convert.py" afterPath="$PROJECT_DIR$/company/function/convert.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/company/function/excel.py" afterPath="$PROJECT_DIR$/company/function/excel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/models.py" afterPath="$PROJECT_DIR$/report/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvMonitor/settings.py" afterPath="$PROJECT_DIR$/EnvMonitor/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/company/models.py" afterPath="$PROJECT_DIR$/company/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/company/views.py" afterPath="$PROJECT_DIR$/company/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EnvMonitor.iws" />
@@ -22,7 +21,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EnvMonitor$test.coverage" NAME="test Coverage Results" MODIFIED="1395029107060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EnvMonitor$test.coverage" NAME="test Coverage Results" MODIFIED="1395077153849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,39 +35,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db_baise_models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/company/db_baise_models.py">
+      <file leaf-file-name="convert.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/company/function/convert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="33" selection-start="11558" selection-end="11558" vertical-scroll-proportion="0.0" vertical-offset="2460" max-vertical-offset="4880">
-              <folding />
+            <state line="162" column="52" selection-start="5577" selection-end="5577" vertical-scroll-proportion="0.6469595" vertical-offset="2695" max-vertical-offset="3933">
+              <folding>
+                <element signature="e#14#53#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/report/admin.py">
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://E:/Python27/Lib/site-packages/django/db/models/fields/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+            <state line="1072" column="0" selection-start="40777" selection-end="40777" vertical-scroll-proportion="0.0" vertical-offset="19724" max-vertical-offset="26695">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/report/models.py">
+        <entry file="file://$PROJECT_DIR$/company/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="44" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
-              <folding>
-                <element signature="e#15#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="para_models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/company/para_models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="6" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1940">
+            <state line="184" column="42" selection-start="6121" selection-end="6121" vertical-scroll-proportion="0.0" vertical-offset="3033" max-vertical-offset="4503">
               <folding />
             </state>
           </provider>
@@ -77,45 +67,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/company/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="18" selection-start="501" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1040">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="excel.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/company/function/excel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="39" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.5661605" vertical-offset="659" max-vertical-offset="1120">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="convert.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/company/function/convert.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="26" selection-start="3781" selection-end="3781" vertical-scroll-proportion="0.0" vertical-offset="2133" max-vertical-offset="3980">
-              <folding>
-                <element signature="e#14#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/company/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="21" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="4740">
+            <state line="23" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="988">
               <folding />
             </state>
           </provider>
@@ -143,33 +95,34 @@
         <option value="$PROJECT_DIR$/EnvMonitor/local_setting.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/company/function/standar.py" />
-        <option value="$PROJECT_DIR$/company/templates/standard_info.html" />
-        <option value="$PROJECT_DIR$/EnvMonitor/urls.py" />
-        <option value="$PROJECT_DIR$/report/templates/daily_report.html" />
         <option value="$PROJECT_DIR$/company/db_baise_models.py" />
-        <option value="$PROJECT_DIR$/report/function/report.py" />
-        <option value="$PROJECT_DIR$/company/templates/article_list.html" />
+        <option value="$PROJECT_DIR$/company/templates/standard_info.html" />
         <option value="$PROJECT_DIR$/company/function/standard.py" />
+        <option value="$PROJECT_DIR$/report/function/report.py" />
+        <option value="$PROJECT_DIR$/report/templates/daily_report.html" />
         <option value="$PROJECT_DIR$/report/views.py" />
-        <option value="$PROJECT_DIR$/report/templates/water_daily_report.html" />
-        <option value="$PROJECT_DIR$/company/admin.py" />
+        <option value="$PROJECT_DIR$/company/routers.py" />
+        <option value="$PROJECT_DIR$/company/templates/article_list.html" />
         <option value="$PROJECT_DIR$/company/para_models.py" />
-        <option value="$PROJECT_DIR$/company/models.py" />
+        <option value="$PROJECT_DIR$/company/templates/company/station_list.html" />
+        <option value="$PROJECT_DIR$/EnvMonitor/urls.py" />
         <option value="$PROJECT_DIR$/report/models.py" />
         <option value="$PROJECT_DIR$/company/views.py" />
         <option value="$PROJECT_DIR$/EnvMonitor/settings.py" />
-        <option value="$PROJECT_DIR$/company/function/convert.py" />
         <option value="$PROJECT_DIR$/EnvMonitor/local_settings.py" />
-        <option value="$PROJECT_DIR$/company/function/excel.py" />
+        <option value="$PROJECT_DIR$/company/function/string.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/company/function/excel.py" />
+        <option value="$PROJECT_DIR$/company/models.py" />
+        <option value="$PROJECT_DIR$/company/function/convert.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -178,10 +131,58 @@
           <State>
             <id />
           </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code quality toolsJavaScript</id>
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>Django</id>
+          </State>
+          <State>
+            <id>File Watchers</id>
+          </State>
+          <State>
+            <id>GeneralCoffeeScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Ini Files</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Buildout</id>
+            <id>PyInterpreterInspection</id>
           </State>
         </selected-state>
       </profile-state>
@@ -203,13 +204,13 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
-      <showMembers />
+      <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource ProjectPane="true" />
-      <autoscrollFromSource />
+      <autoscrollToSource ProjectPane="false" />
+      <autoscrollFromSource ProjectPane="false" />
       <sortByType />
     </navigator>
     <panes>
@@ -220,10 +221,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="EnvMonitor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -250,12 +247,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="function" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -280,8 +309,6 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1049" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="SearchEverywhereHistory" value="" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -290,14 +317,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\django-project\EnvMonitor\report\function" />
+      <recent name="G:\Python\Project\EnvMonitor\company\templates" />
       <recent name="E:\django-project\EnvMonitor\company\templates" />
       <recent name="E:\django-project\EnvMonitor\company" />
       <recent name="E:\django-project\EnvMonitor\company\function" />
       <recent name="E:\django-project\EnvMonitor" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Django server.EnvMonitor">
     <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -313,8 +340,10 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonCover" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonCover" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
@@ -403,27 +432,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="EnvMonitor" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -449,7 +458,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="EnvMonitor" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -515,8 +544,10 @@
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonCover" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonCover" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -531,6 +562,11 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INHERITED,SHOW_FIELDS" />
+    <option name="SHOW_TOOLBAR" value="true" />
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -594,31 +630,27 @@
       <created>1393841891996</created>
       <updated>1393841891996</updated>
     </task>
-    <task id="LOCAL-00011" summary="测试获取排污标准的功能2&#10;@work 2014-3-10 afternoon">
-      <created>1394445866741</created>
-      <updated>1394445866741</updated>
+    <task id="LOCAL-00011" summary="测试获取排污标准的功能3&#10;@home 2014-3-11 evening">
+      <created>1394479254113</created>
+      <updated>1394479254113</updated>
     </task>
-    <task id="LOCAL-00012" summary="增加显示daily report的功能&#10;@work 2014-3-11 早上">
-      <created>1394513221333</created>
-      <updated>1394513221333</updated>
+    <task id="LOCAL-00012" summary="增加显示daily report的功能3        &#10;@home 2014-3-12 evening">
+      <created>1394561154887</created>
+      <updated>1394561154887</updated>
     </task>
-    <task id="LOCAL-00013" summary="增加显示daily report的功能2&#10;@work 2014-3-11 下午">
-      <created>1394531779948</created>
-      <updated>1394531779948</updated>
+    <task id="LOCAL-00013" summary="使用xlrd读取excel文件，EnvMonitor数据库中新增DataParam表出错 @home 2014-3-13 晚上">
+      <created>1394734402544</created>
+      <updated>1394734402544</updated>
     </task>
-    <task id="LOCAL-00014" summary="显示daily report时使用bootstrap; 测试获取监测点位排污标准的功能 @work 2014-3-12下午">
-      <created>1394620155573</created>
-      <updated>1394620155573</updated>
+    <task id="LOCAL-00014" summary="从excel中读取company信息，并更新station信息1 @home 2014-3-17 晚上">
+      <created>1394991363553</created>
+      <updated>1394991363553</updated>
     </task>
-    <task id="LOCAL-00015" summary="在daily report时显示排污标准 @work 2014-3-13下午">
-      <created>1394704173835</created>
-      <updated>1394704173835</updated>
+    <task id="LOCAL-00015" summary=" 从excel中读取company信息，并更新station信息3 @home 2014-3-17 中午">
+      <created>1395034246191</created>
+      <updated>1395034246191</updated>
     </task>
-    <task id="LOCAL-00016" summary="将DB_baise数据库中的T_Data_param表复制到EnvMonitor数据库中 @work 2014-3-14下午">
-      <created>1394791234609</created>
-      <updated>1394791234609</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -642,28 +674,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.30298913" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6222826" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967743" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14258064" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17677419" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30298913" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4388587" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33016303" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.69836956" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2992126" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21629901" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41732284" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19914216" sideWeight="0.3768279" order="2" side_tool="false" content_ui="tabs" x="112" y="538" width="348" height="292" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21507353" sideWeight="0.6231721" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39370078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21323529" sideWeight="0.49943757" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4388587" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35320586" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6982409" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -688,96 +720,97 @@
     <MESSAGE value="@work 2014-2-26 afternoon" />
     <MESSAGE value="在test.py测试各种编码&#10;@work 2014-2-27 afternoon" />
     <MESSAGE value="测试获取排污标准的功能&#10;@work 2014-3-3 afternoon" />
-    <MESSAGE value="测试获取排污标准的功能2&#10;@work 2014-3-10 afternoon" />
-    <MESSAGE value="增加显示daily report的功能&#10;@work 2014-3-11 早上" />
-    <MESSAGE value="增加显示daily report的功能2&#10;@work 2014-3-11 下午" />
-    <MESSAGE value="显示daily report时使用bootstrap; 测试获取监测点位排污标准的功能 @work 2014-3-12下午" />
-    <MESSAGE value="在daily report时显示排污标准 @work 2014-3-13下午" />
-    <MESSAGE value="将DB_baise数据库中的T_Data_param表复制到EnvMonitor数据库中 @work 2014-3-14下午" />
-    <option name="LAST_COMMIT_MESSAGE" value="将DB_baise数据库中的T_Data_param表复制到EnvMonitor数据库中 @work 2014-3-14下午" />
+    <MESSAGE value="测试获取排污标准的功能3&#10;@home 2014-3-11 evening" />
+    <MESSAGE value="增加显示daily report的功能3        &#10;@home 2014-3-12 evening" />
+    <MESSAGE value="使用xlrd读取excel文件，EnvMonitor数据库中新增DataParam表出错 @home 2014-3-13 晚上" />
+    <MESSAGE value="从excel中读取company信息，并更新station信息1 @home 2014-3-17 晚上" />
+    <MESSAGE value=" 从excel中读取company信息，并更新station信息3 @home 2014-3-17 中午" />
+    <option name="LAST_COMMIT_MESSAGE" value=" 从excel中读取company信息，并更新station信息3 @home 2014-3-17 中午" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/standard.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/report/views.py</url>
-          <line>31</line>
+          <line>30</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/report/views.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>184</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://E:/Python27/Lib/site-packages/django/db/models/fields/__init__.py</url>
+          <line>1072</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>173</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>120</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>155</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>156</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/company/function/convert.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="35" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="55" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/company/templates/show_except.html">
+    <entry file="file://$PROJECT_DIR$/company/function/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="160" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
+    <entry file="file://$PROJECT_DIR$/company/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="54" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="380" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="521" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
+    <entry file="file://$PROJECT_DIR$/company/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="33" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="2180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="320" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="1" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="15" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="1" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="18" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="321" column="6" selection-start="14175" selection-end="14175" vertical-scroll-proportion="-0.75253254" vertical-offset="6420" max-vertical-offset="20440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="19" selection-start="2710" selection-end="2710" vertical-scroll-proportion="0.88073397" vertical-offset="4016" max-vertical-offset="4760" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-805619919/pyodbc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="18" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="55940" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345" />
       </provider>
     </entry>
     <entry file="file://E:/Python27/Lib/threading.py">
@@ -820,201 +853,260 @@
         <state line="8" column="18" selection-start="139" selection-end="139" vertical-scroll-proportion="0.2877698" vertical-offset="0" max-vertical-offset="2160" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/company/function/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/function/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/company/templates/company/company_list.html">
+    <entry file="file://E:/Python27/Lib/_strptime.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/templates/show_except.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="41" selection-end="41" vertical-scroll-proportion="0.061728396" vertical-offset="0" max-vertical-offset="648" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/templates/company/station_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="107" selection-end="107" vertical-scroll-proportion="-4.137931" vertical-offset="0" max-vertical-offset="780" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="34" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="5660" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/templates/standard_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="321" selection-end="321" vertical-scroll-proportion="0.51724136" vertical-offset="0" max-vertical-offset="580" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/templates/article_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="261" selection-end="261" vertical-scroll-proportion="-6.8965516" vertical-offset="0" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/function/standard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="34" selection-start="2106" selection-end="2118" vertical-scroll-proportion="-177.0" vertical-offset="886" max-vertical-offset="1740" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="43" selection-start="1237" selection-end="1248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/templates/water_daily_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="30" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="3000" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="680" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="40" selection-start="5149" selection-end="5149" vertical-scroll-proportion="0.0" vertical-offset="2053" max-vertical-offset="5620" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2562" column="0" selection-start="192539" selection-end="193485" vertical-scroll-proportion="0.0" vertical-offset="50970" max-vertical-offset="61760" />
+        <state line="466" column="0" selection-start="20176" selection-end="20176" vertical-scroll-proportion="0.7550644" vertical-offset="8330" max-vertical-offset="8873" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/report/function/report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="784" selection-end="784" vertical-scroll-proportion="-0.82810366" vertical-offset="1287" max-vertical-offset="2020" />
+        <state line="71" column="0" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.0" vertical-offset="1349" max-vertical-offset="1919" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/company/db_baise_models.py">
+    <entry file="file://$PROJECT_DIR$/report/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="33" selection-start="11558" selection-end="11558" vertical-scroll-proportion="0.0" vertical-offset="2460" max-vertical-offset="4880">
+        <state line="20" column="52" selection-start="871" selection-end="871" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="513">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report/admin.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="733">
+        <state line="216" column="13" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.7240664" vertical-offset="3755" max-vertical-offset="4522" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.20552884" vertical-offset="0" max-vertical-offset="832" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/templates/show_except.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="7" selection-start="41" selection-end="41" vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="152" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/templates/standard_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="157" selection-end="157" vertical-scroll-proportion="0.25110132" vertical-offset="0" max-vertical-offset="454" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/function/standard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="0" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.0" vertical-offset="1482" max-vertical-offset="1653">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/company/para_models.py">
+    <entry file="file://$PROJECT_DIR$/company/templates/article_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="6" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1980">
+        <state line="11" column="21" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="646" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/templates/company/company_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="9" selection-end="150" vertical-scroll-proportion="0.13317756" vertical-offset="0" max-vertical-offset="428" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/templates/company/station_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="230" selection-end="230" vertical-scroll-proportion="-7.464286" vertical-offset="0" max-vertical-offset="342" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/templates/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="38" selection-start="269" selection-end="269" vertical-scroll-proportion="0.4553377" vertical-offset="0" max-vertical-offset="646" />
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="544" column="0" selection-start="24043" selection-end="24043" vertical-scroll-proportion="0.0" vertical-offset="9716" max-vertical-offset="19418">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="21" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="4740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
+        <state line="52" column="53" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.6307054" vertical-offset="684" max-vertical-offset="1938">
           <folding>
-            <element signature="e#15#43#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="678" column="23" selection-start="52631" selection-end="52631" vertical-scroll-proportion="0.79957354" vertical-offset="12469" max-vertical-offset="58672" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/para_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="7" selection-start="3842" selection-end="3842" vertical-scroll-proportion="3.4545455" vertical-offset="0" max-vertical-offset="1881">
+          <folding>
+            <element signature="e#36#64#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/sql/compiler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="954" column="0" selection-start="42751" selection-end="42751" vertical-scroll-proportion="0.0" vertical-offset="17706" max-vertical-offset="21166" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="29" selection-start="606" selection-end="606" vertical-scroll-proportion="-0.43939394" vertical-offset="605" max-vertical-offset="1463" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="23" selection-start="429" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="25" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.0" vertical-offset="1500" max-vertical-offset="2420">
+        <state line="11" column="0" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="2299">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/company/views.py">
+    <entry file="file://D:/Dropbox/环保工作/系统编程/EnvMonitor/代码/EnvMonitor/company/function/convert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="18" selection-start="501" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1040">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.5033784" vertical-offset="1482" max-vertical-offset="3705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Dropbox/环保工作/系统编程/EnvMonitor/代码/EnvMonitor/company/function/string.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="21" selection-start="0" selection-end="2150" vertical-scroll-proportion="0.81095403" vertical-offset="1023" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="27" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.82964224" vertical-offset="333" max-vertical-offset="960">
+        <state line="40" column="6" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.87265134" vertical-offset="342" max-vertical-offset="1007">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/company/function/convert.py">
+    <entry file="file://$PROJECT_DIR$/company/db_baise_models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="26" selection-start="3781" selection-end="3781" vertical-scroll-proportion="0.0" vertical-offset="2133" max-vertical-offset="3980">
-          <folding>
-            <element signature="e#14#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/function/excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="39" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
+        <state line="15" column="24" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4636">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.5661605" vertical-offset="659" max-vertical-offset="1120">
+        <state line="57" column="12" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1349">
           <folding />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/company/function/string.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="7" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1577">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/function/excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="44" selection-start="523" selection-end="534" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/sql/where.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="0" selection-start="2902" selection-end="2902" vertical-scroll-proportion="0.0" vertical-offset="1119" max-vertical-offset="7847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/utils/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="0" selection-start="3603" selection-end="3603" vertical-scroll-proportion="0.0" vertical-offset="1822" max-vertical-offset="2698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/fields/related.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1104" column="0" selection-start="52383" selection-end="52383" vertical-scroll-proportion="0.0" vertical-offset="20541" max-vertical-offset="29127">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="0" selection-start="4537" selection-end="4537" vertical-scroll-proportion="0.0" vertical-offset="1731" max-vertical-offset="5339">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/sql/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1199" column="22" selection-start="52346" selection-end="52346" vertical-scroll-proportion="0.25553915" vertical-offset="22247" max-vertical-offset="36157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="0" selection-start="5736" selection-end="5736" vertical-scroll-proportion="0.19728915" vertical-offset="2662" max-vertical-offset="5377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="373" column="0" selection-start="14027" selection-end="14027" vertical-scroll-proportion="0.19940916" vertical-offset="6648" max-vertical-offset="32699">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/django/db/models/fields/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1072" column="0" selection-start="40777" selection-end="40777" vertical-scroll-proportion="0.0" vertical-offset="19724" max-vertical-offset="26695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="42" selection-start="6121" selection-end="6121" vertical-scroll-proportion="0.0" vertical-offset="3033" max-vertical-offset="4503">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/function/convert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="52" selection-start="5577" selection-end="5577" vertical-scroll-proportion="0.6469595" vertical-offset="2695" max-vertical-offset="3933">
+          <folding>
+            <element signature="e#14#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
 

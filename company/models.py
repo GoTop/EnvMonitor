@@ -15,7 +15,7 @@ from db_baise_models import *
 # into your database.
 
 class Manufacturer(models.Model):
-    manufacturer_id = models.IntegerField(db_column='ManufacturerID', primary_key=True)  # Field name made lowercase.
+    id = models.IntegerField(db_column='ManufacturerID', primary_key=True)  # Field name made lowercase.
     #厂商名称
     remark = models.TextField(db_column='Remark', blank=True)  # Field name made lowercase.
     link_man = models.TextField(db_column='LinkMan', blank=True, null=True)  # Field name made lowercase.

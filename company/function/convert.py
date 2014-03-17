@@ -110,7 +110,7 @@ def get_company_from_excel():
     从excle表中读取企业、监测点位的信息，进行更新
     """
 
-    file_path = os.path.join(settings.IMPORT_PATH, '2013年重点污染源自动监控设施社会化运行计划（百色）.xls')
+    file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
 
     #file_path = file_path.encode('utf8')
     #file_path = unicode(file_path, 'utf8')

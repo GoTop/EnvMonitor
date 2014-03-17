@@ -3,6 +3,9 @@ from __future__ import unicode_literals
 
 __author__ = 'GoTop'
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 def uni_prt(a, encoding=None):
     import sys

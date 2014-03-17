@@ -24,7 +24,6 @@ class DataParam(models.Model):
         #managed = False
         db_table = 'DataParam'
 
-
 class HourReport(models.Model):
     #小时报表
     #id = models.CharField(primary_key=True, max_length=10)

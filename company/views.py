@@ -48,4 +48,6 @@ def init_database(request):
     #将T_Manufacturer表从DB_baise数据库中的数据复制到EnvMonitor数据库的Manufacturer表中
     get_manufacturer_table()
 
+    get_station_info_func()
+
     return render_to_response('result.html', {'text': 'success!'})

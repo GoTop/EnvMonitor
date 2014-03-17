@@ -21,7 +21,6 @@ def excel_table_by_index(file_path='file.xls', colname_index=0, by_index=0):
     col_names = table.row_values(colname_index)  #某一行数据
     list = []
     for row_num in range(1, nrows):
-
         row = table.row_values(row_num)
         if row:
             app = {}

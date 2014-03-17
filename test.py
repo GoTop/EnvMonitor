@@ -7,6 +7,9 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 def uni_prt(a, encoding=None):
     import sys

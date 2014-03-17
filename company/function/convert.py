@@ -8,6 +8,7 @@ __author__ = 'GoTop'
 
 from report.models import DataParam
 from company.models import *
+from company.db_baise_models import *
 
 
 def get_station_info_func():
@@ -56,8 +57,6 @@ def get_station_info_func():
 #         new_company.save()
 #         return all_t_company
 
-
-from company.db_baise_models import *
 
 
 def get_special_suprevision_from_excel():

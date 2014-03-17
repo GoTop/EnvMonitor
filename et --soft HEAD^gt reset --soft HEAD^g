@@ -1,0 +1,223 @@
+[33mcommit cc4e9231eecd8ea05f21025606f83dce891a244f[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Mon Mar 17 01:36:03 2014 +0800
+
+    从excel中读取company信息，并更新station信息1 @home 2014-3-17 晚上
+
+[33mcommit 9fc0cbffa6575af6f2d0ab9f46d6ba588b7e1fea[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Fri Mar 14 18:00:34 2014 +0800
+
+    将DB_baise数据库中的T_Data_param表复制到EnvMonitor数据库中 @work 2014-3-14下午
+
+[33mcommit 4faf2546b3384e54e79b6149e8403a98c4b0b72e[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Fri Mar 14 02:13:22 2014 +0800
+
+    使用xlrd读取excel文件，EnvMonitor数据库中新增DataParam表出错 @home 2014-3-13 晚上
+
+[33mcommit e740a4bbf75105e2f9e561b0d02636bb334e8e8c[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Thu Mar 13 17:49:33 2014 +0800
+
+    在daily report时显示排污标准 @work 2014-3-13下午
+
+[33mcommit cd09258eb8cdae81d2a3bc352bef030e92376ec8[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Mar 12 18:29:15 2014 +0800
+
+    显示daily report时使用bootstrap; 测试获取监测点位排污标准的功能 @work 2014-3-12下午
+
+[33mcommit 9b493aa3b4602a3b3b3b308a93b38c1546c41de6[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Mar 12 02:05:54 2014 +0800
+
+    增加显示daily report的功能3
+    @home 2014-3-12 evening
+
+[33mcommit f877caeff9f9538d4d3c41294b8b528b9737ba80[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Tue Mar 11 17:56:19 2014 +0800
+
+    增加显示daily report的功能2
+    @work 2014-3-11 下午
+
+[33mcommit 7b12eef0a5c6dafc3a0eb7b6c43104f0fabbf8a7[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Tue Mar 11 12:47:00 2014 +0800
+
+    增加显示daily report的功能
+    @work 2014-3-11 早上
+
+[33mcommit 83173778088ccec95a3f776fb2fd8bc01b1fa99d[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Tue Mar 11 03:20:54 2014 +0800
+
+    测试获取排污标准的功能3
+    @home 2014-3-11 evening
+
+[33mcommit 5fdbc9cb9adacda37d58cf780fd29f5b3a11a452[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Mon Mar 10 18:04:26 2014 +0800
+
+    测试获取排污标准的功能2
+    @work 2014-3-10 afternoon
+
+[33mcommit b9b2e5bfa709922604fe8dee5bd149c8dad72211[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Mon Mar 3 18:18:11 2014 +0800
+
+    测试获取排污标准的功能
+    @work 2014-3-3 afternoon
+
+[33mcommit cffaa3901817d63c014cc3fd6e49f49cb0b64b8b[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Mon Mar 3 01:47:33 2014 +0800
+
+    修复django-pyodbc将中文保存到SQL Server 2005时出现乱码的问题，修改DB_baise数据库对应的model的名称
+    @home 2014-3-2晚上
+
+[33mcommit a7363ff0f6b4267f1ae665ecb6b8b6b77b0b4af7[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Fri Feb 28 02:13:04 2014 +0800
+
+    尝试增加list_view
+    @home 2014-2-27晚上
+
+[33mcommit 9aae5c033827b76ff104abc758abfcf4d648dd3e[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Thu Feb 27 17:40:29 2014 +0800
+
+    在test.py测试各种编码
+    @work 2014-2-27 afternoon
+
+[33mcommit b4367ae31f9fd87111fffa41464dd5b7e4545544[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Thu Feb 27 01:31:27 2014 +0800
+
+    解决数据库异常页面中文编码问题
+    @home 2014-2-26 晚上
+
+[33mcommit 4d8d9a9a1b312849749ec8bc612930e181977957[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 26 18:05:02 2014 +0800
+
+    @work 2014-2-26 afternoon
+
+[33mcommit bd3e5cbea0bcfb973d8fa1953c269696509d5be9[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 26 12:08:44 2014 +0800
+
+    @work 2014-2-26 morning
+
+[33mcommit 469ad1eefe3ae38ceb6a02ef7806a34dbb6d478c[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 26 01:42:26 2014 +0800
+
+    解决模板不显示中文的问题
+    @home 2014-2-26
+
+[33mcommit 48239c241a3fe7e716b85bd2558d61dddb0132e2[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Tue Feb 25 17:54:05 2014 +0800
+
+    fix django-pyodbc connection error
+    @work 2014-2-25
+
+[33mcommit c336eb02747504a4077779a07f7bb9223f071741[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Mon Feb 24 01:45:48 2014 +0800
+
+    add DB_baise models
+    @home
+
+[33mcommit 3c7247680bacf71a387b62f1306a2bd2435b4759[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Fri Feb 21 00:54:41 2014 +0800
+
+    make django-pyodbc work
+    @home
+
+[33mcommit ec332aa269af7a6dcadd36020728ec3e81ed5f42[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Tue Feb 18 22:38:16 2014 +0800
+
+    edit .gitignore /.idea/ to .idea/*
+    @home
+
+[33mcommit bc1f4bebf9bfc1c58015c71b57f94f43c3204473[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Tue Feb 18 22:28:05 2014 +0800
+
+    edit .gitignore .idea/ to /idea/
+    @home
+
+[33mcommit faa178f11e757c329748140d6e7e02fc0a538a80[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Sun Feb 16 16:01:12 2014 +0800
+
+    change local_setting.py to local_setttings.py
+
+[33mcommit 0bb561adaae5c30d2ca041f23a7a467cebbe0e5f[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Fri Feb 14 17:03:28 2014 +0800
+
+    add local_setting.py
+
+[33mcommit 3427da6c61e34bb3b1e320a2d4049fbba37016b1[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Thu Feb 13 16:05:54 2014 +0800
+
+    add pyodbc class test 2
+
+[33mcommit 96e99e7273b66db8ae8fe0d9881b5fe490103d4c[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Thu Feb 13 15:59:38 2014 +0800
+
+    add pyodbc class test
+
+[33mcommit 185eb9a052ae136e0ea36c115ca4c67f167c52cc[m
+Merge: 5115443 8c8db1b
+Author: GoTop <imgotop@gmail.com>
+Date:   Thu Feb 13 12:17:21 2014 +0800
+
+    Merge remote-tracking branch 'origin/dev' into dev
+    
+    Conflicts:
+    	.idea/workspace.xml
+
+[33mcommit 5115443bb9ed3507fc83e484103831c9c1a67679[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Thu Feb 13 12:15:43 2014 +0800
+
+    add sql server setting 2
+
+[33mcommit 8c8db1b84972575f98676c4a995f4d25a70ba3a9[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 12 21:35:24 2014 +0800
+
+    delete .idea/
+
+[33mcommit c06ede7698b2bfaf8f160403ed3b192503cdeae5[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 12 17:42:55 2014 +0800
+
+    add sql server setting
+
+[33mcommit 04c7ee241710cf6a6e40da32107443219524d48e[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 12 16:11:11 2014 +0800
+
+    .gitignore add .idea/ file
+
+[33mcommit 9c90caea48d326cd272cf0bd1fdcd2d1acc4c362[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 12 15:50:00 2014 +0800
+
+    init
+
+[33mcommit 8717fa87dbdc0a9e7e44b3c180295d7213cb4a4b[m
+Author: GoTop <imgotop@gmail.com>
+Date:   Wed Feb 12 12:22:16 2014 +0800
+
+    init

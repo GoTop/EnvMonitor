@@ -9,7 +9,7 @@ class DatavalidationInline(admin.StackedInline):
 
 
 class Station_Admin(admin.ModelAdmin):
-    list_display = ('name', 'type', 'in_or_out', 'mn')
+    list_display = ('name', 'type', 'in_or_out', 'station_id')
 
     inlines = [
         DatavalidationInline,

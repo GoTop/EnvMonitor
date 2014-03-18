@@ -1,6 +1,7 @@
 #coding=utf-8
 from __future__ import unicode_literals
 import os
+from django.core.exceptions import ObjectDoesNotExist
 from EnvMonitor import settings
 from company.function.excel import excel_table_by_index
 
@@ -32,7 +33,7 @@ def get_station_info_func():
             type = 'gas'
         else:
             type = ''
-        new_station = Station.objects.create(mn=t_station.station_id,
+        new_station = Station.objects.create(station_id=t_station.station_id,
                                              name=t_station.station_name,
                                              type=type,
         )
@@ -125,24 +126,26 @@ def get_company_from_excel():
         elif row['污染源单位（业主）属性'] == 'B':
             station_type = 'gas'
         elif row['污染源单位（业主）属性'] == 'C':
-            company_type = 'wastewater_treatment_plant'
+            company_type = 'water_plant'
         elif row['污染源单位（业主）属性'] == 'E':
             company_type = 'landfills'
         elif row['污染源单位（业主）属性'] == 'F':
-            company_type = 'landfills'
             station_type = 'metal'
 
         if company_type is not None:
-            new_company = Company.objects.create(name=row['污染源单位（业主）'],
-                                                 organ_code=row['法人代码'],
-                                                 district=row['县区'],
-                                                 trade=company_type
+
+            new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
+                                                                         organ_code=row['法人代码'],
+                                                                         district=row['县区'],
+                                                                         trade=company_type
 
             )
+
         else:
-            new_company = Company.objects.create(name=row['污染源单位（业主）'],
-                                                 organ_code=row['法人代码'],
-                                                 district=row['县区'],
+
+            new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
+                                                                         organ_code=row['法人代码'],
+                                                                         district=row['县区'],
             )
 
         if row['进口/排放口'] == '排放口':
@@ -151,14 +154,22 @@ def get_company_from_excel():
             in_or_out = 'in'
 
         manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
+
         if manufacturer:
-            equipment, equipment_created = Equipment.objects.get_or_create(mn = manufacturer=manufacturer)
-        station = Station.objects.get(mn=row['MN号'])
-        if station:
-            station.objects.update(type=station_type, in_or_out=in_or_out)
-            if equipment:
-                station.equipment_set.add(equipment)
-            new_company.station_set.add(station)
+            try:
+                station = Station.objects.get(station_id=int(row['MN号']))
+            except ObjectDoesNotExist:
+                station = None
+
+            if station:
+                equipment, equipment_created = Equipment.objects.get_or_create(station=station,
+                                                                               manufacturer=manufacturer)
+                station.type = station_type
+                station.in_or_out = in_or_out
+                station.save(update_fields=['type', 'in_or_out'])
+                if equipment:
+                    station.equipment_set.add(equipment)
+                new_company.station_set.add(station)
 
     return list
 
@@ -188,11 +199,11 @@ def get_manufacturer_table():
     """
     t_manufacturer_set = T_Manufacturer.objects.using('DB_baise').all()
     for t_manufacturer in t_manufacturer_set:
-        new_manufacturer = Manufacturer(manufacturer_id=t_manufacturer.manufacturer_id,
-                                        remark=t_manufacturer.remark,
-                                        link_man=t_manufacturer.link_man,
-                                        phone=t_manufacturer.phone,
-                                        is_have_run_ipmp=t_manufacturer.is_have_run_ipmp
+        new_manufacturer, created = Manufacturer.objects.get_or_create(id=t_manufacturer.manufacturer_id,
+                                                                       remark=t_manufacturer.remark,
+                                                                       contact_person=t_manufacturer.link_man,
+                                                                       phone=t_manufacturer.phone,
+                                                                       is_have_run_ipmp=t_manufacturer.is_have_run_ipmp
 
         )
-        new_manufacturer.save()
+

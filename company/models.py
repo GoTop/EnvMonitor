@@ -15,11 +15,13 @@ from db_baise_models import *
 # into your database.
 
 class Manufacturer(models.Model):
-    id = models.IntegerField(db_column='ManufacturerID', primary_key=True)  # Field name made lowercase.
+    #因为是从DB_baise导出的表，必须设置db_column
+    id = models.AutoField(db_column='ManufacturerID', primary_key=True)  # Field name made lowercase.
     #厂商名称
-    remark = models.TextField(db_column='Remark', blank=True)  # Field name made lowercase.
-    link_man = models.TextField(db_column='LinkMan', blank=True, null=True)  # Field name made lowercase.
-    phone = models.TextField(db_column='Phone', blank=True, null=True)  # Field name made lowercase.
+    remark = models.CharField(db_column='Remark', max_length= 30, blank=True)  # Field name made lowercase.
+    #联系人
+    contact_person = models.CharField(db_column='LinkMan',max_length= 30, blank=True, null=True)  # Field name made lowercase.
+    phone = models.CharField(db_column='Phone', max_length= 30, blank=True, null=True)  # Field name made lowercase.
     #是否有运营资格
     is_have_run_ipmp = models.NullBooleanField(db_column='IsHaveRunIpmp', blank=True,
                                                null=True)  # Field name made lowercase.
@@ -56,7 +58,7 @@ class Company(models.Model):
         ('starch_plant', '淀粉厂'),
         ('cement_plant', '水泥厂'),
         ('chemical_plant', '化工厂'),
-        ('wastewater_treatment_plant', '污水处理厂'),
+        ('water_plant', '污水处理厂'),
         ('landfills', '垃圾填埋厂'),
         ('metal', '重金属'),
         ('other', '其他'),
@@ -68,12 +70,12 @@ class Company(models.Model):
     #地区
     district = models.CharField(max_length=6, choices=DISTRICT_CHOICES)
     #联系电话
-    tel = models.TextField(blank=True)  # Field name made lowercase.
+    tel = models.CharField(max_length=30, blank=True)  # Field name made lowercase.
     #组织机构代码
-    organ_code = models.TextField(blank=True)  # Field name made lowercase.
-    fax = models.TextField(blank=True)  # Field name made lowercase.
+    organ_code = models.CharField(max_length=15, blank=True)  # Field name made lowercase.
+    fax = models.CharField(max_length=20, blank=True)  # Field name made lowercase.
     #邮政编码
-    post_code = models.TextField(blank=True)  # Field name made lowercase.
+    post_code = models.CharField(max_length=10, blank=True)  # Field name made lowercase.
     #法人代表
     law_person = models.CharField(max_length=10, blank=True)  # Field name made lowercase.
 
@@ -85,7 +87,7 @@ class Company(models.Model):
     #地址
     address = models.CharField(max_length=80, blank=True)  # Field name made lowercase.
     #行业类型
-    trade = models.CharField(max_length=6, choices=TRADE_CHOICES)
+    trade = models.CharField(max_length=20, choices=TRADE_CHOICES)
 
     class Meta:
         db_table = 'Company'
@@ -96,7 +98,7 @@ class Company(models.Model):
 class MaintainCompany(models.Model):
     #运维商
     #maintain_company_id = models.CharField(max_length=10)  # Field name made lowercase.
-    name = models.TextField(blank=True)
+    name = models.CharField(max_length=30)
 
     class Meta:
         db_table = 'MaintainCompany'
@@ -115,18 +117,17 @@ class Station(models.Model):
         ('in', '进口'),
         ('out', '出口'),
     )
-    mn = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
+    station_id = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
     #水或气
-    type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES, default='water')
-    #企业
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES, default='water', blank=True, null=True)
+    #监测点位所属的企业
     company = models.ForeignKey(Company, blank=True, null=True)
     #监测点位名称
     name = models.CharField(max_length=50)
     #进口或出口，窑头或窑尾
     in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='out')
     #运维单位
-    maintain_company = models.ForeignKey(MaintainCompany, db_column='maintain_company_id',
-                                         null=True)  # Field name made lowercase.
+    maintain_company = models.ForeignKey(MaintainCompany, null=True)  # Field name made lowercase.
 
     class Meta:
         db_table = 'Station'
@@ -149,7 +150,7 @@ class DataValidation(models.Model):
     )
 
     #id = models.CharField(primary_key=True, max_length=10)
-    mn = models.ForeignKey('Station', db_column='MN')  # Field name made lowercase.
+    station = models.ForeignKey('Station')  # Field name made lowercase.
     year = models.CharField(max_length=10, choices=YEAR_CHOICES, blank=True)
     season = models.CharField(max_length=10, choices=SEASON_CHOICES, blank=True)
     #检查日期
@@ -177,12 +178,12 @@ class Equipment(models.Model):
     equipment_model = models.CharField(max_length=10, blank=True)
     #data_param = models.ForeignKey('company.DataParam')
     #生成商
-    manufacturer = models.ForeignKey(Manufacturer)
+    manufacturer = models.ForeignKey(Manufacturer, blank=True, null=True)
     #验收日期
     acceptance_date = models.DateTimeField(blank=True, null=True)
     #是否在用
-    is_use = models.BooleanField(blank=True)
-    comment = models.TextField(blank=True)
+    is_use = models.NullBooleanField(blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
 
     class Meta:
         db_table = 'Equipment'
@@ -210,7 +211,7 @@ class SpecialSuprevision(models.Model):
         ('water', '废水'),
         ('gas', '废气'),
         ('metal', '重金属'),
-        ('wastewater_treatment_plant', '污水处理厂'),
+        ('water_plant', '污水处理厂'),
         ('landfills', '垃圾填埋厂'),
     )
 
@@ -221,7 +222,7 @@ class SpecialSuprevision(models.Model):
     )
 
     #id = models.CharField(primary_key=True, max_length=10)
-    mn = models.ForeignKey('Station', db_column='mn')  # Field name made lowercase.
+    station = models.ForeignKey('Station')  # Field name made lowercase.
     year = models.CharField(max_length=4, blank=True, choices=YEAR_CHOICES)
     type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
 

@@ -172,7 +172,7 @@ class Equipment(models.Model):
     #分析仪
 
     #equipment_id = models.CharField(primary_key=True, max_length=10)
-    mn = models.ForeignKey('Station')  # Field name made lowercase.
+    station = models.ForeignKey('Station')  # Field name made lowercase.
     #设备型号
     equipment_model = models.CharField(max_length=10, blank=True)
     #data_param = models.ForeignKey('company.DataParam')

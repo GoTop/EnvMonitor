@@ -116,9 +116,6 @@ def get_company_from_excel():
     """
 
     file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
-
-    #file_path = file_path.encode('utf8')
-    #file_path = unicode(file_path, 'utf8')
     list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
     for row in list:
         company_type = None
@@ -155,10 +152,10 @@ def get_company_from_excel():
 
         manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
         if manufacturer:
-            equipment, equipment_created = Equipment.objects.get_or_create(manufacturer=manufacturer)
+            equipment, equipment_created = Equipment.objects.get_or_create(mn = manufacturer=manufacturer)
         station = Station.objects.get(mn=row['MN号'])
         if station:
-            station.objects.update(type=type, in_or_out=in_or_out)
+            station.objects.update(type=station_type, in_or_out=in_or_out)
             if equipment:
                 station.equipment_set.add(equipment)
             new_company.station_set.add(station)

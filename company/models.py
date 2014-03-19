@@ -66,7 +66,7 @@ class Company(models.Model):
 
     #company_id = models.IntegerField(primary_key=True)
     #企业名称
-    name = models.CharField(max_length=50)  # Field name made lowercase.
+    name = models.CharField(max_length=50, unique=True)  # Field name made lowercase.
     #地区
     district = models.CharField(max_length=6, choices=DISTRICT_CHOICES)
     #联系电话

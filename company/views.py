@@ -50,4 +50,6 @@ def init_database(request):
 
     get_station_info_func()
 
+    get_company_from_excel()
+
     return render_to_response('result.html', {'text': 'success!'})

@@ -19,6 +19,7 @@ def water_daily_report_view(request, date):
         t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
         #daily_report_value['station_name'] = t_station.station_name.decode('gbk', 'ignore').encode('utf8')
         daily_report_value['station_name'] = t_station.station_name
+            #.encode('utf-8')
 
         CODcr_standard_dict = get_station_standard(mn=mn, param_name='CODcr')
         NH_standard_dict = get_station_standard(mn=mn, param_name='NH')

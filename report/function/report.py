@@ -54,6 +54,9 @@ def day_param_value(mn, date, param_name, data_type):
 
 
 def water_daily_report_func(mn, date):
+    '''
+    获取废水监测点位mn的date当天的日数据
+    '''
     CODcr_Avg_day_value = day_param_value(mn, date, param_name='CODcr', data_type='Avg')
     CODcr_Cou_day_value = day_param_value(mn, date, param_name='CODcr', data_type='Cou')
 

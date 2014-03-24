@@ -18,10 +18,11 @@ class Manufacturer(models.Model):
     #因为是从DB_baise导出的表，必须设置db_column
     id = models.AutoField(db_column='ManufacturerID', primary_key=True)  # Field name made lowercase.
     #厂商名称
-    remark = models.CharField(db_column='Remark', max_length= 30, blank=True)  # Field name made lowercase.
+    remark = models.CharField(db_column='Remark', max_length=30, blank=True)  # Field name made lowercase.
     #联系人
-    contact_person = models.CharField(db_column='LinkMan',max_length= 30, blank=True, null=True)  # Field name made lowercase.
-    phone = models.CharField(db_column='Phone', max_length= 30, blank=True, null=True)  # Field name made lowercase.
+    contact_person = models.CharField(db_column='LinkMan', max_length=30, blank=True,
+                                      null=True)  # Field name made lowercase.
+    phone = models.CharField(db_column='Phone', max_length=30, blank=True, null=True)  # Field name made lowercase.
     #是否有运营资格
     is_have_run_ipmp = models.NullBooleanField(db_column='IsHaveRunIpmp', blank=True,
                                                null=True)  # Field name made lowercase.
@@ -110,8 +111,7 @@ class Station(models.Model):
     #监测点位
     TYPE_CHOICES = (
         ('water', '废水'),
-        ('gas', '废气'),
-        ('metal ', '重金属'),
+        ('gas', '废气')
     )
     PORT_CHOICES = (
         ('in', '进口'),
@@ -175,8 +175,9 @@ class Equipment(models.Model):
     #equipment_id = models.CharField(primary_key=True, max_length=10)
     station = models.ForeignKey('Station')  # Field name made lowercase.
     #设备型号
-    equipment_model = models.CharField(max_length=10, blank=True)
-    #data_param = models.ForeignKey('company.DataParam')
+    equipment_model = models.ForeignKey(EquipmentModel, blank=True)
+    #监控因子
+    data_param = models.ForeignKey('report.DataParam')
     #生成商
     manufacturer = models.ForeignKey(Manufacturer, blank=True, null=True)
     #验收日期
@@ -186,7 +187,16 @@ class Equipment(models.Model):
     comment = models.TextField(blank=True, null=True)
 
     class Meta:
-        db_table = 'Equipment'
+        db_table = 'EquipmentModel'
+        verbose_name = '分析仪'
+        verbose_name_plural = '分析仪'
+
+
+class EquipmentModel(models.Model):
+    model = models.CharField(max_length=10, blank=True)
+
+    class Meta:
+        db_table = 'EquipmentModel'
         verbose_name = '分析仪'
         verbose_name_plural = '分析仪'
 
@@ -216,9 +226,10 @@ class SpecialSuprevision(models.Model):
     )
 
     YEAR_CHOICES = (
-        ('2012', '2012'),
-        ('2013', '2013'),
-        ('2014', '2014'),
+        ('2011', '2011年'),
+        ('2012', '2012年'),
+        ('2013', '2013年'),
+        ('2014', '2014年'),
     )
 
     #id = models.CharField(primary_key=True, max_length=10)

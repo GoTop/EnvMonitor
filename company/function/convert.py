@@ -153,15 +153,28 @@ def get_company_from_excel():
         elif row['进口/排放口'] == '进口':
             in_or_out = 'in'
 
+        if row['设备类型'] == 'A':
+            station_type = 'water'
+        elif row['设备类型'] == 'B':
+            station_type = 'gas'
+
         manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
 
         if manufacturer:
             try:
+                #同一台重金属设备可能按两台算
                 station = Station.objects.get(station_id=int(row['MN号']))
             except ObjectDoesNotExist:
                 station = None
 
             if station:
+
+                #更新station的type信息
+                station.objects.update(type=station_type)
+
+                #获取国控信息
+                SpecialSuprevision.objects.get_or_create(station=station, year='2014', type = )
+
                 equipment, equipment_created = Equipment.objects.get_or_create(station=station,
                                                                                manufacturer=manufacturer)
                 station.type = station_type

@@ -169,15 +169,24 @@ class DataValidation(models.Model):
         verbose_name_plural = '数据有效性审核'
 
 
+class EquipmentModel(models.Model):
+    model = models.CharField(max_length=10, blank=True)
+
+    class Meta:
+        db_table = 'EquipmentModel'
+        verbose_name = '分析仪型号'
+        verbose_name_plural = '分析仪型号'
+
+
 class Equipment(models.Model):
     #分析仪
 
     #equipment_id = models.CharField(primary_key=True, max_length=10)
     station = models.ForeignKey('Station')  # Field name made lowercase.
     #设备型号
-    equipment_model = models.ForeignKey(EquipmentModel, blank=True)
+    equipment_model = models.ForeignKey(EquipmentModel, blank=True, null=True)
     #监控因子
-    data_param = models.ForeignKey('report.DataParam')
+    data_param = models.ForeignKey('report.DataParam', blank=True, null=True)
     #生成商
     manufacturer = models.ForeignKey(Manufacturer, blank=True, null=True)
     #验收日期
@@ -187,16 +196,7 @@ class Equipment(models.Model):
     comment = models.TextField(blank=True, null=True)
 
     class Meta:
-        db_table = 'EquipmentModel'
-        verbose_name = '分析仪'
-        verbose_name_plural = '分析仪'
-
-
-class EquipmentModel(models.Model):
-    model = models.CharField(max_length=10, blank=True)
-
-    class Meta:
-        db_table = 'EquipmentModel'
+        db_table = 'Equipment'
         verbose_name = '分析仪'
         verbose_name_plural = '分析仪'
 
@@ -233,9 +233,9 @@ class NationSuprevise(models.Model):
     )
 
     #id = models.CharField(primary_key=True, max_length=10)
-    station = models.ForeignKey('Station')  # Field name made lowercase.
+    station = models.ForeignKey('Station', unique=True)  # Field name made lowercase.
     year = models.CharField(max_length=4, blank=True, choices=YEAR_CHOICES)
-    type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
+    type = models.CharField(max_length=15, blank=True, choices=TYPE_CHOICES)
 
     class Meta:
         db_table = 'NationSuprevise'

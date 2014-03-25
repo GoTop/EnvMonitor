@@ -3,8 +3,9 @@
     <h2>Stations</h2>
     <ul>
         {% for station in object_list %}
-            <li>{{ station.mn }}</li>
+            <li>{{ station.station_id }}</li>
             <li>{{ station.name }}</li>
+            <li>{{ station.in_or_out }}</li>
             <li>{{ station.type }}</li>
         {% endfor %}
     </ul>

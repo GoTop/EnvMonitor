@@ -215,7 +215,7 @@ class ShutdownDate(models.Model):
         verbose_name_plural = '停运时间'
 
 
-class SpecialSuprevision(models.Model):
+class NationSuprevise(models.Model):
     #国控信息
     TYPE_CHOICES = (
         ('water', '废水'),
@@ -238,6 +238,6 @@ class SpecialSuprevision(models.Model):
     type = models.CharField(max_length=10, blank=True, choices=TYPE_CHOICES)
 
     class Meta:
-        db_table = 'SpecialSuprevision'
+        db_table = 'NationSuprevise'
         verbose_name = '国控信息'
         verbose_name_plural = '国控信息'

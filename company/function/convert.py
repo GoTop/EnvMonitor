@@ -119,18 +119,16 @@ def get_company_from_excel():
     file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
     list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
     for row in list:
+        # A:国控重点污染源
+        # B:非国控，但列入国控建设项目范围内的
+        # C:城镇污水处理厂
+        # D:国家级和自治区级工业园区集中污水处理厂
+        # E:地市级重点监管企业
+        # F:非国控重金属污染源企业
+        # AF:国控重金属污染源企业
         company_type = None
-        station_type = None
-        if row['污染源单位（业主）属性'] == 'A':
-            station_type = 'water'
-        elif row['污染源单位（业主）属性'] == 'B':
-            station_type = 'gas'
-        elif row['污染源单位（业主）属性'] == 'C':
+        if row['污染源单位（业主）属性'] == 'C':
             company_type = 'water_plant'
-        elif row['污染源单位（业主）属性'] == 'E':
-            company_type = 'landfills'
-        elif row['污染源单位（业主）属性'] == 'F':
-            station_type = 'metal'
 
         if company_type is not None:
 
@@ -148,15 +146,11 @@ def get_company_from_excel():
                                                                          district=row['县区'],
             )
 
+        in_or_out = None
         if row['进口/排放口'] == '排放口':
             in_or_out = 'out'
         elif row['进口/排放口'] == '进口':
             in_or_out = 'in'
-
-        if row['设备类型'] == 'A':
-            station_type = 'water'
-        elif row['设备类型'] == 'B':
-            station_type = 'gas'
 
         manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
 
@@ -168,22 +162,41 @@ def get_company_from_excel():
                 station = None
 
             if station:
-
-                #更新station的type信息
-                station.objects.update(type=station_type)
-
-                #获取国控信息
-                SpecialSuprevision.objects.get_or_create(station=station, year='2014', type = )
-
-                equipment, equipment_created = Equipment.objects.get_or_create(station=station,
-                                                                               manufacturer=manufacturer)
+                #station_type 只有两种
+                station_type = None
+                if row['设备类型'] == 'A':
+                    station_type = 'water'
+                elif row['设备类型'] == 'B':
+                    station_type = 'gas'
+                #更新station的信息,因为之前从百色平台导入时未录入
                 station.type = station_type
                 station.in_or_out = in_or_out
                 station.save(update_fields=['type', 'in_or_out'])
-                if equipment:
-                    station.equipment_set.add(equipment)
+
+                #设置new_company的station的信息
                 new_company.station_set.add(station)
 
+                #创建或更新国控信息
+                if row['2014国控名单'] == '是':
+                    nation_sup_type = None
+                    if station_type == 'water':
+                        nation_sup_type = 'water'
+                    elif station_type == 'gas':
+                        nation_sup_type = 'gas'
+
+                    #如何是污水处理厂的，则将nation_sup_type改为water_plant
+                    if company_type == 'water_plant':
+                        nation_sup_type = 'water_plant'
+                    if row['污染源单位（业主）属性'] == 'F' or row['污染源单位（业主）属性'] == 'AF':
+                        nation_sup_type = 'metal'
+                    #获取或更新国控信息
+                    NationSuprevise.objects.get_or_create(station=station, year='2014', type=nation_sup_type)
+
+                equipment, equipment_created = Equipment.objects.get_or_create(station=station,
+                                                                               manufacturer=manufacturer)
+                #设置station的equipment的信息
+                if equipment:
+                    station.equipment_set.add(equipment)
     return list
 
 

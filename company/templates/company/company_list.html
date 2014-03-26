@@ -1,12 +1,15 @@
 <html>
 
 
-    <h2>Company</h2>
-    <ul>
-        {% for company in object_list %}
-            <li>{{ company.name }}</li>
+<h2>Company</h2>
+<ul>
+    {% for company in object_list %}
+        <li>{{ company.name }}</li>
+        {% for station in company.station_set.all %}
+            <li>{{ station.name }}</li>
         {% endfor %}
-    </ul>
+    {% endfor %}
+</ul>
 
 
 </html>

@@ -75,3 +75,31 @@ def uni_prt(a, encoding=None):
     else:
         s.append(str(a))
     return ''.join(s)
+
+def convert_district(district):
+    if district == '右江区':
+        district = 'a右江区'
+    elif district == '田阳':
+        district = 'b田阳'
+    elif district == '田东':
+        district = 'c田东'
+    elif district == '平果':
+        district = 'd平果'
+    elif district == '德保':
+        district = 'e德保'
+    elif district == '靖西':
+        district = 'f靖西'
+    elif district == '那坡':
+        district = 'g那坡'
+    elif district == '凌云':
+        district = 'h凌云'
+    elif district == '乐业':
+        district = 'i乐业'
+    elif district == '田林':
+        district = 'j田林'
+    elif district == '隆林':
+        district = 'k隆林'
+    elif district == '西林':
+        district = 'l西林'
+    return district
+

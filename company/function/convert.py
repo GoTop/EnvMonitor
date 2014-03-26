@@ -4,6 +4,7 @@ import os
 from django.core.exceptions import ObjectDoesNotExist
 from EnvMonitor import settings
 from company.function.excel import excel_table_by_index
+from company.function.string import convert_district
 
 __author__ = 'GoTop'
 
@@ -85,7 +86,7 @@ def get_special_suprevision_from_excel():
                 type = 'water'
             elif row['水或气'] == '污水处理厂':
                 type = 'wastewater_treatment_plant'
-            SpecialSuprevision.objects.create(mn=mn, year='2014', type=type)
+            NationSuprevise.objects.create(mn=mn, year='2014', type=type)
 
 
 def get_station_from_excel():
@@ -130,27 +131,20 @@ def get_company_from_excel():
         if row['污染源单位（业主）属性'] == 'C':
             company_type = 'water_plant'
 
+        #row['县区'] = convert_district(row['县区'])
+        #创建或更新企业信息
         if company_type is not None:
-
             new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
                                                                          organ_code=row['法人代码'],
                                                                          district=row['县区'],
                                                                          trade=company_type
 
             )
-
         else:
-
             new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
                                                                          organ_code=row['法人代码'],
                                                                          district=row['县区'],
             )
-
-        in_or_out = None
-        if row['进口/排放口'] == '排放口':
-            in_or_out = 'out'
-        elif row['进口/排放口'] == '进口':
-            in_or_out = 'in'
 
         manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
 
@@ -168,6 +162,12 @@ def get_company_from_excel():
                     station_type = 'water'
                 elif row['设备类型'] == 'B':
                     station_type = 'gas'
+
+                in_or_out = None
+                if row['进口/排放口'] == '排放口':
+                    in_or_out = 'out'
+                elif row['进口/排放口'] == '进口':
+                    in_or_out = 'in'
                 #更新station的信息,因为之前从百色平台导入时未录入
                 station.type = station_type
                 station.in_or_out = in_or_out
@@ -192,11 +192,24 @@ def get_company_from_excel():
                     #获取或更新国控信息
                     NationSuprevise.objects.get_or_create(station=station, year='2014', type=nation_sup_type)
 
-                equipment, equipment_created = Equipment.objects.get_or_create(station=station,
-                                                                               manufacturer=manufacturer)
-                #设置station的equipment的信息
-                if equipment:
-                    station.equipment_set.add(equipment)
+                param_remark_list = row['监控因子'].split("、")
+                for param_remark in param_remark_list:
+                    #DataParam表中有('CODcr','氨氮','PH','SO2','NOx','六价铬','总锰','总铅','总镉','砷')
+                    #DataParam表中有COD对应的是CODcr
+                    if param_remark == 'COD':
+                        param_remark = 'CODcr'
+                    #DataParam表中有没有'水中油'
+                    if param_remark == '水中油':
+                        continue
+                    data_param = DataParam.objects.get(param_remark=param_remark)
+                    if data_param:
+                        #创建或更新检测仪信息
+                        equipment, equipment_created = Equipment.objects.get_or_create(station=station,
+                                                                                       data_param=data_param,
+                                                                                       manufacturer=manufacturer)
+                        #设置station的equipment的信息
+                        if equipment:
+                            station.equipment_set.add(equipment)
     return list
 
 

@@ -11,6 +11,7 @@ from report.function.report import *
 
 class CompanyList(ListView):
     model = Company
+    queryset = Company.objects.all().order_by('-district')
 
 
 class StationList(ListView):

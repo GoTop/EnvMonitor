@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, render_to_response
 from django.views.generic import ListView
+from company.function.string import sort_company_by_district
 from function.standard import *
 from function.db import SqlServerDB
 import pyodbc
@@ -11,7 +12,8 @@ from report.function.report import *
 
 class CompanyList(ListView):
     model = Company
-    queryset = Company.objects.all().order_by('-district')
+    queryset = sorted(Company.objects.all(), key=sort_company_by_district)
+    template_name = 'company/company_list.html'
 
 
 class StationList(ListView):

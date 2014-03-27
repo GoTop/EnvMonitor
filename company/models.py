@@ -53,16 +53,16 @@ class Company(models.Model):
 
     #行业
     TRADE_CHOICES = (
-        ('sugar_factory', '糖厂'),
-        ('paper_mill', '造纸厂'),
-        ('alcohol_plant', '酒精厂'),
-        ('starch_plant', '淀粉厂'),
-        ('cement_plant', '水泥厂'),
-        ('chemical_plant', '化工厂'),
-        ('water_plant', '污水处理厂'),
-        ('landfills', '垃圾填埋厂'),
-        ('metal', '重金属'),
-        ('other', '其他'),
+        ('糖厂', '糖厂'),
+        ('造纸厂', '造纸厂'),
+        ('酒精厂', '酒精厂'),
+        ('淀粉厂', '淀粉厂'),
+        ('水泥厂', '水泥厂'),
+        ('化工厂', '化工厂'),
+        ('污水处理厂', '污水处理厂'),
+        ('垃圾填埋厂', '垃圾填埋厂'),
+        ('重金属', '重金属'),
+        ('其他', '其他'),
     )
 
     #company_id = models.IntegerField(primary_key=True)
@@ -110,12 +110,12 @@ class MaintainCompany(models.Model):
 class Station(models.Model):
     #监测点位
     TYPE_CHOICES = (
-        ('water', '废水'),
-        ('gas', '废气')
+        ('废水', '废水'),
+        ('废气', '废气')
     )
     PORT_CHOICES = (
-        ('in', '进口'),
-        ('out', '出口'),
+        ('进口', '进口'),
+        ('出口', '出口'),
     )
     station_id = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
     #水或气
@@ -218,11 +218,11 @@ class ShutdownDate(models.Model):
 class NationSuprevise(models.Model):
     #国控信息
     TYPE_CHOICES = (
-        ('water', '废水'),
-        ('gas', '废气'),
-        ('metal', '重金属'),
-        ('water_plant', '污水处理厂'),
-        ('landfills', '垃圾填埋厂'),
+        ('废水', '废水'),
+        ('废气', '废气'),
+        ('重金属', '重金属'),
+        ('污水处理厂', '污水处理厂'),
+        ('垃圾填埋厂', '垃圾填埋厂'),
     )
 
     YEAR_CHOICES = (
@@ -233,7 +233,7 @@ class NationSuprevise(models.Model):
     )
 
     #id = models.CharField(primary_key=True, max_length=10)
-    station = models.ForeignKey('Station', unique=True)  # Field name made lowercase.
+    station = models.OneToOneField('Station')  # Field name made lowercase.
     year = models.CharField(max_length=4, blank=True, choices=YEAR_CHOICES)
     type = models.CharField(max_length=15, blank=True, choices=TYPE_CHOICES)
 

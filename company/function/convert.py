@@ -4,7 +4,7 @@ import os
 from django.core.exceptions import ObjectDoesNotExist
 from EnvMonitor import settings
 from company.function.excel import excel_table_by_index
-from company.function.string import convert_district
+from company.function.string import sort_station_by_district
 
 __author__ = 'GoTop'
 
@@ -16,38 +16,10 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-def sort_district(station):
-    district = station.t_admin_area.area_name
-    sort_order = None
-    if district == '右江区':
-        sort_order = 1
-    elif district == '田阳':
-        sort_order = 2
-    elif district == '田东':
-        sort_order = 3
-    elif district == '平果':
-        sort_order = 4
-    elif district == '德保':
-        sort_order = 5
-    elif district == '靖西':
-        sort_order = 6
-    elif district == '那坡':
-        sort_order = 7
-    elif district == '凌云':
-        sort_order = 8
-    elif district == '乐业':
-        sort_order = 9
-    elif district == '田林':
-        sort_order = 10
-    elif district == '隆林':
-        sort_order = 11
-    elif district == '西林':
-        sort_order = 12
-    return sort_order
 
-def get_station_from_DB_baise():
-    all_t_station = T_All_station.objects.using('DB_baise').all().order_by('t_admin_area')
-    #all_t_station = sorted(all_t_station,key = sort_district)
+def get_station_from_db_baise():
+    all_t_station = T_All_station.objects.using('DB_baise').all()
+    all_t_station = sorted(all_t_station, key=sort_station_by_district)
     return all_t_station
 
 
@@ -63,14 +35,14 @@ def get_station_info_func():
 
         kind_id = t_station.t_station_kind.kind_id
         if kind_id == 32:
-            type = 'water'
+            station_type = 'water'
         elif kind_id == 35:
-            type = 'gas'
+            station_type = 'gas'
         else:
-            type = ''
+            station_type = ''
         new_station = Station.objects.create(station_id=t_station.station_id,
                                              name=t_station.station_name,
-                                             type=type,
+                                             type=station_type,
         )
     return all_t_station
 
@@ -97,8 +69,6 @@ def get_station_info_func():
 #         new_company.save()
 #         return all_t_company
 
-
-from company.db_baise_models import *
 
 
 def get_special_suprevision_from_excel():
@@ -154,6 +124,13 @@ def get_company_from_excel():
     file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
     list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
     for row in list:
+        #从DB_baise中获取station的行业信息
+        try:
+            t_station = T_All_station.objects.using('DB_baise').get(station_id=int(row['MN号']))
+            station_trade = t_station.t_trade.remark
+        except ObjectDoesNotExist:
+            station_trade = None
+
         # A:国控重点污染源
         # B:非国控，但列入国控建设项目范围内的
         # C:城镇污水处理厂
@@ -161,48 +138,37 @@ def get_company_from_excel():
         # E:地市级重点监管企业
         # F:非国控重金属污染源企业
         # AF:国控重金属污染源企业
-        company_type = None
-        if row['污染源单位（业主）属性'] == 'C':
-            company_type = 'water_plant'
 
         #row['县区'] = convert_district(row['县区'])
         #创建或更新企业信息
-        if company_type is not None:
-            new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
-                                                                         organ_code=row['法人代码'],
-                                                                         district=row['县区'],
-                                                                         trade=company_type
-
-            )
-        else:
-            new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
-                                                                         organ_code=row['法人代码'],
-                                                                         district=row['县区'],
-            )
+        mn = row['MN号']
+        new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
+                                                                     organ_code=row['法人代码'],
+                                                                     district=row['县区'],
+                                                                     trade=station_trade)
 
         manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
 
         if manufacturer:
+            #从EnvMonitor数据库中获取信息
             try:
-                #同一台重金属设备可能按两台算
                 station = Station.objects.get(station_id=int(row['MN号']))
             except ObjectDoesNotExist:
                 station = None
-
             if station:
                 #station_type 只有两种
                 station_type = None
                 if row['设备类型'] == 'A':
-                    station_type = 'water'
+                    station_type = '废水'
                 elif row['设备类型'] == 'B':
-                    station_type = 'gas'
+                    station_type = '废气'
 
                 in_or_out = None
                 if row['进口/排放口'] == '排放口':
-                    in_or_out = 'out'
+                    in_or_out = '排放口'
                 elif row['进口/排放口'] == '进口':
-                    in_or_out = 'in'
-                #更新station的信息,因为之前从百色平台导入时未录入
+                    in_or_out = '进口'
+                #更新station的信息,因为之前未从百色平台导入时未录入
                 station.type = station_type
                 station.in_or_out = in_or_out
                 station.save(update_fields=['type', 'in_or_out'])
@@ -210,19 +176,22 @@ def get_company_from_excel():
                 #设置new_company的station的信息
                 new_company.station_set.add(station)
 
+
                 #创建或更新国控信息
                 if row['2014国控名单'] == '是':
                     nation_sup_type = None
-                    if station_type == 'water':
-                        nation_sup_type = 'water'
-                    elif station_type == 'gas':
-                        nation_sup_type = 'gas'
+                    if station_type == '废水':
+                        nation_sup_type = '废水'
+                    elif station_type == '废气':
+                        nation_sup_type = '废气'
 
-                    #如何是污水处理厂的，则将nation_sup_type改为water_plant
-                    if company_type == 'water_plant':
-                        nation_sup_type = 'water_plant'
+                    #果然station trade是以下类型，则修改相应的nation_sup_type
+                    if station_trade == '污水处理厂':
+                        nation_sup_type = '污水处理厂'
+                    if station_trade == '垃圾填埋厂':
+                        nation_sup_type = '垃圾填埋厂'
                     if row['污染源单位（业主）属性'] == 'F' or row['污染源单位（业主）属性'] == 'AF':
-                        nation_sup_type = 'metal'
+                        nation_sup_type = '重金属'
                     #获取或更新国控信息
                     NationSuprevise.objects.get_or_create(station=station, year='2014', type=nation_sup_type)
 
@@ -279,4 +248,5 @@ def get_manufacturer_table():
                                                                        is_have_run_ipmp=t_manufacturer.is_have_run_ipmp
 
         )
+
 

@@ -63,7 +63,7 @@ class T_Transfers(models.Model):
 
 
 class T_Trade(models.Model):
-    trade_id = models.IntegerField(db_column='TradeID')  # Field name made lowercase.
+    trade_id = models.IntegerField(db_column='TradeID', primary_key=True)  # Field name made lowercase.
     higher_trade_id = models.BigIntegerField(db_column='HigherTradeID', blank=True,
                                              null=True)  # Field name made lowercase.
     remark = models.TextField(db_column='Remark', blank=True)  # Field name made lowercase.

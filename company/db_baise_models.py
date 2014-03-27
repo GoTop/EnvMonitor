@@ -123,14 +123,16 @@ class T_Comp_info(models.Model):
 
 class T_All_station(models.Model):
     station_id = models.TextField(db_column='StationID', primary_key=True)  # Field name made lowercase.
-    t_station_kind = models.ForeignKey('T_Station_kind', db_column='KindID', blank=True, null=True)  # Field name made lowercase.
+    t_station_kind = models.ForeignKey('T_Station_kind', db_column='KindID', blank=True,
+                                       null=True)  # Field name made lowercase.
     t_water_shed = models.ForeignKey('T_Water_shed', db_column='WaterShedID', blank=True,
                                      null=True)  # Field name made lowercase.
     t_attend_degree = models.ForeignKey('T_Attend_degree', db_column='AttendID', blank=True,
-                                  null=True)  # Field name made lowercase.
+                                        null=True)  # Field name made lowercase.
     t_transfers = models.ForeignKey('T_Transfers', db_column='TransfersID', blank=True,
+                                    null=True)  # Field name made lowercase.
+    t_admin_area = models.ForeignKey(T_Admin_area, db_column='AreaID', blank=True,
                                      null=True)  # Field name made lowercase.
-    t_admin_area = models.ForeignKey(T_Admin_area, db_column='AreaID', blank=True, null=True)  # Field name made lowercase.
     station_name = models.TextField(db_column='StationName', blank=True)  # Field name made lowercase.
     t_trade = models.ForeignKey('T_Trade', db_column='TradeID', blank=True, null=True)  # Field name made lowercase.
     order_id = models.IntegerField(db_column='OrderID', blank=True, null=True)  # Field name made lowercase.
@@ -176,9 +178,9 @@ class T_Exam_project(models.Model):
     exam_parm_id = models.IntegerField(db_column='ExamParmID', primary_key=True)  # Field name made lowercase.
     t_all_station = models.ForeignKey(T_All_station, db_column='StationID')  # Field name made lowercase.
     t_data_param = models.ForeignKey(T_Data_param, db_column='ParamCode', blank=True,
-                                   null=True)  # Field name made lowercase.
+                                     null=True)  # Field name made lowercase.
     t_manufacturer = models.ForeignKey('T_Manufacturer', db_column='ManufacturerID', blank=True,
-                                        null=True)  # Field name made lowercase.
+                                       null=True)  # Field name made lowercase.
     #仪器最小检出限
     low_limit_value = models.DecimalField(db_column='LowLimitValue', max_digits=18, decimal_places=4, blank=True,
                                           null=True)  # Field name made lowercase.

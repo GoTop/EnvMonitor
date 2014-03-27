@@ -76,30 +76,69 @@ def uni_prt(a, encoding=None):
         s.append(str(a))
     return ''.join(s)
 
-def convert_district(district):
+
+
+def sort_station_by_district(station):
+    '''
+    使用sorted()对station进行自定义排序时，自定义排序顺序
+    '''
+    district = station.t_admin_area.area_name
+    sort_order = None
     if district == '右江区':
-        district = 'a右江区'
+        sort_order = 1
+    elif district == '田阳县':
+        sort_order = 2
+    elif district == '田东县':
+        sort_order = 3
+    elif district == '平果县':
+        sort_order = 4
+    elif district == '德保县':
+        sort_order = 5
+    elif district == '靖西县':
+        sort_order = 6
+    elif district == '那坡县':
+        sort_order = 7
+    elif district == '凌云县':
+        sort_order = 8
+    elif district == '乐业县':
+        sort_order = 9
+    elif district == '田林县':
+        sort_order = 10
+    elif district == '隆林县':
+        sort_order = 11
+    elif district == '西林县':
+        sort_order = 12
+    return sort_order
+
+def sort_company_by_district(company):
+    '''
+    使用sorted()对company进行自定义排序时，自定义排序顺序
+    '''
+    district = company.district
+    sort_order = None
+    if district == '右江区':
+        sort_order = 1
     elif district == '田阳':
-        district = 'b田阳'
+        sort_order = 2
     elif district == '田东':
-        district = 'c田东'
+        sort_order = 3
     elif district == '平果':
-        district = 'd平果'
+        sort_order = 4
     elif district == '德保':
-        district = 'e德保'
+        sort_order = 5
     elif district == '靖西':
-        district = 'f靖西'
+        sort_order = 6
     elif district == '那坡':
-        district = 'g那坡'
+        sort_order = 7
     elif district == '凌云':
-        district = 'h凌云'
+        sort_order = 8
     elif district == '乐业':
-        district = 'i乐业'
+        sort_order = 9
     elif district == '田林':
-        district = 'j田林'
+        sort_order = 10
     elif district == '隆林':
-        district = 'k隆林'
+        sort_order = 11
     elif district == '西林':
-        district = 'l西林'
-    return district
+        sort_order = 12
+    return sort_order
 

@@ -46,8 +46,8 @@ def sort_district(station):
     return sort_order
 
 def get_station_from_DB_baise():
-    all_t_station = T_All_station.objects.using('DB_baise').all()
-    all_t_station = sorted(all_t_station.iteritems(),key = sort_district)
+    all_t_station = T_All_station.objects.using('DB_baise').all().order_by('t_admin_area')
+    #all_t_station = sorted(all_t_station,key = sort_district)
     return all_t_station
 
 

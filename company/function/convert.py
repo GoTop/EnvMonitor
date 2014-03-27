@@ -16,10 +16,38 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+def sort_district(station):
+    district = station.t_admin_area.area_name
+    sort_order = None
+    if district == '右江区':
+        sort_order = 1
+    elif district == '田阳':
+        sort_order = 2
+    elif district == '田东':
+        sort_order = 3
+    elif district == '平果':
+        sort_order = 4
+    elif district == '德保':
+        sort_order = 5
+    elif district == '靖西':
+        sort_order = 6
+    elif district == '那坡':
+        sort_order = 7
+    elif district == '凌云':
+        sort_order = 8
+    elif district == '乐业':
+        sort_order = 9
+    elif district == '田林':
+        sort_order = 10
+    elif district == '隆林':
+        sort_order = 11
+    elif district == '西林':
+        sort_order = 12
+    return sort_order
 
 def get_station_from_DB_baise():
     all_t_station = T_All_station.objects.using('DB_baise').all()
-
+    all_t_station = sorted(all_t_station.iteritems(),key = sort_district)
     return all_t_station
 
 

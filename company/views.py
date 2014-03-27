@@ -52,3 +52,8 @@ def init_database(request):
     get_station_info_func()
 
     return render_to_response('result.html', {'text': 'success!'})
+
+
+def get_station_from_DB_baise_view(request):
+    station_list = get_station_from_DB_baise
+    return render_to_response('all_station.html', {'station_list': station_list})

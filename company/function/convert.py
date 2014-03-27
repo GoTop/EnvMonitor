@@ -17,6 +17,12 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
+def get_station_from_DB_baise():
+    all_t_station = T_All_station.objects.using('DB_baise').all()
+
+    return all_t_station
+
+
 def get_station_info_func():
     """
     从DB_balse数据库的T_Allstation表中读取监测点位的信息，

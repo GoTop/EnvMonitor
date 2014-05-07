@@ -5,7 +5,7 @@ __author__ = 'GoTop'
 from django.db import connections
 import time
 
-#
+
 def dictfetchall(cursor):
     "Returns all rows from a cursor as a dict"
     desc = cursor.description
@@ -34,6 +34,9 @@ def get_param_code(param_name):
 
 
 def day_param_value(mn, date, param_name, data_type):
+    '''
+    获取废水监测点位mn的date当天指定类型data_type（平均值Avg，或累计值Cou）和指定监测类型param_name的日数据
+    '''
     param_code = get_param_code(param_name)
     timeArray = time.strptime(date, "%Y%m%d")
     date = time.strftime("%Y/%m/%d %H:%M:%S", timeArray)
@@ -41,6 +44,8 @@ def day_param_value(mn, date, param_name, data_type):
     param = (table_name, mn, param_code, data_type, date)
     cursor = connections['DB_baise'].cursor()
 
+    #因为在DB_baise数据库里，每个监测点位的日数据表名称都不一样（类似Day_45007760002801）
+    #所以只能用构造SQL语句的方式进行查询
     query = '''SELECT * FROM %s
                 WHERE StationID = '%s'
                 AND ParamCode = '%s'
@@ -55,7 +60,7 @@ def day_param_value(mn, date, param_name, data_type):
 
 def water_daily_report_func(mn, date):
     '''
-    获取废水监测点位mn的date当天的日数据
+    获取废水监测点位mn的date当天的日数据（COD和NH的平均值，累计排放量，pH值和流量）
     '''
     CODcr_Avg_day_value = day_param_value(mn, date, param_name='CODcr', data_type='Avg')
     CODcr_Cou_day_value = day_param_value(mn, date, param_name='CODcr', data_type='Cou')
@@ -76,6 +81,11 @@ def water_daily_report_func(mn, date):
 
 
 def COD_day_cou_value(mn, date):
+    #已由 day_param_value(mn, date, param_name, data_type)代替
+    '''
+    获取监控点位mn指定日期date的COD累计流量
+
+    '''
     #strptime将格式字符串转换为datetime对象
     timeArray = time.strptime(date, "%Y%m%d")
     date = time.strftime("%Y/%m/%d %H:%M:%S", timeArray)

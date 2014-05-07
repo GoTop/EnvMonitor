@@ -48,7 +48,7 @@ def get_standard_func(mn):
 
 def get_station_standard(mn, param_name):
     """
-    根据监测点位的mn，获取param_name对应的标准值
+    根据监测点位的mn，获取指定的监控因子param_name对应的标准值
     """
     param_code = get_param_code(param_name)
     t_superscale_list = T_Superscale.objects.using('DB_baise').filter(
@@ -79,3 +79,14 @@ def get_all_station_standard(mn):
     """
     t_superscale_list = T_Superscale.objects.using('DB_baise').filter(
         t_exam_project__t_all_station__station_id=mn).all()
+
+
+def is_abnormal(mn, value, param_name):
+    """
+    根据监测点位的mn和监控因子param_name的监测值value，判断数据是否异常
+    """
+    standard = get_station_standard(mn, param_name)
+    if value > standard['standard_max'] or value < standard['standard_min']:
+        return True
+    else:
+        return False

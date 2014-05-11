@@ -19,7 +19,9 @@ urlpatterns = patterns('',
     url(r'^company/get_station_info', 'company.views.get_station_info'),
     url(r'^company/get_station_from_db_baise_view', 'company.views.get_station_from_DB_baise_view'),
     url(r'^company/standard_info', 'company.views.get_standard'),
-    url(r'^report/daily_report/(?P<date>\d{8})/$', 'report.views.water_daily_report_view'),
+    url(r'^report/water_daily_report/(?P<date>\d{8})/$', 'report.views.water_daily_report_view'),
+    url(r'^report/gas_daily_report/(?P<date>\d{8})/$', 'report.views.gas_daily_report_view'),
+    #url(r'^report/(?P<mn>\d{14})/(?P<date>\d{8})/$', 'report.views.company_hour_report_view'),
 )
 
 urlpatterns += patterns('',

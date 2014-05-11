@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>{{ datetime|date:"Y年m月d日" }}国控企业废水监控{{ type }}报表</title>
+    <title>{{ datetime|date:"Y年m月d日" }}国控企业废气监控{{ type }}报表</title>
 </head>
 <body>
 
@@ -93,20 +93,19 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废水监控{{ type }}报表</h2>
+            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废气监控{{ type }}报表</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
                 <tr>
                     <th>监控点位</th>
-                    <th>CODcr[Avg]</th>
-                    <th>CODcr[Cou]</th>
-                    <th>氨氮[Avg]</th>
-                    <th>氨氮[Cou]</th>
-                    <th>pH[Avg]</th>
-                    <th>废水流量[Cou]</th>
-                    <th>CODcr标准</th>
-                    <th>NH标准</th>
+                    <th>SO2[Avg]</th>
+                    <th>SO2[Cou]</th>
+                    <th>氮氧化物[Avg]</th>
+                    <th>氮氧化物[Cou]</th>
+                    <th>标态流量[Cou]</th>
+                    <th>SO2标准</th>
+                    <th>氮氧化物</th>
                 </tr>
                 <tr>
                     <th></th>
@@ -114,7 +113,6 @@
                     <th>(Kg)</th>
                     <th>(mg/l)</th>
                     <th>(Kg)</th>
-                    <th>(-)</th>
                     <th>M3</th>
                     <th>(mg/l)</th>
                     <th>(mg/l)</th>
@@ -124,14 +122,13 @@
                 {% for daily_report in daily_report_list %}
                     <tr>
                         <td>{{ daily_report.station_name }}</td>
-                        <td>{{ daily_report.CODcr_Avg }}</td>
-                        <td>{{ daily_report.CODcr_Cou }}</td>
-                        <td>{{ daily_report.NH_Avg }}</td>
-                        <td>{{ daily_report.NH_Cou }}</td>
-                        <td>{{ daily_report.pH_Avg }}</td>
-                        <td>{{ daily_report.volume_of_water_Cou }}</td>
-                        <td>{{ daily_report.CODcr_standard }}</td>
-                        <td>{{ daily_report.NH_standard }}</td>
+                        <td>{{ daily_report.SO2_Avg }}</td>
+                        <td>{{ daily_report.SO2_Cou }}</td>
+                        <td>{{ daily_report.NOx_Avg }}</td>
+                        <td>{{ daily_report.NOx_Cou }}</td>
+                        <td>{{ daily_report.volume_of_gas_Cou }}</td>
+                        <td>{{ daily_report.SO2_standard }}</td>
+                        <td>{{ daily_report.NOx_standard }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>

@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 # coding=utf-8
+import datetime
 from company.db_baise_models import T_All_station
 from company.function.standard import get_param_code, get_station_standard
 
@@ -23,7 +24,9 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     和指定监测因子param_name的小时或日数据（由day_or_hour(day或hour)设置）
     '''
     param_code = get_param_code(param_name)
-    timeArray = time.strptime(date, "%Y%m%d")
+    #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
+    timeArray = time.strptime(date, "%Y/%m/%d %H:%M:%S")
+    # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
     date = time.strftime("%Y/%m/%d %H:%M:%S", timeArray)
 
     #根据day_or_hour选择数据库中的日数据表或者小时数据表
@@ -48,7 +51,7 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     return round(dict[0]['dValue'], 2)
 
 
-def get_water_data_func(mn, date, type):
+def get_water_day_data_func(mn, date, type):
     '''
     获取废水监测点位mn的date当天的小时或日数据（COD和NH的平均值，累计排放量，pH值和流量）
     小时或日数据（由day_or_hour(day或hour)设置）
@@ -93,7 +96,7 @@ def get_water_data_func(mn, date, type):
     return daily_report_value
 
 
-def get_gas_data_func(mn, date, type):
+def get_gas_day_data_func(mn, date, type):
     '''
     获取气监测点位mn的date当天的小时或日数据（SO2和NOx的平均值，累计排放量，流量）
     小时或日数据（由day_or_hour(day或hour)设置）
@@ -147,22 +150,20 @@ def get_gas_data_func(mn, date, type):
 
     return daily_report_value
 
-#TODO
+
 def get_daily_report_func(mn, date, type):
     '''
-    获取企业mn的各种数据，以便按报表显示
+    获取企业mn每日的日数据，以便按报表显示
 
     '''
     t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
 
-    daily_report_value = {}
-    daily_report_value['station_name'] = t_station.station_name
     #判断该检测点位是水还是气
     #t_station_kind为监测类型编码，32为水，35为气
-    if t_station.t_station_kind == 32:
-        daily_report_value = get_water_data_func(mn, date, type='day')
+    if t_station.t_station_kind.kind_id == 32:
+        daily_report_value = get_water_day_data_func(mn, date, type='day')
 
-        # #获取排污标准
+        # #获取排污标准的通用方法，暂时不用
         # param_name_list = {'CODcr', 'NH'}
         # for param_name in param_name_list:
         #     param_standard_dict = get_station_standard(mn=mn, param_name=param_name)
@@ -178,32 +179,33 @@ def get_daily_report_func(mn, date, type):
         #             param_name_abnormal = param_name + '_abnormal'
         #             daily_report_value[param_name_abnormal] = True
 
-        return daily_report_value
+    elif t_station.t_station_kind.kind_id == 35:
+        daily_report_value = get_gas_day_data_func(mn, date, type='day')
 
-    elif t_station.t_station_kind == 35:
-        daily_report_value = get_gas_data_func(mn, date, type='day')
-
-    #获取排污标准
-    CODcr_standard_dict = get_station_standard(mn=mn, param_name='CODcr')
-    NH_standard_dict = get_station_standard(mn=mn, param_name='NH')
-
-    standard_dict = {}
-    if CODcr_standard_dict:
-        daily_report_value['CODcr_standard'] = CODcr_standard_dict['standard_max']
-
-        #如果CODcr的值超标，这设置一个字段为True
-        if daily_report_value['CODcr_Avg'] > CODcr_standard_dict['standard_max'] \
-                or daily_report_value['CODcr_Avg'] < CODcr_standard_dict['standard_min']:
-            daily_report_value['CODcr_abnormal'] = True
-    if NH_standard_dict:
-        daily_report_value['NH_standard'] = NH_standard_dict['standard_max']
-
-        #如果NH的值超标，这设置一个字段为True
-        if daily_report_value['NH_Avg'] > NH_standard_dict['standard_max'] \
-                or daily_report_value['NH_Avg'] < NH_standard_dict['standard_min']:
-            daily_report_value['NH_abnormal'] = True
+    daily_report_value['station_name'] = t_station.station_name
+    return daily_report_value
 
     #daily_report_list.append(daily_report_value)
 
+def get_water_hour_data_report_func(mn, date):
+    """
+    获取废气监控点位mn的一天内的小时数据
+    """
+    t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
+
+    timeArray = time.strptime(date, "%Y%m%d")
+
+    date = time.strftime("%Y/%m/%d %H:%M:%S", timeArray)
+
+    report_list = []
+    for hour in range(23):
+        report_row = {}
+        report_row['monitor_date'] = date
+        report_row = get_water_day_data_func(mn, date, type='hour')
+        report_list.append(report_row)
+
+        date = date + datetime.timedelta(hour)
+
+    return report_list
 
 

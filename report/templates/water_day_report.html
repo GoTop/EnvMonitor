@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>{{ datetime|date:"Y年m月d日" }}国控企业废水监控{{ type }}报表</title>
+    <title>{{ station_name }}废水监控日报表 {{ datetime|date:"Y年m月d日" }}</title>
 </head>
 <body>
 
@@ -93,20 +93,20 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废水监控{{ type }}报表</h2>
+            <h2>{{ station_name }}废水监控日报表 {{ datetime|date:"Y年m月d日" }}</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
                 <tr>
-                    <th>监控点位</th>
+                    <th>时间</th>
                     <th>CODcr[Avg]</th>
-                    <th>CODcr[Cou]</th>
+                    <th>CODcr[Cou]</th
                     <th>氨氮[Avg]</th>
                     <th>氨氮[Cou]</th>
                     <th>pH[Avg]</th>
                     <th>废水流量[Cou]</th>
                     <th>CODcr标准</th>
-                    <th>NH标准</th>
+                    <th>氨氮标准</th>
                 </tr>
                 <tr>
                     <th></th>
@@ -121,17 +121,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for daily_report in daily_report_list %}
+                {% for report in report_list %}
                     <tr>
-                        <td>{{ daily_report.station_name }}</td>
-                        <td>{{ daily_report.CODcr_Avg }}</td>
-                        <td>{{ daily_report.CODcr_Cou }}</td>
-                        <td>{{ daily_report.NH_Avg }}</td>
-                        <td>{{ daily_report.NH_Cou }}</td>
-                        <td>{{ daily_report.pH_Avg }}</td>
-                        <td>{{ daily_report.volume_of_water_Cou }}</td>
-                        <td>{{ daily_report.CODcr_standard }}</td>
-                        <td>{{ daily_report.NH_standard }}</td>
+                        <td>{{ report.monitor_date }}</td>
+                        <td>{{ report.CODcr_Avg }}</td>
+                        <td>{{ report.CODcr_Cou }}</td>
+                        <td>{{ report.NH_Avg }}</td>
+                        <td>{{ report.NH_Cou }}</td>
+                        <td>{{ report.pH_Avg }}</td>
+                        <td>{{ report.volume_of_water_Cou }}</td>
+                        <td>{{ report.CODcr_standard }}</td>
+                        <td>{{ report.NH_standard }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>

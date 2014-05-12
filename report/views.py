@@ -53,19 +53,17 @@ def gas_daily_report_view(request, date):
 
 #TODO
 def company_water_day_report_view(request, mn, date):
+    """
+    获取监控点位mn在date当天24小时的小时数据，显示日报表
+    """
     #strptime将格式字符串转换为datetime对象
     datetime_object = datetime.datetime.strptime(date, "%Y%m%d")
     report_list = []
 
     t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
 
-    report_row = get_water_hour_data_report_func(mn, date)
+    report_list = get_water_hour_data_report_func(mn, date)
 
-    CODcr_standard_dict = get_station_standard(mn=mn, param_name='CODcr')
-    NH_standard_dict = get_station_standard(mn=mn, param_name='NH')
-
-
-    report_list.append(report_row)
     return render_to_response('water_day_report.html',
                               {'station_name': t_station.station_name,
                                'datetime': datetime_object,

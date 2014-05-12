@@ -7,7 +7,7 @@ from company.function.standard import get_param_code, get_station_standard
 __author__ = 'GoTop'
 
 from django.db import connections
-import time
+import time, datetime
 
 
 def dictfetchall(cursor):
@@ -18,6 +18,7 @@ def dictfetchall(cursor):
         for row in cursor.fetchall()
     ]
 
+
 def get_monitor_value(mn, date, param_name, data_type, type):
     '''
     获取废水监测点位mn的date当天指定类型data_type（平均值Avg，或累计值Cou）
@@ -25,9 +26,9 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     '''
     param_code = get_param_code(param_name)
     #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
-    timeArray = time.strptime(date, "%Y/%m/%d %H:%M:%S")
+    datetime_tuple = time.strptime(date, "%Y/%m/%d %H:%M:%S")
     # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
-    date = time.strftime("%Y/%m/%d %H:%M:%S", timeArray)
+    date = time.strftime("%Y/%m/%d %H:%M:%S", datetime_tuple)
 
     #根据day_or_hour选择数据库中的日数据表或者小时数据表
     if type == 'day':
@@ -120,7 +121,7 @@ def get_gas_day_data_func(mn, date, type):
     NOx_Cou_value = get_monitor_value(mn, date, param_name='NOx', data_type='Cou', type=type)
 
     volume_of_gas_Cou_value = get_monitor_value(mn, date, param_name='volume_of_gas',
-                                                  data_type='Cou', type=type)
+                                                data_type='Cou', type=type)
     daily_report_value = {'SO2_Avg': SO2_Avg_value,
                           'SO2_Cou': SO2_Cou_value,
                           'NOx_Avg': NOx_Avg_value,
@@ -187,24 +188,27 @@ def get_daily_report_func(mn, date, type):
 
     #daily_report_list.append(daily_report_value)
 
+
 def get_water_hour_data_report_func(mn, date):
     """
     获取废气监控点位mn的一天内的小时数据
     """
-    t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
+    struct_time = time.strptime(date, "%Y%m%d")
 
-    timeArray = time.strptime(date, "%Y%m%d")
+    #strptime将格式字符串转换为datetime对象
+    datetime_object = datetime.datetime.strptime(date, "%Y%m%d")
 
-    date = time.strftime("%Y/%m/%d %H:%M:%S", timeArray)
+    datetime_string = time.strftime("%Y/%m/%d %H:%M:%S", datetime_object.timetuple())
 
     report_list = []
-    for hour in range(23):
+    for x in range(24):
         report_row = {}
-        report_row['monitor_date'] = date
-        report_row = get_water_day_data_func(mn, date, type='hour')
+        report_row = get_water_day_data_func(mn, datetime_string, type='hour')
+        report_row['monitor_date'] = datetime_string
         report_list.append(report_row)
 
-        date = date + datetime.timedelta(hour)
+        datetime_object = datetime_object + datetime.timedelta(hours=1)
+        datetime_string = time.strftime("%Y/%m/%d %H:%M:%S", datetime_object.timetuple())
 
     return report_list
 

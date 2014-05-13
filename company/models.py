@@ -94,6 +94,7 @@ class Company(models.Model):
         db_table = 'Company'
         verbose_name = '企业'
         verbose_name_plural = '企业'
+        unique_together = (("name", "organ_code", "district", "trade"))
 
 
 class MaintainCompany(models.Model):

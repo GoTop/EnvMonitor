@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 import os
 from django.core.exceptions import ObjectDoesNotExist
+import time
 from EnvMonitor import settings
 from company.function.excel import excel_table_by_index
 from company.function.string import sort_station_by_district
@@ -134,6 +135,7 @@ def get_company_from_excel():
         except ObjectDoesNotExist:
             station_trade = None
 
+        #row['污染源单位（业主）属性']的代码含义如下：
         # A:国控重点污染源
         # B:非国控，但列入国控建设项目范围内的
         # C:城镇污水处理厂
@@ -146,9 +148,11 @@ def get_company_from_excel():
         #创建或更新企业信息
 
         new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
-                                                                     organ_code=row['法人代码'],
-                                                                     district=row['县区'],
-                                                                     trade=station_trade)
+                                                                     defaults={
+                                                                         'organ_code': row['法人代码'],
+                                                                         'district': row['县区'],
+                                                                         'trade': station_trade}
+        )
 
         manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
 

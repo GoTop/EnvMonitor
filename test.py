@@ -47,11 +47,27 @@ def uni_prt(a, encoding=None):
     return ''.join(s)
 
 
-a = {'district': u'\u53f3\u6c5f\u533a',
- 'name': u'\u84dd\u661f\u5316\u5de5\u65b0\u6750\u6599\u80a1\u4efd\u6709\u9650\u516c\u53f8\u5e7f\u897f\u5206\u516c\u53f8',
- 'organ_code': u'66480398-1',
- 'trade': None},
-
+a = {u'2012\u5e74\u662f\u5426\u5f00\u5c55\u793e\u4f1a\u5316\u8fd0\u884c\u5e76\u83b7\u5f97\u81ea\u6cbb\u533a\u8d22\u653f\u8865\u52a9': u'\u5426',
+  u'2014\u56fd\u63a7\u540d\u5355': '',
+  u'MN\u53f7': 45007760008901.0,
+  u'\u53bf\u533a': u'\u7530\u4e1c',
+  u'\u56fd\u63a7\u6e90\n\u5e74\u4efd': 2011.0,
+  u'\u5730\u5e02': u'\u767e\u8272',
+  u'\u5907\u6ce8': '',
+  u'\u5e8f\u53f7': 30.0,
+  u'\u662f\u5426\u4e3a2013\n\u65b0\u589e\u5bf9\u8c61': u'\u662f',
+  u'\u662f\u5426\u5b63\u8282\u6027\u751f\u4ea7\u4f01\u4e1a': u'\u5426',
+  u'\u662f\u5426\u8054\u7f51': u'\u662f',
+  u'\u662f\u5426\u9a8c\u6536': u'\u5426',
+  u'\u6c61\u67d3\u6e90\u5355\u4f4d\uff08\u4e1a\u4e3b\uff09': u'\u5e7f\u897f\u7530\u9633\u534e\u7f8e\u7eb8\u4e1a\u6709\u9650\u516c\u53f8',
+  u'\u6c61\u67d3\u6e90\u5355\u4f4d\uff08\u4e1a\u4e3b\uff09\u5c5e\u6027': u'A',
+  u'\u6cd5\u4eba\u4ee3\u7801': u'79683267-X',
+  u'\u76d1\u63a7\u56e0\u5b50': u'SO2\u3001NOx',
+  u'\u76d1\u63a7\u8bbe\u5907\u5382\u5bb6': u'\u5e7f\u5dde\u6797\u534e',
+  u'\u81ea\u52a8\u76d1\u63a7\u8bbe\u5907\u540d\u79f0': u'\u5e7f\u897f\u7530\u9633\u534e\u7f8e\u7eb8\u4e1a\u6709\u9650\u516c\u53f8\u5e9f\u6c14\u6392\u653e\u53e3\u76d1\u63a7\u8bbe\u5907',
+  u'\u8bbe\u5907\u7c7b\u578b': u'B',
+  u'\u8fdb\u53e3/\u6392\u653e\u53e3': u'\u6392\u653e\u53e3',
+  u'\u9884\u8ba1\u751f\u4ea7\u65f6\u957f\uff08\u5b63\u8282\u6027\u4f01\u4e1a\uff09': 12.0},
 #print a.decode('gbk')
 #print uni_prt('utf-8')
 #print uni_prt(a, 'utf8')
@@ -62,7 +78,7 @@ a = {'district': u'\u53f3\u6c5f\u533a',
 #print dictb
 print uni_prt(a)
 
-
+print u"[23000] [Microsoft][SQL Native Client][SQL Server]\xb2\xbb\xc4\xdc\xbd\xab\xd6\xb5 NULL \xb2\xe5\xc8\xeb\xc1\xd0 'trade'\xa3\xac\xb1\xed 'EnvMonitor.dbo.Company'\xa3\xbb\xc1\xd0\xb2\xbb\xd4\xca\xd0\xed\xd3\xd0\xbf\xd5\xd6\xb5\xa1\xa3INSERT \xca\xa7\xb0\xdc\xa1\xa3 (515) (SQLExecDirectW); [01000] [Microsoft][SQL Native Client][SQL Server]\xd3\xef\xbe\xe4\xd2\xd1\xd6\xd5\xd6\xb9\xa1\xa3 (3621)".encode('utf-8')
 
 
 

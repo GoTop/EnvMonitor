@@ -5,6 +5,9 @@ from para_models import *
 
 
 class T_Data_param(models.Model):
+    """
+    监测参数字典
+    """
     param_code = models.CharField(db_column='ParamCode', max_length=3, primary_key=True)
     standard_code = models.TextField(db_column='StandardCode', blank=True)
     param_remark = models.TextField(db_column='ParamRemark', blank=True)
@@ -223,6 +226,9 @@ class T_Exam_project(models.Model):
 
 
 class T_Superscale(models.Model):
+    """
+    执行标准范围设定
+    """
     exam_id = models.IntegerField(db_column='ExamID', primary_key=True)
     t_exam_project = models.ForeignKey(T_Exam_project, db_column='ExamParmID')
     level_id = models.IntegerField(db_column='LevelID', blank=True, null=True)

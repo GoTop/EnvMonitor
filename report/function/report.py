@@ -25,16 +25,21 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     和指定监测因子param_name的小时或日数据（由day_or_hour(day或hour)设置）
     '''
     param_code = get_param_code(param_name)
-    #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
-    datetime_tuple = time.strptime(date, "%Y/%m/%d %H:%M:%S")
-    # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
-    date = time.strftime("%Y/%m/%d %H:%M:%S", datetime_tuple)
+
 
     #根据day_or_hour选择数据库中的日数据表或者小时数据表
     if type == 'day':
         table_name = 'Day_' + mn
+        #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
+        datetime_tuple = time.strptime(date, "%Y%m%d")
+        # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
+        date = time.strftime("%Y/%m/%d %H:%M:%S", datetime_tuple)
     elif type == 'hour':
         table_name = 'Hour_' + mn
+        #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
+        datetime_tuple = time.strptime(date, "%Y/%m/%d %H:%M:%S")
+        # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
+        date = time.strftime("%Y/%m/%d %H:%M:%S", datetime_tuple)
     param = (table_name, mn, param_code, data_type, date)
     cursor = connections['DB_baise'].cursor()
 
@@ -86,6 +91,9 @@ def get_water_day_data_func(mn, date, type):
         if daily_report_value['CODcr_Avg'] > CODcr_standard_dict['standard_max'] \
                 or daily_report_value['CODcr_Avg'] < CODcr_standard_dict['standard_min']:
             daily_report_value['CODcr_abnormal'] = True
+    else:
+        daily_report_value['CODcr_standard'] = '-'
+
     if NH_standard_dict:
         daily_report_value['NH_standard'] = NH_standard_dict['standard_max']
 
@@ -93,6 +101,8 @@ def get_water_day_data_func(mn, date, type):
         if daily_report_value['NH_Avg'] > NH_standard_dict['standard_max'] \
                 or daily_report_value['NH_Avg'] < NH_standard_dict['standard_min']:
             daily_report_value['NH_abnormal'] = True
+    else:
+        daily_report_value['NH_standard'] = '-'
 
     return daily_report_value
 
@@ -141,6 +151,9 @@ def get_gas_day_data_func(mn, date, type):
         if daily_report_value['SO2_Avg'] > SO2_standard_dict['standard_max'] \
                 or daily_report_value['SO2_Avg'] < SO2_standard_dict['standard_min']:
             daily_report_value['SO2_abnormal'] = True
+    else:
+        daily_report_value['SO2_standard'] = '-'
+
     if NOx_standard_dict:
         daily_report_value['NOx_standard'] = NOx_standard_dict['standard_max']
 
@@ -148,7 +161,8 @@ def get_gas_day_data_func(mn, date, type):
         if daily_report_value['NOx_Avg'] > NOx_standard_dict['standard_max'] \
                 or daily_report_value['NOx_Avg'] < NOx_standard_dict['standard_min']:
             daily_report_value['NOx_abnormal'] = True
-
+    else:
+        daily_report_value['NOx_standard'] = '-'
     return daily_report_value
 
 

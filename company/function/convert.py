@@ -124,9 +124,12 @@ def get_company_from_excel():
     file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
     list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
     for row in list:
+
+        mn = int(row['MN号'])
+
         #从DB_baise中获取station的行业信息
         try:
-            t_station = T_All_station.objects.using('DB_baise').get(station_id=int(row['MN号']))
+            t_station = T_All_station.objects.using('DB_baise').get(station_id=mn)
             station_trade = t_station.t_trade.remark
         except ObjectDoesNotExist:
             station_trade = None
@@ -141,7 +144,7 @@ def get_company_from_excel():
 
         #row['县区'] = convert_district(row['县区'])
         #创建或更新企业信息
-        mn = row['MN号']
+
         new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
                                                                      organ_code=row['法人代码'],
                                                                      district=row['县区'],
@@ -152,7 +155,7 @@ def get_company_from_excel():
         if manufacturer:
             #从EnvMonitor数据库中获取信息
             try:
-                station = Station.objects.get(station_id=int(row['MN号']))
+                station = Station.objects.get(station_id=mn)
             except ObjectDoesNotExist:
                 station = None
             if station:

@@ -71,20 +71,17 @@ class Message(models.Model):
     class Meta:
         db_table = 'Message'
 
-class ModifyData(models.Model):
-    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
-    station_id = models.TextField(db_column='StationID') # Field name made lowercase.
-    param_code = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
-    data_type = models.TextField(db_column='DataType') # Field name made lowercase.
-    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
-    modify_time = models.DateTimeField(db_column='ModifyTime', blank=True, null=True) # Field name made lowercase.
-    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
-    sipa_ddress = models.TextField(db_column='sIPAddress', blank=True) # Field name made lowercase.
-    user_id = models.IntegerField(db_column='UserID', blank=True, null=True) # Field name made lowercase.
-    swhys = models.CharField(db_column='sWhys', max_length=500, blank=True) # Field name made lowercase.
-    remark = models.CharField(db_column='Remark', max_length=500, blank=True) # Field name made lowercase.
-    id = models.TextField(db_column='ID', blank=True) # Field name made lowercase.
-    is_active = models.NullBooleanField(db_column='IsActive', blank=True, null=True) # Field name made lowercase.
-    class Meta:
-        managed = False
-        db_table = 'ModifyData'
+# class AbnormalData(models.Model):
+#     #自动检测数据进行修约
+#     data_time = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+#     mn = models.ForeignKey('company.Station', db_column='mn') # Field name made lowercase.
+#     param_code = models.CharField('company.T_Data_param',db_column='ParamCode', max_length=3) # Field name made lowercase.
+#     data_type = models.TextField('company.T_Data_type',db_column='DataType') # Field name made lowercase.
+#     original_value = models.DecimalField(db_column='original_value', max_digits=18, decimal_places=4) # Field name made lowercase.
+#     modify_value = models.DecimalField(db_column='modify_value', max_digits=18, decimal_places=4) # Field name made lowercase.
+#     modify_time = models.DateTimeField(db_column='modify_time', blank=True, null=True) # Field name made lowercase.
+#     user_id = models.IntegerField(db_column='user_id', blank=True, null=True) # Field name made lowercase.
+#     remark = models.CharField(db_column='remark', max_length=500, blank=True) # Field name made lowercase.
+#     class Meta:
+#         db_table = 'AbnormalData'
+#         unique_together = ("data_time", "mn", "param_code", "data_type")

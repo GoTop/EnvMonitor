@@ -26,7 +26,6 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     '''
     param_code = get_param_code(param_name)
 
-
     #根据day_or_hour选择数据库中的日数据表或者小时数据表
     if type == 'day':
         table_name = 'Day_' + mn
@@ -55,6 +54,27 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     dict = dictfetchall(cursor)
     #row = cursor.fetchall()
     return round(dict[0]['dValue'], 2)
+
+
+def get_monitor_value(mn, date, param_name_list, data_type_list, type):
+    '''
+    一个简便功能函数，可以方便地获取监测点位mn的date的多个因子和数据类型的小时或日数据
+
+    param_name_list：监控因子列表
+    data_type_list：数据类型列表：Avg或Cou
+    type(day或hour):小时或日数据
+
+    return：返回的数组中，key为类似COD_Avg这样的格式
+    '''
+    report_value = {}
+    param_name_list = {'CODcr', 'NH'}
+    for param_name in param_name_list:
+        data_type_list = {'Avg', 'Cou'}
+        for data_type in data_type_list:
+            value = get_monitor_value(mn, date, param_name, data_type, type)
+            key = param_name + '_' + data_type
+            report_value[key] = value
+    return report_value
 
 
 def get_water_day_data_func(mn, date, type):

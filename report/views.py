@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render_to_response
 from company.models import T_All_station
+from report.function.abnormal import get_abnormal_date
 from report.function.report import *
 
 import datetime
@@ -69,5 +70,15 @@ def company_water_day_report_view(request, mn, date):
                                'datetime': datetime_object,
                                'type': '小时',
                                'report_list': report_list}
+    )
+
+def get_abnormal_data_view(request, mn, date):
+    abnormal_data_list = get_abnormal_date(mn, date)
+
+    return render_to_response('water_day_report.html',
+                              {'station_name': t_station.station_name,
+                               'datetime': datetime_object,
+                               'type': '小时',
+                               'report_list': abnormal_data_list}
     )
 

@@ -244,6 +244,11 @@ class T_Superscale(models.Model):
         managed = False
         db_table = 'T_Superscale'
 
-
+class T_Datatype(models.Model):
+    data_type = models.TextField(db_column='DataType') # Field name made lowercase.
+    remark = models.TextField(db_column='Remark', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'T_DataType'
 
 

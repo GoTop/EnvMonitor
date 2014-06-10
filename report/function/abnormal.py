@@ -1,11 +1,20 @@
 # coding=utf-8
 from __future__ import unicode_literals
-from company.function.standard import is_abnormal
+from company.function.standard import get_station_standard
 from report.function.report import get_monitor_value
 
 
 __author__ = 'GoTop'
 
+def is_abnormal(mn, value, param_name):
+    """
+    根据监测点位的mn和监控因子param_name的监测值value，判断数据是否异常
+    """
+    standard = get_station_standard(mn, param_name)
+    if value > standard['standard_max'] or value < standard['standard_min']:
+        return True
+    else:
+        return False
 
 def get_abnormal_date(mn, date):
     abnormal_data = {}

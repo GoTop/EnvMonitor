@@ -111,12 +111,4 @@ def get_all_station_standard(mn):
         t_exam_project__t_all_station__station_id=mn).all()
 
 
-def is_abnormal(mn, value, param_name):
-    """
-    根据监测点位的mn和监控因子param_name的监测值value，判断数据是否异常
-    """
-    standard = get_station_standard(mn, param_name)
-    if value > standard['standard_max'] or value < standard['standard_min']:
-        return True
-    else:
-        return False
+

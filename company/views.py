@@ -7,7 +7,7 @@ from function.standard import *
 from function.db import SqlServerDB
 import pyodbc
 from company.function.convert import *
-from report.function.report import *
+from report.function.report_func import *
 
 
 class CompanyList(ListView):

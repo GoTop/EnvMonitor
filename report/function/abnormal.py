@@ -1,7 +1,8 @@
 # coding=utf-8
 from __future__ import unicode_literals
 from company.function.standard import get_station_standard
-from report.function.report import get_monitor_value
+from report.function.report_func import get_monitor_value, get_monitor_value_func
+from report.models import AbnormalData
 
 
 __author__ = 'GoTop'
@@ -17,24 +18,30 @@ def is_abnormal(mn, value, param_name):
         return False
 
 def get_abnormal_date(mn, date):
+    """
+    获取指定监控点位mn，指定日期date的异常数据
+    并保存到AbnormalData
+    """
     abnormal_data = {}
     data_type = 'Avg'
     param_name_list = ['CODcr', 'NH', 'pH']
     data_type_list = ['Avg']
     #获取小时均值数据
     type = 'hour'
-    abnormal_data_list = get_monitor_value(mn, date, param_name_list, data_type_list, type)
+    abnormal_data_list = get_monitor_value_func(mn, date, param_name_list, data_type_list, type)
 
     # abnormal_data['CODcr_Avg'] = get_monitor_value(mn, date, param_name='CODcr', data_type=data_type, type=type)
     # abnormal_data['NH_Avg'] = get_monitor_value(mn, date, param_name='NH', data_type=data_type, type=type)
     # abnormal_data['pH_Avg'] = get_monitor_value(mn, date, param_name='pH', data_type=data_type, type=type)
 
-    for value, param_name in abnormal_data_list:
-        if(is_abnormal(mn, value, param_name)):
-            abnormal_data_list = AbnormalData(mn=mn, date_time=date, date_type='Avg',
-                                                original_value=value)
+    for abnormal_data in abnormal_data_list:
+        for param_name, value in abnormal_data:
+            if(is_abnormal(mn, value, param_name)):
+                abnormal_data_list = AbnormalData(mn=mn, date_time=date, date_type='Avg',
+                                                    original_value=value)
     return abnormal_data_list
 
-def get_save_abnormal_date():
-    abnormal_data = get_abnormal_date()
-    abnormal_data_object = AbnormalData(mn=mn, date_time=date_time, date_type=date_type, original_value=original_value)
+def get_save_abnormal_date(mn, date, ):
+    abnormal_data_list = get_abnormal_date()
+    for abnormal_data in abnormal_data_list:
+        abnormal_data_object = AbnormalData(mn=mn, date_time=date, date_type='Avg', original_value=original_value)

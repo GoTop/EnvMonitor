@@ -121,11 +121,25 @@
                             <td>{{ station.station_id }}</td>
                             <td>{{ station.type }}</td>
                             <td>{{ station.in_or_out }}</td>
+
                             {% if station.nationsuprevise %}
                                 <td>是</td>
                             {% else %}
                                 <td></td>
                             {% endif %}
+
+                            <td>
+                                 {% for equipment in station.equipment_set.all %}
+                                    {{equipment.data_param.param_remark}}
+
+                                    {% if not forloop.last %}
+                                            、
+                                    {% endif %}
+                                 {% endfor %}
+
+
+                            </td>
+
                         </tr>
                     {% endfor %}
 

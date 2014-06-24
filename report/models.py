@@ -76,7 +76,7 @@ class AbnormalData(models.Model):
     data_time = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
     mn = models.ForeignKey('company.Station', db_column='mn') # Field name made lowercase.
     param_code = models.CharField('company.T_Data_param',db_column='ParamCode', max_length=3) # Field name made lowercase.
-    data_type = models.TextField('company.T_Data_type',db_column='DataType') # Field name made lowercase.
+    data_type = models.CharField('company.T_Data_type',db_column='DataType',max_length=5) # Field name made lowercase.
     original_value = models.DecimalField(db_column='original_value', max_digits=18, decimal_places=4) # Field name made lowercase.
     modify_value = models.DecimalField(db_column='modify_value', max_digits=18, decimal_places=4) # Field name made lowercase.
     modify_time = models.DateTimeField(db_column='modify_time', blank=True, null=True) # Field name made lowercase.

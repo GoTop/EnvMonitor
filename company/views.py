@@ -18,6 +18,7 @@ class CompanyList(ListView):
 
 class StationList(ListView):
     model = Station
+    template_name = 'company/station_list.html'
 
 
 # Create your views here.

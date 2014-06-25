@@ -74,11 +74,11 @@ def company_water_day_report_view(request, mn, date):
     )
 
 
-def get_abnormal_data_view(request, mn, date):
-    abnormal_data_list = abnormal_func.get_abnormal_data(mn, date)
+def get_abnormal_data_view(request, mn, date_string):
+    abnormal_data_list = abnormal_func.get_abnormal_data(mn, date_string)
     t_station = T_All_station.objects.get(mn=mn)
     #strptime将格式字符串转换为datetime对象
-    datetime_object = datetime.datetime.strptime(date, "%Y%m%d")
+    datetime_object = datetime.datetime.strptime(date_string, "%Y%m%d")
 
     return render_to_response('water_day_report.html',
                               {'station_name': t_station.station_name,

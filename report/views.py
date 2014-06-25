@@ -2,8 +2,9 @@
 from __future__ import unicode_literals
 from django.shortcuts import render_to_response
 from company.models import T_All_station
-from report.function.abnormal import get_abnormal_date
-from report.function.report_func import *
+
+import report.function.report_func as report_func
+import report.function.abnormal_func as abnormal_func
 
 import datetime
 
@@ -21,7 +22,7 @@ def water_daily_report_view(request, date):
         # t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
         # daily_report_value['station_name'] = t_station.station_name
 
-        daily_report_row = get_daily_report_func(mn, date, type='day')
+        daily_report_row = report_func.get_daily_report_func(mn, date, type='day')
 
         daily_report_list.append(daily_report_row)
     return render_to_response('water_daily_report.html',
@@ -43,7 +44,7 @@ def gas_daily_report_view(request, date):
         # t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
         # daily_report_value['station_name'] = t_station.station_name
 
-        daily_report_row = get_daily_report_func(mn, date, type='day')
+        daily_report_row = report_func.get_daily_report_func(mn, date, type='day')
 
         daily_report_list.append(daily_report_row)
     return render_to_response('gas_daily_report.html',
@@ -63,7 +64,7 @@ def company_water_day_report_view(request, mn, date):
 
     t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
 
-    report_list = get_water_hour_data_report_func(mn, date)
+    report_list = report_func.get_water_hour_data_report_func(mn, date)
 
     return render_to_response('water_day_report.html',
                               {'station_name': t_station.station_name,
@@ -74,7 +75,7 @@ def company_water_day_report_view(request, mn, date):
 
 
 def get_abnormal_data_view(request, mn, date):
-    abnormal_data_list = get_abnormal_date(mn, date)
+    abnormal_data_list = abnormal_func.get_abnormal_data(mn, date)
     t_station = T_All_station.objects.get(mn=mn)
     #strptime将格式字符串转换为datetime对象
     datetime_object = datetime.datetime.strptime(date, "%Y%m%d")

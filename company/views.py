@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, render_to_response
 from django.views.generic import ListView
 from company.function.string import sort_company_by_district
-from function.standard import *
+#from function.standard import *
 from function.db import SqlServerDB
 import pyodbc
 from company.function.convert import *
@@ -53,6 +53,9 @@ def init_database(request):
     get_manufacturer_table()
 
     get_station_info_func()
+
+    #从excel表中导入企业信息，并与station进行关联
+    get_company_from_excel()
 
     return render_to_response('result.html', {'text': 'success!'})
 

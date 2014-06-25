@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>{{ datetime|date:"Y年m月d日" }}国控企业废气监控{{ type }}报表</title>
+    <title>获取异常监控数据结果</title>
 </head>
 <body>
 
@@ -73,7 +73,7 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Link</a></li>
-                    <li class="dropdown">gas_daily_report.html
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
@@ -93,42 +93,37 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废气监控{{ type }}报表</h2>
+            <h2>获取异常监控数据结果</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
                 <tr>
                     <th>监控点位</th>
-                    <th>SO2[Avg]</th>
-                    <th>SO2[Cou]</th>
-                    <th>氮氧化物[Avg]</th>
-                    <th>氮氧化物[Cou]</th>
-                    <th>标态流量[Cou]</th>
-                    <th>SO2标准</th>
-                    <th>氮氧化物</th>
+                    <th>时间</th>
+                    <th>监测因子</th>
+                    <th>数据类型</th>
+                    <th>监测数值</th>
+                    <th>标准</th>
+
                 </tr>
                 <tr>
                     <th></th>
-                    <th>(mg/l)</th>
-                    <th>(Kg)</th>
-                    <th>(mg/l)</th>
-                    <th>(Kg)</th>
-                    <th>M3</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                     <th>(mg/l)</th>
                     <th>(mg/l)</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for daily_report in daily_report_list %}
+                {% for report in report_list %}
                     <tr>
-                        <td>{{ daily_report.station_name }}</td>
-                        <td>{{ daily_report.SO2_Avg }}</td>
-                        <td>{{ daily_report.SO2_Cou }}</td>
-                        <td>{{ daily_report.NOx_Avg }}</td>
-                        <td>{{ daily_report.NOx_Cou }}</td>
-                        <td>{{ daily_report.volume_of_gas_Cou }}</td>
-                        <td>{{ daily_report.SO2_standard }}</td>
-                        <td>{{ daily_report.NOx_standard }}</td>
+                        <td>{{ station_name}}</td>
+                        <td>{{ report.data_time|date:"Y-m-d H:i:s"  }}</td>
+                        <td>{{ report.param_code }}</td>
+                        <td>{{ report.data_type }}</td>
+                        <td>{{ report.original_value }}</td>
+                        <td>{{ standard }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>

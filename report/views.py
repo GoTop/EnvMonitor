@@ -1,8 +1,7 @@
 # coding=utf-8
 from __future__ import unicode_literals
 from django.shortcuts import render_to_response
-from company.models import T_All_station
-
+from company.models import T_All_station, Station
 import report.function.report_func as report_func
 import report.function.abnormal_func as abnormal_func
 
@@ -75,13 +74,19 @@ def company_water_day_report_view(request, mn, date):
 
 
 def get_abnormal_data_view(request, mn, date_string):
-    abnormal_data_list = abnormal_func.get_abnormal_data(mn, date_string)
-    t_station = T_All_station.objects.get(mn=mn)
+    #水的监控因子
+    #param_name_list = ['CODcr', 'NH', 'pH']
+
+    #气的监控因子
+    param_name_list = ['SO2', 'NOx']
+
+    abnormal_data_list = abnormal_func.get_abnormal_data(mn, date_string, param_name_list)
+    t_station = Station.objects.get(station_id=mn)
     #strptime将格式字符串转换为datetime对象
     datetime_object = datetime.datetime.strptime(date_string, "%Y%m%d")
 
-    return render_to_response('water_day_report.html',
-                              {'station_name': t_station.station_name,
+    return render_to_response('get_abmornal_date_result.html',
+                              {'station_name': t_station.name,
                                'datetime': datetime_object,
                                'type': '小时',
                                'report_list': abnormal_data_list}

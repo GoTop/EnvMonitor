@@ -40,10 +40,6 @@ def get_abnormal_data(mn, date_string, param_name_list):
     monitor_data_dict = report_func.get_range_monitor_value(mn, start_date_object, end_date_object, param_name_list,
                                                             data_type_list, type)
 
-    # abnormal_data['CODcr_Avg'] = get_monitor_value(mn, date, param_name='CODcr', data_type=data_type, type=type)
-    # abnormal_data['NH_Avg'] = get_monitor_value(mn, date, param_name='NH', data_type=data_type, type=type)
-    # abnormal_data['pH_Avg'] = get_monitor_value(mn, date, param_name='pH', data_type=data_type, type=type)
-
     abnormal_data_list = []
     for param_name in param_name_list:
         for data_type in data_type_list:
@@ -53,21 +49,66 @@ def get_abnormal_data(mn, date_string, param_name_list):
                 if (is_abnormal(mn, monitor_data['dValue'], param_name)):
                     t_station = Station.objects.get(station_id=mn)
                     abnormal_data, abnormal_data_created = AbnormalData.objects.get_or_create(mn=t_station,
-                                                                                            data_time=monitor_data[
-                                                                                                'DataTime'],
-                                                                                            data_type=monitor_data[
-                                                                                                'DataType'],
-                                                                                            param_code=monitor_data[
-                                                                                                'ParamCode'],
-                                                                                            original_value=monitor_data[
-                                                                                                'dValue'])
+                                                                                              data_time=monitor_data[
+                                                                                                  'DataTime'],
+                                                                                              data_type=monitor_data[
+                                                                                                  'DataType'],
+                                                                                              param_code=monitor_data[
+                                                                                                  'ParamCode'],
+                                                                                              original_value=
+                                                                                              monitor_data[
+                                                                                                  'dValue'])
                     if abnormal_data_created:
                         abnormal_data_list.append(abnormal_data)
 
     return abnormal_data_list
 
 
-def get_save_abnormal_data(mn, date, ):
-    abnormal_data_list = get_abnormal_data()
-    for abnormal_data in abnormal_data_list:
-        abnormal_data_object = AbnormalData(mn=mn, date_time=date, date_type='Avg', original_value=original_value)
+def count_abnormal_data(mn, start_date_string, end_date_string, param_name_list, data_type):
+    """
+    统计指定监控点位mn从start_date至end_date，指定监控因子列表中的param_name_list，
+    和数据类型data_type（ZsAvg）的超标数
+
+    """
+    #获取小时均值数据
+    type = 'hour'
+    data_type_list = [data_type]
+    start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
+    end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+
+    monitor_data_dict = report_func.get_range_monitor_value(mn, start_date_object, end_date_object,
+                                                            param_name_list, data_type_list, type)
+
+    monitor_data_num_dict = {}
+    for param_name in param_name_list:
+        abnormal_data_num = 0
+        #生成COD_Avg，pH_Cou 之类的key名
+        key = param_name + '_' + data_type
+
+        if key in monitor_data_dict.keys():
+            #构造一个key名，类似COD_Avg_num，并赋值
+            monitor_data_num_dict[key + '_total_num'] = len(monitor_data_dict[key])
+            for monitor_data in monitor_data_dict[key]:
+                if (is_abnormal(mn, monitor_data['dValue'], param_name)):
+                    abnormal_data_num = abnormal_data_num + 1
+            monitor_data_num_dict[key + '_abnormal_num'] = abnormal_data_num
+
+    return monitor_data_num_dict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

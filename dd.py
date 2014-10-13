@@ -11,6 +11,120 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+class Day45007760002007(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Day_45007760002007'
+
+class Day45007760002601(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Day_45007760002601'
+
+class Day45007760002801(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Day_45007760002801'
+
+class Day45007760003001(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Day_45007760003001'
+
+class Day45007760006501(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Day_45007760006501'
+
+class Hour45007760002007(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Hour_45007760002007'
+
+class Hour45007760002801(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Hour_45007760002801'
+
+class Hour45007760003001(models.Model):
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    isright = models.NullBooleanField(db_column='IsRight', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Hour_45007760003001'
+
+class Modify45007760002007(models.Model):
+    datatime = models.DateTimeField(db_column='DataTime') # Field name made lowercase.
+    stationid = models.TextField(db_column='StationID') # Field name made lowercase.
+    paramcode = models.CharField(db_column='ParamCode', max_length=3) # Field name made lowercase.
+    datatype = models.TextField(db_column='DataType') # Field name made lowercase.
+    dvalue = models.DecimalField(db_column='dValue', max_digits=18, decimal_places=4) # Field name made lowercase.
+    modifytime = models.DateTimeField(db_column='ModifyTime', blank=True, null=True) # Field name made lowercase.
+    flag = models.TextField(db_column='Flag', blank=True) # Field name made lowercase.
+    sipaddress = models.TextField(db_column='sIPAddress', blank=True) # Field name made lowercase.
+    userid = models.IntegerField(db_column='UserID', blank=True, null=True) # Field name made lowercase.
+    swhys = models.CharField(db_column='sWhys', max_length=500, blank=True) # Field name made lowercase.
+    remark = models.CharField(db_column='Remark', max_length=500, blank=True) # Field name made lowercase.
+    id = models.TextField(db_column='ID', blank=True) # Field name made lowercase.
+    isactive = models.NullBooleanField(db_column='IsActive', blank=True, null=True) # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Modify_45007760002007'
+
 class TAdjust(models.Model):
     adjustid = models.CharField(db_column='AdjustID', max_length=20) # Field name made lowercase.
     recodeid = models.ForeignKey('TAdjustrecord', db_column='RecodeID') # Field name made lowercase.
@@ -2493,18 +2607,6 @@ class TStatetype(models.Model):
         managed = False
         db_table = 'T_StateType'
 
-class TStationapplog(models.Model):
-    applogid = models.IntegerField(db_column='AppLogID') # Field name made lowercase.
-    examparmid = models.ForeignKey(TExamproject, db_column='ExamParmID') # Field name made lowercase.
-    logtime = models.DateTimeField(db_column='LogTime') # Field name made lowercase.
-    logid = models.ForeignKey(TLogdict, db_column='LogID', blank=True, null=True) # Field name made lowercase.
-    localreadin = models.CharField(db_column='LocalReadIn', max_length=500, blank=True) # Field name made lowercase.
-    centerreadin = models.CharField(db_column='CenterReadIn', max_length=500, blank=True) # Field name made lowercase.
-    busaddress = models.CharField(db_column='BusAddress', max_length=200, blank=True) # Field name made lowercase.
-    class Meta:
-        managed = False
-        db_table = 'T_StationAppLog'
-
 class TStationkind(models.Model):
     kindid = models.IntegerField(db_column='KindID') # Field name made lowercase.
     kindname = models.CharField(db_column='KindName', max_length=30, blank=True) # Field name made lowercase.
@@ -2522,15 +2624,6 @@ class TStationoptlog(models.Model):
     class Meta:
         managed = False
         db_table = 'T_StationOptLog'
-
-class TStationsyslog(models.Model):
-    syslogid = models.IntegerField(db_column='SysLogID') # Field name made lowercase.
-    logid = models.ForeignKey(TLogdict, db_column='LogID') # Field name made lowercase.
-    stationid = models.ForeignKey(TAllstation, db_column='StationID') # Field name made lowercase.
-    logtime = models.DateTimeField(db_column='LogTime') # Field name made lowercase.
-    class Meta:
-        managed = False
-        db_table = 'T_StationSysLog'
 
 class TStatuschangerecord(models.Model):
     recordid = models.IntegerField(db_column='RecordID') # Field name made lowercase.

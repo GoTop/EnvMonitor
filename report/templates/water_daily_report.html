@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>{{ datetime|date:"Y年m月d日" }}国控企业废水监控情况</title>
+    <title>{{ datetime|date:"Y年m月d日" }}国控企业废水监控{{ type }}报表</title>
 </head>
 <body>
 
@@ -93,7 +93,7 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废水监控情况</h2>
+            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废水监控{{ type }}报表</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>

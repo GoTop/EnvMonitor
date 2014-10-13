@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>{{ datetime|date:"Y年m月d日" }}企业监控点位情况</title>
+    <title>统计异常监控数据个数</title>
 </head>
 <body>
 
@@ -93,56 +93,39 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>{{ datetime|date:"Y年m月d日" }}企业自动监控设备信息</h2>
+            <h2>统计异常监控数据个数</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
                 <tr>
-                    <th>县区</th>
-                    <th>企业名称</th>
-                    <th>组织机构代码</th>
-                    <th>监测点位名称</th>
-                    <th>MN</th>
-                    <th>类型</th>
-                    <th>进口/排放口</th>
-                    <th>2014年国控</th>
-                    <th>监控因子</th>
+                    <th>监控点位</th>
+                    <th>时间</th>
+                    <th colspan="2">COD</th>
+                    <th colspan="2">NH</th>
+                    <th colspan="2">SO2</th>
+                    <th colspan="2">NOx</th>
+
                 </tr>
                 </thead>
                 <tbody>
-                {% for company in object_list %}
+                {% for monitor_data_num_dict in monitor_data_num_dict_list %}
+                    <tr>
+                        <td>{{ monitor_data_num_dict.station_name }}</td>
+                        <td>{{ start_date_string|date:"Y-m-d H:i:s" }}至{{ end_date_string|date:"Y-m-d H:i:s" }}</td>
 
-                    {% for station in company.station_set.all %}
-                        <tr>
-                            <td>{{ company.district }}</td>
-                            <td>{{ company.name }}</td>
-                            <td>{{ company.organ_code }}</td>
-                            <td>{{ station.name }}</td>
-                            <td>{{ station.station_id }}</td>
-                            <td>{{ station.type }}</td>
-                            <td>{{ station.in_or_out }}</td>
+                        <td>{{ monitor_data_num_dict.CODcr_Avg_total_num }}</td>
+                        <td>{{ monitor_data_num_dict.CODcr_Avg_abnormal_num }}</td>
 
-                            {% if station.nationsuprevise %}
-                                <td>是</td>
-                            {% else %}
-                                <td></td>
-                            {% endif %}
+                        <td>{{ monitor_data_num_dict.NH_Avg_total_num }}</td>
+                        <td>{{ monitor_data_num_dict.NH_Avg_abnormal_num }}</td>
 
-                            <td>
-                                 {% for equipment in station.equipment_set.all %}
-                                    {{equipment.data_param.param_remark}}
+                        <td>{{ monitor_data_num_dict.SO2_ZsAvg_total_num }}</td>
+                        <td>{{ monitor_data_num_dict.SO2_ZsAvg_abnormal_num }}</td>
 
-                                    {% if not forloop.last %}
-                                            、
-                                    {% endif %}
-                                 {% endfor %}
+                        <td>{{ monitor_data_num_dict.NOx_ZsAvg_total_num }}</td>
+                        <td>{{ monitor_data_num_dict.NOx_ZsAvg_abnormal_num }}</td>
 
-
-                            </td>
-
-                        </tr>
-                    {% endfor %}
-
+                    </tr>
                 {% endfor %}
                 </tbody>
             </table>

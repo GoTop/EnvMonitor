@@ -2,19 +2,23 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, render_to_response
 from django.views.generic import ListView
-from function.standard import *
+from company.function.string import sort_company_by_district
+#from function.standard import *
 from function.db import SqlServerDB
 import pyodbc
 from company.function.convert import *
-from report.function.report import *
+from report.function.report_func import *
 
 
 class CompanyList(ListView):
     model = Company
+    queryset = sorted(Company.objects.all(), key=sort_company_by_district)
+    template_name = 'company/company_list.html'
 
 
 class StationList(ListView):
     model = Station
+    template_name = 'company/station_list.html'
 
 
 # Create your views here.
@@ -50,4 +54,12 @@ def init_database(request):
 
     get_station_info_func()
 
+    #从excel表中导入企业信息，并与station进行关联
+    get_company_from_excel()
+
     return render_to_response('result.html', {'text': 'success!'})
+
+
+def get_station_from_DB_baise_view(request):
+    station_list = get_station_from_DB_baise()
+    return render_to_response('all_station.html', {'station_list': station_list})

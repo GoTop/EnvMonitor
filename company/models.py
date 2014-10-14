@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 #coding=utf8
+import time
+from django.core.urlresolvers import reverse
 from django.db import models
 from db_baise_models import *
 
@@ -96,6 +98,9 @@ class Company(models.Model):
         verbose_name_plural = '企业'
         unique_together = (("name", "organ_code", "district", "trade"))
 
+    def __unicode__(self):
+        return self.name
+
 
 class MaintainCompany(models.Model):
     #运维商
@@ -106,6 +111,9 @@ class MaintainCompany(models.Model):
         db_table = 'MaintainCompany'
         verbose_name = '运维商'
         verbose_name_plural = '运维商'
+
+    def __unicode__(self):
+        return self.name
 
 
 class Station(models.Model):
@@ -130,10 +138,39 @@ class Station(models.Model):
     #运维单位
     maintain_company = models.ForeignKey(MaintainCompany, null=True)  # Field name made lowercase.
 
+    #显示
+    def district(self):
+        """
+        显示该监控点位的所属的县区
+        """
+        try:
+            district = self.company.district
+        except AttributeError:
+            district = ''
+        return district
+    district.short_description = '县区'
+
+
+    def report_url(self):
+        '''
+        生成显示当天小时数据的连接
+        '''
+        date = time.strftime("%Y%m%d")
+        html = "<a href='%s' target='_blank'>Report</a>" % reverse("station_day_report_url",
+                                                                   args=[self.station_id, date])
+        return html
+
+    report_url.short_description = 'Report'
+    report_url.allow_tags = True
+
+
     class Meta:
         db_table = 'Station'
         verbose_name = '监控点位'
         verbose_name_plural = '监控点位'
+
+    def __unicode__(self):
+        return self.name
 
 
 class DataValidation(models.Model):
@@ -178,6 +215,9 @@ class EquipmentModel(models.Model):
         verbose_name = '分析仪型号'
         verbose_name_plural = '分析仪型号'
 
+    def __unicode__(self):
+        return self.model
+
 
 class Equipment(models.Model):
     #分析仪
@@ -200,6 +240,9 @@ class Equipment(models.Model):
         db_table = 'Equipment'
         verbose_name = '分析仪'
         verbose_name_plural = '分析仪'
+
+    def __unicode__(self):
+        return self.equipment_model
 
 
 class ShutdownDate(models.Model):

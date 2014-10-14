@@ -9,6 +9,11 @@ import datetime
 
 # Create your views here.
 def water_daily_report_view(request, date):
+    """
+    所有废水排放点位的当天日数据报表
+
+    """
+
     mn_list = ['45007760002801', '45007760003001']
 
     #strptime将格式字符串转换为datetime对象
@@ -31,6 +36,9 @@ def water_daily_report_view(request, date):
 
 
 def gas_daily_report_view(request, date):
+    '''
+    所有废气排放点位的当天日数据报表
+    '''
     mn_list = ['45007760002007', '45007760002601']
 
     #strptime将格式字符串转换为datetime对象

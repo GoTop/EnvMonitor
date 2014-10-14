@@ -204,7 +204,7 @@ def get_daily_report_func(mn, date, type):
 
 def get_water_hour_data_report_func(mn, date):
     """
-    获取废气监控点位mn的一天内的小时数据
+    获取废水监控点位mn的一天内的小时数据
     """
     struct_time = time.strptime(date, "%Y%m%d")
 

@@ -49,9 +49,11 @@ def get_standard(request):
 def init_database(request):
     #将T_DataParam表从DB_baise数据库中的数据复制到EnvMonitor数据库的DataParam表中
     get_data_param_table()
+
     #将T_Manufacturer表从DB_baise数据库中的数据复制到EnvMonitor数据库的Manufacturer表中
     get_manufacturer_table()
 
+    #从DB_balse数据库的T_Allstation表中读取监测点位的信息，保存到EnvMonitor数据库的Station表中
     get_station_info_func()
 
     #从excel表中导入企业信息，并与station进行关联

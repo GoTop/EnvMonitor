@@ -123,13 +123,16 @@ def get_company_from_excel():
     从excle表中读取企业、监测点位的信息，进行更新
     """
 
-    file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
-    list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
-    for row in list:
+    # file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
+    # list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
 
+    file_path = settings.IMPORT_PATH + r"百色市2015年重点污染源自动监控设施社会化运行计划.xls"
+    list = excel_table_by_index(file_path=file_path, by_index=0, colname_row=2, data_start_row=3)
+
+    for row in list:
         mn = int(row['MN号'])
 
-        #从DB_baise中获取station的行业信息
+        #从DB_baise中获取station的trade行业信息
         try:
             t_station = T_All_station.objects.using('DB_baise').get(station_id=mn)
             station_trade = t_station.t_trade.remark
@@ -148,79 +151,107 @@ def get_company_from_excel():
         #row['县区'] = convert_district(row['县区'])
         #创建或更新企业信息
 
-        new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
-                                                                     defaults={
-                                                                         'organ_code': row['法人代码'],
-                                                                         'district': row['县区'],
-                                                                         'trade': station_trade}
-        )
+        try:
+            company = Company.objects.get(name=row['污染源单位（业主）'])
+        except ObjectDoesNotExist:
+            company = Company(name=row['污染源单位（业主）'], organ_code=row['法人代码'],
+                              district=row['县区'],
+                              trade=station_trade)
+            company.save()
 
-        manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
+        # new_company, company_created = Company.objects.get_or_create(name=row['污染源单位（业主）'],
+        #                                                              defaults={
+        #                                                                  'organ_code': row['法人代码'],
+        #                                                                  'district': row['县区'],
+        #                                                                  'trade': station_trade}
+        # )
+
+        #manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
+
+        try:
+            manufacturer = Manufacturer.objects.get(remark=row['监控设备厂家'])
+        except ObjectDoesNotExist:
+            manufacturer = Manufacturer(remark=row['监控设备厂家'])
+            manufacturer.save()
 
         if manufacturer:
-            #从EnvMonitor数据库中获取信息
+            #从EnvMonitor数据库station表中（该表数据来源于DB_baise数据库）获取信息
             try:
                 station = Station.objects.get(station_id=mn)
             except ObjectDoesNotExist:
                 station = None
-            if station:
-                #station_type 只有两种
-                station_type = None
-                if row['设备类型'] == 'A':
-                    station_type = '废水'
-                elif row['设备类型'] == 'B':
-                    station_type = '废气'
+        if station:
+            #station_type 只有两种
+            station_type = None
+            if row['设备类型'] == 'A':
+                station_type = '废水'
+            elif row['设备类型'] == 'B':
+                station_type = '废气'
 
-                in_or_out = None
-                if row['进口/排放口'] == '排放口':
-                    in_or_out = '排放口'
-                elif row['进口/排放口'] == '进口':
-                    in_or_out = '进口'
-                #更新station的信息,因为之前未从百色平台导入时未录入
-                station.type = station_type
-                station.in_or_out = in_or_out
-                station.save(update_fields=['type', 'in_or_out'])
+            in_or_out = None
+            if row['进口/排放口'] == '排放口':
+                in_or_out = '排放口'
+            elif row['进口/排放口'] == '进口':
+                in_or_out = '进口'
+            #更新station的信息,因为之前未从百色平台导入时未录入
+            station.type = station_type
+            station.in_or_out = in_or_out
+            station.save(update_fields=['type', 'in_or_out'])
 
-                #设置new_company的station的信息
-                new_company.station_set.add(station)
+            #设置company的station的信息
+            company.station_set.add(station)
 
 
-                #创建或更新国控信息
-                if row['2014国控名单'] == '是':
-                    nation_sup_type = None
-                    if station_type == '废水':
-                        nation_sup_type = '废水'
-                    elif station_type == '废气':
-                        nation_sup_type = '废气'
+            #创建或更新国控信息
+            #暂时禁用
+            # if row['2014国控名单'] == '是':
+            #     nation_sup_type = None
+            #     if station_type == '废水':
+            #         nation_sup_type = '废水'
+            #     elif station_type == '废气':
+            #         nation_sup_type = '废气'
+            #
+            #     #果然station trade是以下类型，则修改相应的nation_sup_type
+            #     if station_trade == '污水处理厂':
+            #         nation_sup_type = '污水处理厂'
+            #     if station_trade == '垃圾填埋厂':
+            #         nation_sup_type = '垃圾填埋厂'
+            #     if row['污染源单位（业主）属性'] == 'F' or row['污染源单位（业主）属性'] == 'AF':
+            #         nation_sup_type = '重金属'
+            #     #获取或更新国控信息
+            #     NationSuprevise.objects.get_or_create(station=station, year='2014', type=nation_sup_type)
 
-                    #果然station trade是以下类型，则修改相应的nation_sup_type
-                    if station_trade == '污水处理厂':
-                        nation_sup_type = '污水处理厂'
-                    if station_trade == '垃圾填埋厂':
-                        nation_sup_type = '垃圾填埋厂'
-                    if row['污染源单位（业主）属性'] == 'F' or row['污染源单位（业主）属性'] == 'AF':
-                        nation_sup_type = '重金属'
-                    #获取或更新国控信息
-                    NationSuprevise.objects.get_or_create(station=station, year='2014', type=nation_sup_type)
+            param_remark_list = row['监控因子'].split("、")
+            for param_remark in param_remark_list:
+                #DataParam表中有('CODcr','氨氮','PH','SO2','NOx','六价铬','总锰','总铅','总镉','砷')
+                #DataParam表中有COD对应的是CODcr
+                if param_remark == 'COD':
+                    param_remark = 'CODcr'
+                #DataParam表中有没有'水中油'
+                if param_remark == '水中油':
+                    continue
+                data_param = DataParam.objects.get(param_remark=param_remark)
+                if data_param:
+                    #创建或更新检测仪信息
+                    # equipment, equipment_created = Equipment.objects.get_or_create(station=station,
+                    #                                                                data_param=data_param,
+                    #                                                                manufacturer=manufacturer)
 
-                param_remark_list = row['监控因子'].split("、")
-                for param_remark in param_remark_list:
-                    #DataParam表中有('CODcr','氨氮','PH','SO2','NOx','六价铬','总锰','总铅','总镉','砷')
-                    #DataParam表中有COD对应的是CODcr
-                    if param_remark == 'COD':
-                        param_remark = 'CODcr'
-                    #DataParam表中有没有'水中油'
-                    if param_remark == '水中油':
-                        continue
-                    data_param = DataParam.objects.get(param_remark=param_remark)
-                    if data_param:
-                        #创建或更新检测仪信息
-                        equipment, equipment_created = Equipment.objects.get_or_create(station=station,
-                                                                                       data_param=data_param,
-                                                                                       manufacturer=manufacturer)
-                        #设置station的equipment的信息
-                        if equipment:
-                            station.equipment_set.add(equipment)
+                    try:
+                        equipment = Equipment.objects.get(station=station,
+                                                             data_param=data_param,
+                                                             manufacturer=manufacturer)
+                    except ObjectDoesNotExist:
+                        equipment = Equipment(station=station,
+                                                 data_param=data_param,
+                                                 manufacturer=manufacturer)
+                        equipment.save()
+
+                    #设置station的equipment的信息
+                    if equipment:
+                        station.equipment_set.add(equipment)
+
+
     return list
 
 

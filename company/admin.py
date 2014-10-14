@@ -39,8 +39,16 @@ class MaintainCompany_Admin(admin.ModelAdmin):
 class ShutdownDate_Admin(admin.ModelAdmin):
     pass
 
+class Equipment_Admin(admin.ModelAdmin):
+    pass
+
+class Manufacturer_Admin(admin.ModelAdmin):
+    pass
+
 
 admin.site.register(Station, Station_Admin)
 admin.site.register(Company, Company_Admin)
 admin.site.register(MaintainCompany, MaintainCompany_Admin)
 admin.site.register(ShutdownDate, ShutdownDate_Admin)
+admin.site.register(Equipment, Equipment_Admin)
+admin.site.register(Manufacturer, Manufacturer_Admin)

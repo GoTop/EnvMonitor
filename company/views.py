@@ -57,10 +57,17 @@ def init_database(request):
     get_station_info_func()
 
     #从excel表中导入企业信息，并与station进行关联
-    get_company_from_excel()
+    #get_company_from_excel()
 
     return render_to_response('result.html', {'text': 'success!'})
 
+def get_company_from_excel_view(request):
+    """
+    从excel表中导入企业信息，并与station进行关联
+    """
+    get_company_from_excel()
+
+    return render_to_response('result.html', {'text': 'success!'})
 
 def get_station_from_DB_baise_view(request):
     station_list = get_station_from_DB_baise()

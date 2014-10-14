@@ -10,6 +10,8 @@ urlpatterns = [
     #初始化数据库
     url(r'^init_database', views.init_database),
 
+    url(r'^get_company_from_excel', views.get_company_from_excel_view),
+
     url(r'^get_station_info', views.get_station_info),
 
     url(r'^get_station_from_db_baise_view', views.get_station_from_DB_baise_view),

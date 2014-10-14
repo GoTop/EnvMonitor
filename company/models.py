@@ -33,6 +33,12 @@ class Manufacturer(models.Model):
         #managed = False
         db_table = 'Manufacturer'
 
+        verbose_name = '设备制造商'
+        verbose_name_plural = '设备制造商'
+    def __unicode__(self):
+        return self.remark
+
+
 
 class Company(models.Model):
     #企业信息
@@ -148,6 +154,7 @@ class Station(models.Model):
         except AttributeError:
             district = ''
         return district
+
     district.short_description = '县区'
 
 
@@ -242,7 +249,7 @@ class Equipment(models.Model):
         verbose_name_plural = '分析仪'
 
     def __unicode__(self):
-        return self.equipment_model
+        return self.equipment_model.model
 
 
 class ShutdownDate(models.Model):
@@ -257,6 +264,9 @@ class ShutdownDate(models.Model):
         db_table = 'ShutDownDate'
         verbose_name = '停运时间'
         verbose_name_plural = '停运时间'
+
+    def __unicode__(self):
+        return self.company + self.start_date + self.end_date
 
 
 class NationSuprevise(models.Model):

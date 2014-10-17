@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 import os
 from django.core.exceptions import ObjectDoesNotExist
 import time
+from django.db import connection
+
 from EnvMonitor import settings
 from company.function.excel import excel_table_by_index
 from company.function.string import sort_station_by_district
@@ -10,6 +12,7 @@ from company.function.string import sort_station_by_district
 __author__ = 'GoTop'
 
 from report.models import DataParam
+from company.para_models import T_Trade
 from company.models import *
 from company.db_baise_models import *
 
@@ -121,6 +124,7 @@ def get_station_from_excel():
 def get_company_from_excel():
     """
     从excle表中读取企业、监测点位的信息，进行更新
+    如果，T_All_station有的点位，excle中没有，则无法填写县区
     """
 
     # file_path = settings.IMPORT_PATH + r"2013年重点污染源自动监控设施社会化运行计划（百色）.xls"
@@ -137,7 +141,9 @@ def get_company_from_excel():
             t_station = T_All_station.objects.using('DB_baise').get(station_id=mn)
             station_trade = t_station.t_trade.remark
         except ObjectDoesNotExist:
-            station_trade = None
+            #如果遇到excle表中的企业，在T_All_station数据库中不存在，比如“广西百色那荷矿业有限责任公司”
+            #则将其trade设置为其他
+            station_trade = T_Trade.objects.using('DB_baise').get(pk=1).remark
 
         #row['污染源单位（业主）属性']的代码含义如下：
         # A:国控重点污染源
@@ -239,18 +245,17 @@ def get_company_from_excel():
 
                     try:
                         equipment = Equipment.objects.get(station=station,
-                                                             data_param=data_param,
-                                                             manufacturer=manufacturer)
+                                                          data_param=data_param,
+                                                          manufacturer=manufacturer)
                     except ObjectDoesNotExist:
                         equipment = Equipment(station=station,
-                                                 data_param=data_param,
-                                                 manufacturer=manufacturer)
+                                              data_param=data_param,
+                                              manufacturer=manufacturer)
                         equipment.save()
 
                     #设置station的equipment的信息
                     if equipment:
                         station.equipment_set.add(equipment)
-
 
     return list
 
@@ -280,12 +285,26 @@ def get_manufacturer_table():
     """
     t_manufacturer_set = T_Manufacturer.objects.using('DB_baise').all()
     for t_manufacturer in t_manufacturer_set:
-        new_manufacturer, created = Manufacturer.objects.get_or_create(id=t_manufacturer.manufacturer_id,
-                                                                       remark=t_manufacturer.remark,
-                                                                       contact_person=t_manufacturer.link_man,
-                                                                       phone=t_manufacturer.phone,
-                                                                       is_have_run_ipmp=t_manufacturer.is_have_run_ipmp
+        # new_manufacturer, created = Manufacturer.objects.get_or_create(id=t_manufacturer.manufacturer_id,
+        #                                                                remark=t_manufacturer.remark,
+        #                                                                contact_person=t_manufacturer.link_man,
+        #                                                                phone=t_manufacturer.phone,
+        #                                                                is_have_run_ipmp=t_manufacturer.is_have_run_ipmp
+        #
+        # )
 
-        )
+        try:
+            manufacturer = Manufacturer.objects.get(id=t_manufacturer.manufacturer_id,
+                                                    remark=t_manufacturer.remark,
+                                                    contact_person=t_manufacturer.link_man,
+                                                    phone=t_manufacturer.phone,
+                                                    is_have_run_ipmp=t_manufacturer.is_have_run_ipmp)
+        except ObjectDoesNotExist:
+            manufacturer = Manufacturer(id=t_manufacturer.manufacturer_id,
+                                        remark=t_manufacturer.remark,
+                                        contact_person=t_manufacturer.link_man,
+                                        phone=t_manufacturer.phone,
+                                        is_have_run_ipmp=t_manufacturer.is_have_run_ipmp)
+            manufacturer.save()
 
 

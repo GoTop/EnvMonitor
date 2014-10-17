@@ -96,7 +96,7 @@ class Company(models.Model):
     #地址
     address = models.CharField(max_length=80, blank=True)  # Field name made lowercase.
     #行业类型
-    trade = models.CharField(max_length=20, choices=TRADE_CHOICES)
+    trade = models.CharField(max_length=20, choices=TRADE_CHOICES, blank=True, null=True)
 
     class Meta:
         db_table = 'Company'

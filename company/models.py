@@ -130,17 +130,17 @@ class Station(models.Model):
     )
     PORT_CHOICES = (
         ('进口', '进口'),
-        ('出口', '出口'),
+        ('排放口', '排放口'),
     )
     station_id = models.CharField(primary_key=True, max_length=14)  # Field name made lowercase.
     #水或气
-    type = models.CharField(max_length=10, choices=TYPE_CHOICES, default='water', blank=True, null=True)
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES, default='废水', blank=True, null=True)
     #监测点位所属的企业
     company = models.ForeignKey(Company, blank=True, null=True)
     #监测点位名称
     name = models.CharField(max_length=50)
     #进口或出口，窑头或窑尾
-    in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='out')
+    in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='排放口')
     #运维单位
     maintain_company = models.ForeignKey(MaintainCompany, null=True)  # Field name made lowercase.
 
@@ -255,7 +255,7 @@ class Equipment(models.Model):
 class ShutdownDate(models.Model):
     #停运时间
     #id = models.CharField(primary_key=True, max_length=10)
-    company = models.ForeignKey('Company')
+    station = models.ForeignKey('Station')
     start_date = models.DateTimeField(blank=True, null=True)
     end_date = models.DateTimeField(blank=True, null=True)
     comment = models.TextField(blank=True)
@@ -266,7 +266,8 @@ class ShutdownDate(models.Model):
         verbose_name_plural = '停运时间'
 
     def __unicode__(self):
-        return self.company + self.start_date + self.end_date
+        return self.station.name + ' 从'+ self.start_date.strftime('%Y-%m-%d %H:%M:%S')+\
+               '至' + self.end_date.strftime('%Y-%m-%d %H:%M:%S')
 
 
 class NationSuprevise(models.Model):

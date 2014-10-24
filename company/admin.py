@@ -1,4 +1,5 @@
 from django.contrib import admin
+from company.admin_filter import DistrictListFilter
 from company.models import *
 from company.db_baise_models import *
 # Register your models here.
@@ -15,7 +16,8 @@ class Station_Admin(admin.ModelAdmin):
         DatavalidationInline,
     ]
 
-    list_filter = ('company', )
+    list_filter = ( DistrictListFilter, 'type', 'in_or_out',)
+
 
     search_fields = ['name']
 
@@ -36,8 +38,10 @@ class MaintainCompany_Admin(admin.ModelAdmin):
     pass
 
 
+
+
 class ShutdownDate_Admin(admin.ModelAdmin):
-    pass
+    list_filter = (DistrictListFilter,)
 
 class Equipment_Admin(admin.ModelAdmin):
     pass

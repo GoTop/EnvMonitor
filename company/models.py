@@ -98,6 +98,8 @@ class Company(models.Model):
     #行业类型
     trade = models.CharField(max_length=20, choices=TRADE_CHOICES, blank=True, null=True)
 
+    is_use = models.BooleanField(default=True)
+
     class Meta:
         db_table = 'Company'
         verbose_name = '企业'
@@ -143,6 +145,8 @@ class Station(models.Model):
     in_or_out = models.CharField(max_length=10, blank=True, choices=PORT_CHOICES, default='排放口')
     #运维单位
     maintain_company = models.ForeignKey(MaintainCompany, null=True)  # Field name made lowercase.
+
+    is_use = models.BooleanField(default=True)
 
     #显示
     def district(self):

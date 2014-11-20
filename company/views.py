@@ -63,7 +63,7 @@ def init_database(request):
 
 def get_company_from_excel_view(request):
     """
-    从excel表中导入企业信息，并与station进行关联
+    从excel表中导入企业信息到Company表，并与station进行关联
     """
     get_company_from_excel()
 

@@ -123,7 +123,13 @@ def get_station_from_excel():
 
 def get_company_from_excel():
     """
-    从excle表中读取企业、监测点位的信息，进行更新
+    从《2015年重点污染源自动监控设施社会化运行计划（百色）》excle表中读取企业信息，导入Company表
+
+    在Company表中新建相关企业信息
+    在Manufacturer表中新建设备设备商信息
+    更新Station的类型和进口/排放口信息，通过mn号，将station信息与company表进行关联
+    在Equipment表中，新增分析仪信息，并与station表进行关联
+
     如果，T_All_station有的点位，excle中没有，则无法填写县区
     """
 
@@ -136,7 +142,7 @@ def get_company_from_excel():
     for row in list:
         mn = int(row['MN号'])
 
-        #从DB_baise中获取station的trade行业信息
+        #从DB_baise数据库中获取station表的设置的trade行业信息
         try:
             t_station = T_All_station.objects.using('DB_baise').get(station_id=mn)
             station_trade = t_station.t_trade.remark
@@ -174,6 +180,7 @@ def get_company_from_excel():
 
         #manufacturer, manufacturer_created = Manufacturer.objects.get_or_create(remark=row['监控设备厂家'])
 
+        #在Manufacturer表中，新建监控设备厂家
         try:
             manufacturer = Manufacturer.objects.get(remark=row['监控设备厂家'])
         except ObjectDoesNotExist:
@@ -199,7 +206,8 @@ def get_company_from_excel():
                 in_or_out = '排放口'
             elif row['进口/排放口'] == '进口':
                 in_or_out = '进口'
-            #更新station的信息,因为之前未从百色平台导入时未录入
+
+            #更新station的类型和进口/排放口信息,因为之前未从百色平台导入时未录入
             station.type = station_type
             station.in_or_out = in_or_out
             station.save(update_fields=['type', 'in_or_out'])

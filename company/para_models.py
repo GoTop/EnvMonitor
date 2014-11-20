@@ -4,6 +4,8 @@ from django.db import models
 from company.models import *
 from company.db_baise_models import *
 
+#从DB_baise数据库中将一些参数的表复制到EnvMonitor数据库中，以便在EnvMonitor数据库中自建的表对其进行关联
+#不对这些表进行写操作
 
 class T_Water_shed(models.Model):
     water_shed_id = models.IntegerField(db_column='WaterShedID')  # Field name made lowercase.

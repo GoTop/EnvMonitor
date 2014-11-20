@@ -88,7 +88,7 @@ s = "[42000] [Microsoft][SQL Native Client][SQL Server]\xcd\xe2\xbc\xfc 'mn_refs
 
 s= "[42S02] [Microsoft][SQL Native Client][SQL Server]\xb6\xd4\xcf\xf3\xc3\xfb  'Manufacturer' \xce\xde\xd0\xa7\xa1\xa3 (208) (SQLExecDirectW); [42000] [Microsoft][SQL Native Client][SQL Server]\xce\xb4\xc4\xdc\xd7\xbc\xb1\xb8\xd3\xef\xbe\xe4\xa1\xa3 (8180)"
 s = '[22001] [Microsoft][SQL Native Client][SQL Server]\xbd\xab\xbd\xd8\xb6\xcf\xd7\xd6\xb7\xfb\xb4\xae\xbb\xf2\xb6\xfe\xbd\xf8\xd6\xc6\xca\xfd\xbe\xdd\xa1\xa3 (8152) (SQLExecDirectW); [01000] [Microsoft][SQL Native Client][SQL Server]\xd3\xef\xbe\xe4\xd2\xd1\xd6\xd5\xd6\xb9\xa1\xa3 (3621)'
-s = "[42S02] [Microsoft][SQL Native Client][SQL Server]\xb6\xd4\xcf\xf3\xc3\xfb  'Hour_45007760002510' \xce\xde\xd0\xa7\xa1\xa3 (208) (SQLExecDirectW)"
+s = "[42S02] [Microsoft][SQL Native Client][SQL Server]\xb6\xd4\xcf\xf3\xc3\xfb  'Company' \xce\xde\xd0\xa7\xa1\xa3 (208) (SQLExecDirectW)"
 print s.decode('gbk')
 
 

@@ -42,7 +42,7 @@ TEMPLATE_DIRS = (
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    #     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 ALLOWED_HOSTS = []
@@ -57,11 +57,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'bootstrap3',
-    #'south',
-    'company',
-    'report',
+    'smart_selects',
+    # 'bootstrap3',
+    # 'south',
+    # 'company',
+    #'report',
+    'testapp',
+
 )
+JQUERY_URL = 'http://code.jquery.com/jquery-1.7.2.min.js'
+USE_DJANGO_JQUERY = False
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -83,8 +88,8 @@ WSGI_APPLICATION = 'EnvMonitor.wsgi.application'
 
 DATABASES = {
     # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # 'ENGINE': 'django.db.backends.sqlite3',
+    # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
 }
 

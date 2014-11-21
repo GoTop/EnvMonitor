@@ -58,15 +58,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'smart_selects',
+    'selectable',
     # 'bootstrap3',
     # 'south',
     # 'company',
     #'report',
+    #'statistics',
     'testapp',
 
 )
-JQUERY_URL = 'http://code.jquery.com/jquery-1.7.2.min.js'
-USE_DJANGO_JQUERY = False
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -111,6 +112,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# add 2014-11-20
+# django.contrib.staticfiles 要求设置STATIC_ROOT和MEDIA_ROOT，这样能自动收集所有的静态文件到指定的目录下
+STATIC_ROOT = BASE_DIR + '/static/'
+
+MEDIA_ROOT = BASE_DIR + '/media/'
 
 '''This code will try to find a file named local_settings.py in the same directory as the
 settings file. If it succeeds, it will import everything defined in the file. If no such file exists,

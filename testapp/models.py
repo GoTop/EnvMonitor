@@ -41,6 +41,3 @@ class Location(models.Model):
     street = models.CharField(max_length=100)
 
 
-class LocationForm(ModelForm):
-    class Meta:
-        model = Location

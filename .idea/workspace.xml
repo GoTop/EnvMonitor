@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d123c28c-aad3-498f-ab22-a7f8cafca0b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/advanced.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/formset.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/nav.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/function/lookups.py" afterPath="$PROJECT_DIR$/testapp/function/lookups.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/templates/selectable_form.html" afterPath="$PROJECT_DIR$/testapp/templates/selectable_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvMonitor/settings.py" afterPath="$PROJECT_DIR$/EnvMonitor/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/views.py" afterPath="$PROJECT_DIR$/testapp/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EnvMonitor.iws" />
@@ -38,65 +30,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="lookups.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/function/lookups.py">
+      <file leaf-file-name="abnormal_func.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="4" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="480">
+            <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="2280">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/views.py">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="33" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="540">
+            <state line="134" column="0" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0" vertical-offset="2381" max-vertical-offset="2800">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectable_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/selectable_form.html">
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="24" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="680">
+            <state line="6" column="43" selection-start="265" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1280">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="1" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="advanced.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/advanced.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-              <folding>
-                <marker date="1413883254000" expanded="true" signature="160:308" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="189:218" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="240:300" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="377:607" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="412:596" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="452:511" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/nav.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="240">
-              <folding>
-                <marker date="1416560975142" expanded="true" signature="15:356" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -121,28 +77,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/base.html">
+      <file leaf-file-name="nav.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="43" selection-start="265" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1280">
+            <state line="6" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="240">
+              <folding>
+                <marker date="1416560975142" expanded="true" signature="15:356" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advanced.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/advanced.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+              <folding>
+                <marker date="1413883254000" expanded="true" signature="160:308" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="189:218" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="240:300" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="377:607" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="412:596" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="452:511" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="1" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
+      <file leaf-file-name="selectable_form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/selectable_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="0" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0" vertical-offset="2381" max-vertical-offset="2800">
+            <state line="12" column="24" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="680">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="abnormal_func.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.3693182" vertical-offset="0" max-vertical-offset="2280">
+            <state line="21" column="33" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="540">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lookups.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/function/lookups.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="4" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
@@ -453,7 +445,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="EnvMonitor" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -479,27 +491,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="EnvMonitor" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -772,7 +764,11 @@
       <created>1416543017729</created>
       <updated>1416543017729</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="测试selectable module，还未成功2">
+      <created>1416561752077</created>
+      <updated>1416561752077</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -804,7 +800,7 @@
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283871" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22193548" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14129032" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15870968" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16064516" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5298913" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46331522" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -812,12 +808,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47554347" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11548913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11548913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -836,9 +832,9 @@
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14129032" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1567742" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4660326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4660326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -853,7 +849,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="编写将数据转换为unicode的方法1 @work 2014-3-17 下午" />
     <MESSAGE value="将mn修改为station_id @work 2014-3-18 下午" />
     <MESSAGE value="在convert company函数中增加更新国控信息的功能 @home 2014-3-25早上" />
     <MESSAGE value="在company list view 中显示station 1 @home 2014-3- 26下午" />
@@ -878,7 +873,8 @@
     <MESSAGE value="修复好从excel导入company信息的功能&#10;" />
     <MESSAGE value="在company和station model中加入is_use字段，用来表明企业和监控点位是否在用" />
     <MESSAGE value="测试selectable module，还未成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试selectable module，还未成功" />
+    <MESSAGE value="测试selectable module，还未成功2" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试selectable module，还未成功2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1205,7 +1201,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.3693182" vertical-offset="0" max-vertical-offset="2280">
+        <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="2280">
           <folding />
         </state>
       </provider>

@@ -31,6 +31,8 @@ TEMPLATE_DEBUG = True
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
+
+
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -118,6 +120,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR + '/static/'
 
 MEDIA_ROOT = BASE_DIR + '/media/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 '''This code will try to find a file named local_settings.py in the same directory as the
 settings file. If it succeeds, it will import everything defined in the file. If no such file exists,

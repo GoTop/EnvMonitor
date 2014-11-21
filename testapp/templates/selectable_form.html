@@ -3,15 +3,22 @@
 <head lang="en">
     <meta charset="UTF-8">
 
-    {% load selectable_tags %}
-    {% include_jquery_libs %}
-    {% include_ui_theme %}
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/
+1.8.13/themes/ui-lightness/jquery-ui.css" type="text/css"/>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/
+jquery/1.4.4/jquery.min.js"></script>
+    {{ form.media.js }}
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/
+jqueryui/1.8.13/jquery-ui.min.js"></script>
+    {{ form.media.css }}
 
     <title></title>
 </head>
 <body>
 {% block content %}
     <form action='' method='post' enctype='multipart/form-data'>
+        {{ form.media.css }}
+        {{ form.media.js }}
         {{ form.as_p }}
         {% csrf_token %}
         <input type='submit' value='submit'/>

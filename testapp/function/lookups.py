@@ -10,7 +10,7 @@ __author__ = 'GoTop'
 
 class CountryLookup(ModelLookup):
     model = Country
-    search_field = 'content__contains'
+    search_field = 'country__icontains'
 
 try:
     registry.register(CountryLookup)

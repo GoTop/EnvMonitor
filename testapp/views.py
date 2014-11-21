@@ -18,4 +18,5 @@ def selectable_form(request):
         form = CountryForm(data=request.POST)
     else:
         form = CountryForm()
-    return render_to_response('selectable_form.html', {'form': form})
+    #return render_to_response('selectable_form.html', {'form': form})
+    return render_to_response('base.html', {'form': form})

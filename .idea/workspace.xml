@@ -2,93 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d123c28c-aad3-498f-ab22-a7f8cafca0b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/changelist-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/changelist-bg_rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/chooser-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/chooser_stacked-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/default-bg-reverse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/default-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/deleted-overlay.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon-no.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon-yes.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_addlink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_alert.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_calendar.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_changelink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_clock.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_deletelink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_error.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_searchbox.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_success.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-delete-8bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-restore-8bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-restore.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-splitter-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg-grabber.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg-reverse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg-selected.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/selector-icons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/selector-search.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/sorting-icons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-left.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-left_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-right.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-right_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/LICENSE-JQUERY.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistics/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/function/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/actions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/actions.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistics/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/base.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/collapse.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/dashboard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/selectable/css/dj.selectable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/form.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/forms.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/inlines.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/inlines.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/selectable/js/jquery.dj.selectable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/jquery.init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/function/lookups.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistics/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/selectable_form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/smart_selects_form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistics/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/timeparse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistics/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" />
-      <change type="DELETED" beforePath="E:\django-project\EnvMonitor\testapp\templates\form.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/models.py" afterPath="$PROJECT_DIR$/testapp/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/advanced.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/formset.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/templates/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/function/lookups.py" afterPath="$PROJECT_DIR$/testapp/function/lookups.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/templates/selectable_form.html" afterPath="$PROJECT_DIR$/testapp/templates/selectable_form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvMonitor/settings.py" afterPath="$PROJECT_DIR$/EnvMonitor/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvMonitor/urls.py" afterPath="$PROJECT_DIR$/EnvMonitor/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/urls.py" afterPath="$PROJECT_DIR$/testapp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/views.py" afterPath="$PROJECT_DIR$/testapp/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -118,21 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/urls.py">
+      <file leaf-file-name="lookups.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/function/lookups.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <folding>
-                <element signature="e#15#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selectable_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/selectable_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="211" selection-end="211" vertical-scroll-proportion="-8.275862" vertical-offset="0" max-vertical-offset="540">
+            <state line="14" column="4" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
@@ -141,58 +50,99 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="50" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="520">
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/form.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="600">
-              <folding>
-                <element signature="e#15#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="26" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="980">
+            <state line="21" column="33" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lookups.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/function/lookups.py">
+      <file leaf-file-name="selectable_form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/selectable_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="36" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <folding>
-                <element signature="e#15#54#0" expanded="true" />
-              </folding>
+            <state line="12" column="24" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="680">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
+        <entry file="file://$PROJECT_DIR$/testapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
+            <state line="12" column="1" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="advanced.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/advanced.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+              <folding>
+                <marker date="1413883254000" expanded="true" signature="160:308" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="189:218" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="240:300" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="377:607" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="412:596" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="452:511" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="240">
+              <folding>
+                <marker date="1416560975142" expanded="true" signature="15:356" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formset.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/formset.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
+              <folding>
+                <marker date="1413883254000" expanded="true" signature="352:586" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="387:575" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="434:567" placeholder="{&quot;prefix&quot;: '{{ formset.prefix }}'...}" />
+                <marker date="1413883254000" expanded="true" signature="510:557" placeholder="{...}" />
+                <marker date="1413883254000" expanded="true" signature="681:1450" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="785:1406" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="805:1009" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="826:988" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="1029:1389" placeholder="..." />
+                <marker date="1413883254000" expanded="true" signature="1180:1339" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testapp/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="43" selection-start="265" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1280">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="19" selection-start="3293" selection-end="3293" vertical-scroll-proportion="0.7159904" vertical-offset="2220" max-vertical-offset="2680">
+            <state line="134" column="0" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0" vertical-offset="2381" max-vertical-offset="2800">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="abnormal_func.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.3693182" vertical-offset="0" max-vertical-offset="2280">
               <folding />
             </state>
           </provider>
@@ -256,12 +206,13 @@
         <option value="$PROJECT_DIR$/testapp/models.py" />
         <option value="$PROJECT_DIR$/testapp/templates/form.html" />
         <option value="$PROJECT_DIR$/testapp/templates/smart_selects_form.html" />
-        <option value="$PROJECT_DIR$/testapp/views.py" />
         <option value="$PROJECT_DIR$/testapp/urls.py" />
-        <option value="$PROJECT_DIR$/testapp/function/lookups.py" />
         <option value="$PROJECT_DIR$/testapp/form.py" />
-        <option value="$PROJECT_DIR$/EnvMonitor/settings.py" />
+        <option value="$PROJECT_DIR$/testapp/function/lookups.py" />
         <option value="$PROJECT_DIR$/testapp/templates/selectable_form.html" />
+        <option value="$PROJECT_DIR$/testapp/views.py" />
+        <option value="$PROJECT_DIR$/testapp/templates/nav.html" />
+        <option value="$PROJECT_DIR$/EnvMonitor/settings.py" />
       </list>
     </option>
   </component>
@@ -332,6 +283,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -343,7 +308,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/django-selectable-master" />
     <property name="FullScreen" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="140" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
@@ -377,6 +342,9 @@
       <recent name="E:\django-project\EnvMonitor\report" />
       <recent name="E:\django-project\EnvMonitor\report\templates" />
       <recent name="E:\django-project\EnvMonitor\report\function" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\django-project\EnvMonitor\testapp\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.EnvMonitor">
@@ -485,27 +453,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="EnvMonitor" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -531,7 +479,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="EnvMonitor" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -800,7 +768,11 @@
       <created>1416475858028</created>
       <updated>1416475858028</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="测试selectable module，还未成功">
+      <created>1416543017729</created>
+      <updated>1416543017729</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -832,20 +804,20 @@
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283871" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22193548" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14129032" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1567742" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15870968" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5298913" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46331522" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38722825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38722825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47554347" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11548913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -864,9 +836,9 @@
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14129032" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1567742" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4660326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -881,7 +853,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="从excel中读取company信息，并更新station信息2 @home 2014-3-17 上午" />
     <MESSAGE value="编写将数据转换为unicode的方法1 @work 2014-3-17 下午" />
     <MESSAGE value="将mn修改为station_id @work 2014-3-18 下午" />
     <MESSAGE value="在convert company函数中增加更新国控信息的功能 @home 2014-3-25早上" />
@@ -906,7 +877,8 @@
     <MESSAGE value="改写从excle获取company，station等信息的功能。&#10;&#10;弃用get_or_create()&#10;" />
     <MESSAGE value="修复好从excel导入company信息的功能&#10;" />
     <MESSAGE value="在company和station model中加入is_use字段，用来表明企业和监控点位是否在用" />
-    <option name="LAST_COMMIT_MESSAGE" value="在company和station model中加入is_use字段，用来表明企业和监控点位是否在用" />
+    <MESSAGE value="测试selectable module，还未成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试selectable module，还未成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -939,31 +911,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/company/templates/company/station_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="291" selection-end="291" vertical-scroll-proportion="-8.965517" vertical-offset="0" max-vertical-offset="380" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/function/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/company/function/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180" />
-      </provider>
-    </entry>
     <entry file="file://E:/Python27/Lib/site-packages/django/shortcuts/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="0" selection-start="1567" selection-end="1567" vertical-scroll-proportion="-4.011494" vertical-offset="2385" max-vertical-offset="3180" />
@@ -1073,9 +1020,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/company/db_baise_models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="25" selection-start="7750" selection-end="7750" vertical-scroll-proportion="0.0" vertical-offset="2406" max-vertical-offset="5200">
-          <folding />
-        </state>
+        <state line="127" column="25" selection-start="7750" selection-end="7750" vertical-scroll-proportion="0.0" vertical-offset="2406" max-vertical-offset="5200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/admin_filter.py">
@@ -1085,16 +1030,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/report/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="29" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.549273" vertical-offset="20" max-vertical-offset="1960">
-          <folding />
-        </state>
+        <state line="19" column="29" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.549273" vertical-offset="20" max-vertical-offset="1960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="31" selection-start="998" selection-end="998" vertical-scroll-proportion="0.4318182" vertical-offset="476" max-vertical-offset="1180">
-          <folding />
-        </state>
+        <state line="39" column="31" selection-start="998" selection-end="998" vertical-scroll-proportion="0.4318182" vertical-offset="476" max-vertical-offset="1180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/report/admin.py">
@@ -1104,129 +1045,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/company/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="1220">
-          <folding />
-        </state>
+        <state line="29" column="0" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="1220" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="6" selection-start="1642" selection-end="1642" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="6160">
-          <folding />
-        </state>
+        <state line="42" column="6" selection-start="1642" selection-end="1642" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="6160" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/para_models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="4657" selection-end="4657" vertical-scroll-proportion="3.6184487" vertical-offset="94" max-vertical-offset="2020">
-          <folding />
-        </state>
+        <state line="93" column="0" selection-start="4657" selection-end="4657" vertical-scroll-proportion="3.6184487" vertical-offset="94" max-vertical-offset="2020" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="580">
-          <folding />
-        </state>
+        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="580" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="20" selection-start="1652" selection-end="1673" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="1540">
-          <folding />
-        </state>
+        <state line="56" column="20" selection-start="1652" selection-end="1673" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="1540" />
       </provider>
     </entry>
     <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/django/forms/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="770" selection-end="770" vertical-scroll-proportion="0.57416266" vertical-offset="0" max-vertical-offset="11520">
-          <folding />
-        </state>
+        <state line="26" column="13" selection-start="770" selection-end="770" vertical-scroll-proportion="0.57416266" vertical-offset="0" max-vertical-offset="11520" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="12" selection-start="80" selection-end="80" vertical-scroll-proportion="0.23201856" vertical-offset="0" max-vertical-offset="431">
-          <folding />
-        </state>
+        <state line="5" column="12" selection-start="80" selection-end="80" vertical-scroll-proportion="0.23201856" vertical-offset="0" max-vertical-offset="431" />
       </provider>
     </entry>
     <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/selectable/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.27842227" vertical-offset="0" max-vertical-offset="431">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.27842227" vertical-offset="0" max-vertical-offset="431" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testapp/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="431">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="431" />
       </provider>
     </entry>
     <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/selectable/forms/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="8" selection-start="965" selection-end="965" vertical-scroll-proportion="0.33240998" vertical-offset="400" max-vertical-offset="4960">
-          <folding />
-        </state>
+        <state line="37" column="8" selection-start="965" selection-end="965" vertical-scroll-proportion="0.33240998" vertical-offset="400" max-vertical-offset="4960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testapp/templates/smart_selects_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="86" selection-start="153" selection-end="153" vertical-scroll-proportion="0.15904573" vertical-offset="0" max-vertical-offset="503">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding>
-            <element signature="e#15#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="50" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="520">
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testapp/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="600">
-          <folding>
-            <element signature="e#15#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="26" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="980">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testapp/function/lookups.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="36" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding>
-            <element signature="e#15#54#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="4" column="86" selection-start="153" selection-end="153" vertical-scroll-proportion="0.15904573" vertical-offset="0" max-vertical-offset="503" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-          <folding />
-        </state>
+        <state line="22" column="0" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/function/convert.py">
@@ -1236,16 +1110,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="26" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="600" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="6" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="137" max-vertical-offset="980" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/function/lookups.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="4" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testapp/templates/selectable_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="211" selection-end="211" vertical-scroll-proportion="-8.275862" vertical-offset="0" max-vertical-offset="540">
+        <state line="12" column="24" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="1" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="33" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/templates/formset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
+          <folding>
+            <marker date="1413883254000" expanded="true" signature="352:586" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="387:575" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="434:567" placeholder="{&quot;prefix&quot;: '{{ formset.prefix }}'...}" />
+            <marker date="1413883254000" expanded="true" signature="510:557" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="681:1450" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="785:1406" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="805:1009" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="826:988" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="1029:1389" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="1180:1339" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/templates/advanced.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding>
+            <marker date="1413883254000" expanded="true" signature="160:308" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="189:218" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="240:300" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="377:607" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="412:596" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="452:511" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/templates/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="240">
+          <folding>
+            <marker date="1416560975142" expanded="true" signature="15:356" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="43" selection-start="265" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1280">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="19" selection-start="3293" selection-end="3293" vertical-scroll-proportion="0.7159904" vertical-offset="2220" max-vertical-offset="2680">
+        <state line="134" column="0" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0" vertical-offset="2381" max-vertical-offset="2800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.3693182" vertical-offset="0" max-vertical-offset="2280">
           <folding />
         </state>
       </provider>

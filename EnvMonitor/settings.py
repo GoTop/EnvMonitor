@@ -63,9 +63,9 @@ INSTALLED_APPS = (
     'selectable',
     # 'bootstrap3',
     # 'south',
-    # 'company',
-    #'report',
-    #'statistics',
+    'company',
+    'report',
+    'statistics',
     'testapp',
 
 )

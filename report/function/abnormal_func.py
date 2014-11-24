@@ -26,7 +26,7 @@ def is_abnormal(mn, value, param_name):
 
 def get_abnormal_data(mn, date_string, param_name_list):
     """
-    获取指定监控点位mn，指定日期date的异常数据
+    获取指定监控点位mn，指定某一天的date的异常数据
     并保存到AbnormalData
     """
     data_type_list = ['ZsAvg']
@@ -68,7 +68,6 @@ def count_abnormal_data(mn, start_date_string, end_date_string, param_name_list,
     """
     统计指定监控点位mn从start_date至end_date，指定监控因子列表中的param_name_list，
     和数据类型data_type（ZsAvg）的超标数
-
     """
     #获取小时均值数据
     type = 'hour'

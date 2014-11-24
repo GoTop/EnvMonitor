@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d123c28c-aad3-498f-ab22-a7f8cafca0b5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/function/abnormal_func.py" afterPath="$PROJECT_DIR$/report/function/abnormal_func.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html" afterPath="$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvMonitor/settings.py" afterPath="$PROJECT_DIR$/EnvMonitor/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EnvMonitor/urls.py" afterPath="$PROJECT_DIR$/EnvMonitor/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/urls.py" afterPath="$PROJECT_DIR$/report/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EnvMonitor.iws" />
@@ -30,11 +35,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="abnormal_func.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/report/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="2280">
+            <state line="21" column="0" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="1960">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="65" selection-start="639" selection-end="639" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+              <folding>
+                <element signature="e#14#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,99 +58,43 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="0" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0" vertical-offset="2381" max-vertical-offset="2800">
+            <state line="65" column="14" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0" vertical-offset="904" max-vertical-offset="2800">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/base.html">
+      <file leaf-file-name="count_multi_abnormal_data.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="43" selection-start="265" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1280">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formset.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/formset.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
-              <folding>
-                <marker date="1413883254000" expanded="true" signature="352:586" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="387:575" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="434:567" placeholder="{&quot;prefix&quot;: '{{ formset.prefix }}'...}" />
-                <marker date="1413883254000" expanded="true" signature="510:557" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="681:1450" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="785:1406" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="805:1009" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="826:988" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="1029:1389" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="1180:1339" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/nav.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="240">
-              <folding>
-                <marker date="1416560975142" expanded="true" signature="15:356" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="advanced.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/advanced.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-              <folding>
-                <marker date="1413883254000" expanded="true" signature="160:308" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="189:218" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="240:300" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="377:607" placeholder="..." />
-                <marker date="1413883254000" expanded="true" signature="412:596" placeholder="{...}" />
-                <marker date="1413883254000" expanded="true" signature="452:511" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="1" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selectable_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/templates/selectable_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="24" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="680">
+            <state line="119" column="80" selection-start="4656" selection-end="4656" vertical-scroll-proportion="-17.931034" vertical-offset="1860" max-vertical-offset="2940">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/views.py">
+        <entry file="file://$PROJECT_DIR$/report/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="33" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="540">
+            <state line="90" column="46" selection-start="2999" selection-end="2999" vertical-scroll-proportion="0.0" vertical-offset="1289" max-vertical-offset="3420">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lookups.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testapp/function/lookups.py">
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/report/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="4" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="480">
+            <state line="21" column="31" selection-start="670" selection-end="670" vertical-scroll-proportion="0.530504" vertical-offset="0" max-vertical-offset="760">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="abnormal_func.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="49" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="2260">
               <folding />
             </state>
           </provider>
@@ -175,11 +135,8 @@
         <option value="$PROJECT_DIR$/report/models.py" />
         <option value="$PROJECT_DIR$/company/templates/company/company_list.html" />
         <option value="$PROJECT_DIR$/report/function/abnormal.py" />
-        <option value="$PROJECT_DIR$/report/function/abnormal_func.py" />
         <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/report/views.py" />
         <option value="$PROJECT_DIR$/report/function/report_func.py" />
-        <option value="$PROJECT_DIR$/report/urls.py" />
         <option value="$PROJECT_DIR$/company/urls.py" />
         <option value="$PROJECT_DIR$/EnvMonitor/local_settings.py" />
         <option value="$PROJECT_DIR$/company/function/utility.py" />
@@ -194,7 +151,6 @@
         <option value="$PROJECT_DIR$/company/function/convert.py" />
         <option value="$PROJECT_DIR$/company/models.py" />
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/EnvMonitor/urls.py" />
         <option value="$PROJECT_DIR$/testapp/models.py" />
         <option value="$PROJECT_DIR$/testapp/templates/form.html" />
         <option value="$PROJECT_DIR$/testapp/templates/smart_selects_form.html" />
@@ -205,6 +161,11 @@
         <option value="$PROJECT_DIR$/testapp/views.py" />
         <option value="$PROJECT_DIR$/testapp/templates/nav.html" />
         <option value="$PROJECT_DIR$/EnvMonitor/settings.py" />
+        <option value="$PROJECT_DIR$/EnvMonitor/urls.py" />
+        <option value="$PROJECT_DIR$/report/views.py" />
+        <option value="$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html" />
+        <option value="$PROJECT_DIR$/report/function/abnormal_func.py" />
+        <option value="$PROJECT_DIR$/report/urls.py" />
       </list>
     </option>
   </component>
@@ -285,7 +246,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testapp" />
+              <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,27 +420,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="EnvMonitor" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -491,7 +446,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="EnvMonitor" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -768,7 +743,11 @@
       <created>1416561752077</created>
       <updated>1416561752077</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="测试selectable module，还未成功2">
+      <created>1416562176735</created>
+      <updated>1416562176735</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -796,24 +775,24 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17806451" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3709239" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28244275" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283871" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2697201" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22193548" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14129032" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16064516" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1632258" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5298913" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46331522" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38722825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28244275" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28244275" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47554347" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11548913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -832,9 +811,9 @@
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14129032" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1567742" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4660326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -907,16 +886,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://E:/Python27/Lib/site-packages/django/shortcuts/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1567" selection-end="1567" vertical-scroll-proportion="-4.011494" vertical-offset="2385" max-vertical-offset="3180" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/__future__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="11" selection-start="415" selection-end="415" vertical-scroll-proportion="-4.275862" vertical-offset="2100" max-vertical-offset="2680" />
-      </provider>
-    </entry>
     <entry file="file://E:/Python27/Lib/site-packages/django/http/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10480" />
@@ -925,13 +894,6 @@
     <entry file="file://E:/Python27/Lib/_strptime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9080" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="63" selection-start="2320" selection-end="2328" vertical-scroll-proportion="0.68" vertical-offset="900" max-vertical-offset="3420">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/django/db/models/base.py">
@@ -957,11 +919,6 @@
     <entry file="file://$PROJECT_DIR$/company/function/excel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="30" selection-start="346" selection-end="346" vertical-scroll-proportion="0.4991274" vertical-offset="14" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/company/function/db.py">
@@ -1022,11 +979,6 @@
     <entry file="file://$PROJECT_DIR$/company/admin_filter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="0" selection-start="2826" selection-end="2826" vertical-scroll-proportion="1.3877221" vertical-offset="721" max-vertical-offset="1760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="29" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.549273" vertical-offset="20" max-vertical-offset="1960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/local_settings.py">
@@ -1094,11 +1046,6 @@
         <state line="4" column="86" selection-start="153" selection-end="153" vertical-scroll-proportion="0.15904573" vertical-offset="0" max-vertical-offset="503" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/company/function/convert.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="293" column="49" selection-start="10967" selection-end="10967" vertical-scroll-proportion="1.0596659" vertical-offset="5256" max-vertical-offset="6320">
@@ -1144,34 +1091,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testapp/templates/formset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
-          <folding>
-            <marker date="1413883254000" expanded="true" signature="352:586" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="387:575" placeholder="{...}" />
-            <marker date="1413883254000" expanded="true" signature="434:567" placeholder="{&quot;prefix&quot;: '{{ formset.prefix }}'...}" />
-            <marker date="1413883254000" expanded="true" signature="510:557" placeholder="{...}" />
-            <marker date="1413883254000" expanded="true" signature="681:1450" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="785:1406" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="805:1009" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="826:988" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="1029:1389" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="1180:1339" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testapp/templates/advanced.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
           <folding>
-            <marker date="1413883254000" expanded="true" signature="160:308" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="189:218" placeholder="{...}" />
-            <marker date="1413883254000" expanded="true" signature="240:300" placeholder="{...}" />
-            <marker date="1413883254000" expanded="true" signature="377:607" placeholder="..." />
-            <marker date="1413883254000" expanded="true" signature="412:596" placeholder="{...}" />
-            <marker date="1413883254000" expanded="true" signature="452:511" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1413883254000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1413883254000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1180,8 +1109,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="240">
           <folding>
-            <marker date="1416560975142" expanded="true" signature="15:356" placeholder="..." />
+            <marker date="1416560975142" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testapp/templates/formset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,16 +1128,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/report/function/date_func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="19" selection-start="511" selection-end="511" vertical-scroll-proportion="0.6366048" vertical-offset="0" max-vertical-offset="920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="1960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="0" selection-start="3367" selection-end="3367" vertical-scroll-proportion="0.0" vertical-offset="2381" max-vertical-offset="2800">
+        <state line="65" column="14" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0" vertical-offset="904" max-vertical-offset="2800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="80" selection-start="4656" selection-end="4656" vertical-scroll-proportion="-17.931034" vertical-offset="1860" max-vertical-offset="2940">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="65" selection-start="639" selection-end="639" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding>
+            <element signature="e#14#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="46" selection-start="2999" selection-end="2999" vertical-scroll-proportion="0.0" vertical-offset="1289" max-vertical-offset="3420">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="23" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="2280">
+        <state line="34" column="49" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="2260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="31" selection-start="670" selection-end="670" vertical-scroll-proportion="0.530504" vertical-offset="0" max-vertical-offset="760">
           <folding />
         </state>
       </provider>

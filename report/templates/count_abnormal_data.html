@@ -110,7 +110,7 @@
                 <tbody>
                 <tr>
                     <td>{{ station_name }}</td>
-                    <td>{{ start_date_string|date:"Y-m-d H:i:s" }}至{{ end_date_string|date:"Y-m-d H:i:s" }}</td>
+                    <td>{{ start_date_object|date:"Y-m-d H:i:s" }}至{{ end_date_object|date:"Y-m-d H:i:s" }}</td>
 
                     <td>{{ monitor_data_num_dict.CODcr_Avg_total_num }}</td>
                     <td>{{ monitor_data_num_dict.CODcr_Avg_abnormal_num }}</td>
@@ -121,8 +121,8 @@
                     <td>{{ monitor_data_num_dict.SO2_ZsAvg_total_num }}</td>
                     <td>{{ monitor_data_num_dict.SO2_ZsAvg_abnormal_num }}</td>
 
-                    <td>{{ monitor_data_num_dict.NOx_ZsAvg_total_num }}</td>
-                    <td>{{ monitor_data_num_dict.NOx_ZsAvg_abnormal_num }}</td>
+                    <td><a href="{% url get_abnormal_data mn start_date_string start_date_string %}">{{ monitor_data_num_dict.NOx_ZsAvg_total_num }}</a></td><td>{{ monitor_data_num_dict.NOx_ZsAvg_total_num }}</td>
+                    <td><a href="{% url get_abnormal_data mn start_date_string start_date_string %}">{{ monitor_data_num_dict.NOx_ZsAvg_abnormal_num }}</a></td>
 
                 </tr>
                 </tbody>

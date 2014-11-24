@@ -79,7 +79,7 @@ def get_abnormal_data(mn, start_date_string,
     return abnormal_data_list
 
 
-def count_abnormal_data(mn, start_date_string, end_date_string, param_name_list, data_type):
+def count_abnormal_data(mn, start_date_string, end_date_string, param_name, data_type):
     """
     统计指定监控点位mn从start_date至end_date，指定监控因子列表中的param_name_list，
     和数据类型data_type（ZsAvg）的超标数
@@ -91,21 +91,22 @@ def count_abnormal_data(mn, start_date_string, end_date_string, param_name_list,
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
     monitor_data_dict = report_func.get_range_monitor_value(mn, start_date_object, end_date_object,
-                                                            param_name_list, data_type_list, type)
+                                                            param_name, data_type_list, type)
 
     monitor_data_num_dict = {}
-    for param_name in param_name_list:
-        abnormal_data_num = 0
-        #生成COD_Avg，pH_Cou 之类的key名
-        key = param_name + '_' + data_type
+    abnormal_data_num = 0
+    #生成COD_Avg，pH_Cou 之类的key名
+    key = param_name + '_' + data_type
 
-        if key in monitor_data_dict.keys():
-            #构造一个key名，类似COD_Avg_num，并赋值
-            monitor_data_num_dict[key + '_total_num'] = len(monitor_data_dict[key])
-            for monitor_data in monitor_data_dict[key]:
-                if (is_abnormal(mn, monitor_data['dValue'], param_name)):
-                    abnormal_data_num = abnormal_data_num + 1
-            monitor_data_num_dict[key + '_abnormal_num'] = abnormal_data_num
+    standard = standard_func.get_station_standard(mn, param_name)
+    if key in monitor_data_dict.keys():
+        #构造一个key名，类似COD_Avg_num，并赋值
+        monitor_data_num_dict[key + '_total_num'] = len(monitor_data_dict[key])
+        for monitor_data in monitor_data_dict[key]:
+            #if (is_abnormal(mn, monitor_data['dValue'], param_name)):
+            if (is_abnormal_by_standard(monitor_data['dValue'], standard['standard_max'], standard['standard_min'])):
+                abnormal_data_num = abnormal_data_num + 1
+        monitor_data_num_dict[key + '_abnormal_num'] = abnormal_data_num
 
     return monitor_data_num_dict
 

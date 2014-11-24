@@ -17,7 +17,7 @@ def water_daily_report_view(request, date):
 
     mn_list = ['45007760002801', '45007760003001']
 
-    #strptime将格式字符串转换为datetime对象
+    # strptime将格式字符串转换为datetime对象
     datetime_object = datetime.datetime.strptime(date, "%Y%m%d")
     daily_report_list = []
     for mn in mn_list:
@@ -42,7 +42,7 @@ def gas_daily_report_view(request, date):
     '''
     mn_list = ['45007760002007', '45007760002601']
 
-    #strptime将格式字符串转换为datetime对象
+    # strptime将格式字符串转换为datetime对象
     datetime_object = datetime.datetime.strptime(date, "%Y%m%d")
     daily_report_list = []
     for mn in mn_list:
@@ -61,12 +61,12 @@ def gas_daily_report_view(request, date):
                                'daily_report_list': daily_report_list})
 
 
-#TODO
+# TODO
 def company_water_day_report_view(request, mn, date):
     """
     获取监控点位mn在date当天24小时的小时数据，显示日报表
     """
-    #strptime将格式字符串转换为datetime对象
+    # strptime将格式字符串转换为datetime对象
     datetime_object = datetime.datetime.strptime(date, "%Y%m%d")
     report_list = []
 
@@ -83,7 +83,15 @@ def company_water_day_report_view(request, mn, date):
 
 
 def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
-    #根据监控点位的类型选择监控因子
+    """
+    获取指定mn的监控点位在start_date_string, end_date_string之间的异常在线监控数据
+    :param request:
+    :param mn:
+    :param start_date_string:类似20140101000000
+    :param end_date_string:
+    :return:
+    """
+    # 根据监控点位的类型选择监控因子
     t_station = Station.objects.get(station_id=mn)
     if t_station.type == '废水':
         param_name_list = ['CODcr', 'NH']
@@ -93,7 +101,6 @@ def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
         data_type = 'ZsAvg'
 
     report_list = []
-    report_dict = {}
     for param_name in param_name_list:
         abnormal_data_list = abnormal_func.get_abnormal_data(mn, start_date_string,
                                                              end_date_string,
@@ -105,10 +112,9 @@ def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
                        'standard_text': standard['text']}
         report_list.append(report_dict)
 
-        t_station = Station.objects.get(station_id=mn)
-        #strptime将格式字符串转换为datetime对象
-        start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
-        end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+    # strptime将格式字符串转换为datetime对象
+    start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
+    end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
     return render_to_response('get_abmornal_date_result.html',
                               {'station_name': t_station.name,
@@ -116,7 +122,7 @@ def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
                                'end_datetime': end_date_object,
                                'type': '小时',
                                'report_list': report_list}
-        )
+    )
 
 
 def count_abnormal_data_view(request, mn, start_date_string, end_date_string):
@@ -132,18 +138,22 @@ def count_abnormal_data_view(request, mn, start_date_string, end_date_string):
         param_name_list = ['SO2', 'NOx']
         data_type = 'ZsAvg'
 
-    monitor_data_num_dict = abnormal_func.count_abnormal_data(mn, start_date_string,
-                                                              end_date_string,
-                                                              param_name_list,
-                                                              data_type)
+    for param_name in param_name_list:
+        monitor_data_num_dict = abnormal_func.count_abnormal_data(mn, start_date_string,
+                                                                  end_date_string,
+                                                                  param_name,
+                                                                  data_type)
 
-    start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
-    end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+        start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
+        end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
     return render_to_response('count_abnormal_data.html',
-                              {'station_name': t_station.name,
-                               'start_date_string': start_date_object,
-                               'end_date_string': end_date_object,
+                              {'mn': mn,
+                               'station_name': t_station.name,
+                               'start_date_object': start_date_object,
+                               'end_date_object': end_date_object,
+                               'start_date_string': start_date_string,
+                               'end_date_string': end_date_string,
                                'type': '小时',
                                'monitor_data_num_dict': monitor_data_num_dict}
     )
@@ -170,20 +180,31 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
             param_name_list = ['SO2', 'NOx']
             data_type = 'ZsAvg'
 
-        monitor_data_num_dict = abnormal_func.count_abnormal_data(mn, start_date_string,
-                                                                  end_date_string,
-                                                                  param_name_list,
-                                                                  data_type)
-        monitor_data_num_dict["station_name"] = t_station.name
-        monitor_data_num_dict_list.append(monitor_data_num_dict)
+        report_list = []
+        for param_name in param_name_list:
+            abnormal_data_dict = abnormal_func.count_abnormal_data(mn, start_date_string,
+                                                                   end_date_string,
+                                                                   param_name,
+                                                                   data_type)
+
+            report_dict = {'station_name': t_station,
+                           'param_name': param_name,
+                           'abnormal_data_dict': abnormal_data_dict,
+                           'mn': mn}
+            report_list.append(report_dict)
+
+            # monitor_data_num_dict["station_name"] = t_station.name
+            # monitor_data_num_dict_list.append(monitor_data_num_dict)
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
     return render_to_response('count_multi_abnormal_data.html',
-                              {'start_date_string': start_date_object,
-                               'end_date_string': end_date_object,
+                              {'start_date_object': start_date_object,
+                               'end_date_object': end_date_object,
+                               'start_date_string': start_date_string,
+                               'end_date_string': end_date_string,
                                'type': '小时',
-                               'monitor_data_num_dict_list': monitor_data_num_dict_list}
+                               'report_list': report_list}
     )
 

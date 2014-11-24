@@ -26,7 +26,7 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     '''
     param_code = get_param_code(param_name)
 
-    #根据day_or_hour选择数据库中的日数据表或者小时数据表
+    # 根据day_or_hour选择数据库中的日数据表或者小时数据表
     if type == 'day':
         table_name = 'Day_' + mn
         #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
@@ -78,7 +78,7 @@ def get_water_day_data_func(mn, date, type):
                           'volume_of_water_Cou': volume_of_water_Cou_value,
     }
 
-    #获取排污标准
+    # 获取排污标准
     CODcr_standard_dict = get_station_standard(mn=mn, param_name='CODcr')
     NH_standard_dict = get_station_standard(mn=mn, param_name='NH')
 
@@ -116,7 +116,7 @@ def get_gas_day_data_func(mn, date, type):
     # report_value = {}
     # param_name_list = {'CODcr', 'NH'}
     # for param_name in param_name_list:
-    #     data_type_list = {'Avg', 'Cou'}
+    # data_type_list = {'Avg', 'Cou'}
     #     for data_type in data_type_list:
     #         value = get_monitor_value(mn, date, param_name=param_name, data_type=data_type, type=type)
     #         key = param_name + '_' + data_type
@@ -172,7 +172,7 @@ def get_daily_report_func(mn, date, type):
     '''
     t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
 
-    #判断该检测点位是水还是气
+    # 判断该检测点位是水还是气
     #t_station_kind为监测类型编码，32为水，35为气
     if t_station.t_station_kind.kind_id == 32:
         daily_report_value = get_water_day_data_func(mn, date, type='day')
@@ -208,7 +208,7 @@ def get_water_hour_data_report_func(mn, date):
     """
     struct_time = time.strptime(date, "%Y%m%d")
 
-    #strptime将格式字符串转换为datetime对象
+    # strptime将格式字符串转换为datetime对象
     datetime_object = datetime.datetime.strptime(date, "%Y%m%d")
 
     datetime_string = time.strftime("%Y/%m/%d %H:%M:%S", datetime_object.timetuple())
@@ -226,7 +226,7 @@ def get_water_hour_data_report_func(mn, date):
     return report_list
 
 
-def get_range_monitor_value(mn, start_date_object, end_date_object, param_name,data_type_list, type):
+def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type_list, type):
     '''
     一个简便功能函数，可以方便地获取监测点位mn的date的多个因子和数据类型的小时或日数据
 
@@ -237,7 +237,7 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name,d
     return：返回的数组中，key为类似COD_Avg这样的格式
     '''
 
-    #根据type选择数据库中的日数据表或者小时数据表
+    # 根据type选择数据库中的日数据表或者小时数据表
     #格式化start_date和end_date
     if type == 'day':
         table_name = 'Day_' + mn
@@ -260,8 +260,8 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name,d
         # end_date_tuple = time.strptime(end_date, "%Y/%m/%d %H:%M:%S")
         # end_date = time.strftime("%Y/%m/%d %H:%M:%S", end_date_tuple)
 
-    start_date_string = datetime.datetime.strftime(start_date_object, "%Y/%m/%d %H:%M:%S")
-    end_date_string = datetime.datetime.strftime(end_date_object, "%Y/%m/%d %H:%M:%S")
+    start_date_string = datetime.datetime.strftime(start_date_object, '%Y/%m/%d %H:%M:%S')
+    end_date_string = datetime.datetime.strftime(end_date_object, '%Y/%m/%d %H:%M:%S')
 
     report_value = {}
     report_hour_value = {}
@@ -287,7 +287,7 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name,d
 
         #生成COD_Avg，pH_Cou 之类的key名
         key = param_name + '_' + data_type
-        report_value[key] =  dict
+        report_value[key] = dict
 
         #row = cursor.fetchall()
         #return round(dict[0]['dValue'], 2)

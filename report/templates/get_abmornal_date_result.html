@@ -116,14 +116,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for report in report_list %}
+                {% for report_dict in report_list %}
+                    {% for abnormal_data in report_dict.abnormal_data_list %}
+                        <tr>
+                            <td>{{ station_name }}</td>
+                            <td>{{ abnormal_data.data_time|date:"Y-m-d H:i:s" }}</td>
+                            <td>{{ report_dict.param_name }}</td>
+                            <td>{{ abnormal_data.data_type }}</td>
+                            <td>{{ abnormal_data.original_value }}</td>
+                            <td>{{ report_dict.standard_text }}</td>
+                        </tr>
+                    {% endfor %}
                     <tr>
-                        <td>{{ station_name}}</td>
-                        <td>{{ report.data_time|date:"Y-m-d H:i:s"  }}</td>
-                        <td>{{ report.param_code }}</td>
-                        <td>{{ report.data_type }}</td>
-                        <td>{{ report.original_value }}</td>
-                        <td>{{ standard }}</td>
+                        <td colspan="6">-----------------------------------------------------------------------------</td>
                     </tr>
                 {% endfor %}
                 </tbody>

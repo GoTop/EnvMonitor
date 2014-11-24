@@ -101,7 +101,6 @@ def get_station_standard(mn, param_name):
 
     return standard
 
-
 #TODO 未完成
 def get_all_station_standard(mn):
     """

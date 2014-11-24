@@ -1,6 +1,7 @@
 # coding=utf-8
 from __future__ import unicode_literals
 from django.shortcuts import render_to_response
+from company.function.standard import get_station_standard
 from company.models import T_All_station, Station
 import report.function.report_func as report_func
 import report.function.abnormal_func as abnormal_func
@@ -81,24 +82,41 @@ def company_water_day_report_view(request, mn, date):
     )
 
 
-def get_abnormal_data_view(request, mn, date_string):
-    #水的监控因子
-    #param_name_list = ['CODcr', 'NH', 'pH']
-
-    #气的监控因子
-    param_name_list = ['SO2', 'NOx']
-
-    abnormal_data_list = abnormal_func.get_abnormal_data(mn, date_string, param_name_list)
+def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
+    #根据监控点位的类型选择监控因子
     t_station = Station.objects.get(station_id=mn)
-    #strptime将格式字符串转换为datetime对象
-    datetime_object = datetime.datetime.strptime(date_string, "%Y%m%d")
+    if t_station.type == '废水':
+        param_name_list = ['CODcr', 'NH']
+        data_type = 'Avg'
+    elif t_station.type == '废气':
+        param_name_list = ['SO2', 'NOx']
+        data_type = 'ZsAvg'
+
+    report_list = []
+    report_dict = {}
+    for param_name in param_name_list:
+        abnormal_data_list = abnormal_func.get_abnormal_data(mn, start_date_string,
+                                                             end_date_string,
+                                                             param_name,
+                                                             data_type)
+        standard = get_station_standard(mn, param_name)
+        report_dict = {'param_name': param_name,
+                       'abnormal_data_list': abnormal_data_list,
+                       'standard_text': standard['text']}
+        report_list.append(report_dict)
+
+        t_station = Station.objects.get(station_id=mn)
+        #strptime将格式字符串转换为datetime对象
+        start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
+        end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
     return render_to_response('get_abmornal_date_result.html',
                               {'station_name': t_station.name,
-                               'datetime': datetime_object,
+                               'start_datetime': start_date_object,
+                               'end_datetime': end_date_object,
                                'type': '小时',
-                               'report_list': abnormal_data_list}
-    )
+                               'report_list': report_list}
+        )
 
 
 def count_abnormal_data_view(request, mn, start_date_string, end_date_string):

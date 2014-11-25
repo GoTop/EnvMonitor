@@ -121,9 +121,6 @@ STATIC_ROOT = BASE_DIR + '/static/'
 
 MEDIA_ROOT = BASE_DIR + '/media/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 '''This code will try to find a file named local_settings.py in the same directory as the
 settings file. If it succeeds, it will import everything defined in the file. If no such file exists,

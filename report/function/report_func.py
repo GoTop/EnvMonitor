@@ -226,7 +226,7 @@ def get_water_hour_data_report_func(mn, date):
     return report_list
 
 
-def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type_list, type):
+def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type, type):
     '''
     一个简便功能函数，可以方便地获取监测点位mn的date的多个因子和数据类型的小时或日数据
 
@@ -241,24 +241,8 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, 
     #格式化start_date和end_date
     if type == 'day':
         table_name = 'Day_' + mn
-        # #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
-        # start_date_tuple = time.strptime(start_date, "%Y%m%d")
-        # # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
-        # start_date = time.strftime("%Y/%m/%d", start_date_tuple)
-        #
-        # end_date_tuple = time.strptime(end_date, "%Y%m%d")
-        # end_date = time.strftime("%Y/%m/%d", end_date_tuple)
-
     elif type == 'hour':
         table_name = 'Hour_' + mn
-
-        # #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
-        # start_date_tuple = time.strptime(start_date, "%Y/%m/%d %H:%M:%S")
-        # # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
-        # start_date = time.strftime("%Y/%m/%d %H:%M:%S", start_date_tuple)
-        #
-        # end_date_tuple = time.strptime(end_date, "%Y/%m/%d %H:%M:%S")
-        # end_date = time.strftime("%Y/%m/%d %H:%M:%S", end_date_tuple)
 
     start_date_string = datetime.datetime.strftime(start_date_object, '%Y/%m/%d %H:%M:%S')
     end_date_string = datetime.datetime.strftime(end_date_object, '%Y/%m/%d %H:%M:%S')
@@ -266,38 +250,37 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, 
     report_value = {}
     report_hour_value = {}
 
-    for data_type in data_type_list:
-        #todo
-        param_code = get_param_code(param_name)
-        param = (table_name, mn, param_code, data_type, start_date_string, end_date_string)
-        cursor = connections['DB_baise'].cursor()
+    #todo
+    param_code = get_param_code(param_name)
+    param = (table_name, mn, param_code, data_type, start_date_string, end_date_string)
+    cursor = connections['DB_baise'].cursor()
 
-        #因为在DB_baise数据库里，每个监测点位的日数据表名称都不一样（类似Day_45007760002801）
-        #所以只能用构造SQL语句的方式进行查询
-        query = '''SELECT * FROM %s
-                    WHERE StationID = '%s'
-                    AND ParamCode = '%s'
-                    AND DataType = '%s'
-                    AND DataTime >= '%s'
-                    AND DataTime <= '%s'
-                ''' % param
+    #因为在DB_baise数据库里，每个监测点位的日数据表名称都不一样（类似Day_45007760002801）
+    #所以只能用构造SQL语句的方式进行查询
+    query = '''SELECT * FROM %s
+                WHERE StationID = '%s'
+                AND ParamCode = '%s'
+                AND DataType = '%s'
+                AND DataTime >= '%s'
+                AND DataTime <= '%s'
+            ''' % param
 
-        cursor.execute(query)
-        dict = dict_fetch_all(cursor)
+    cursor.execute(query)
+    dict = dict_fetch_all(cursor)
 
-        #生成COD_Avg，pH_Cou 之类的key名
-        key = param_name + '_' + data_type
-        report_value[key] = dict
+    #生成COD_Avg，pH_Cou 之类的key名
+    key = param_name + '_' + data_type
+    report_value[key] = dict
 
-        #row = cursor.fetchall()
-        #return round(dict[0]['dValue'], 2)
+    #row = cursor.fetchall()
+    #return round(dict[0]['dValue'], 2)
 
-        # for x in range(24):
-        #     datetime_object = datetime_object + datetime.timedelta(hours=1)
-        #     datetime_string = time.strftime("%Y/%m/%d %H:%M:%S", datetime_object.timetuple())
-        #     value = get_monitor_value(mn, datetime_string, param_name, data_type, type)
-        #     key = param_name + '_' + data_type
-        #     report_hour_value[key] = value
-        #     report_value[x] = report_hour_value
+    # for x in range(24):
+    #     datetime_object = datetime_object + datetime.timedelta(hours=1)
+    #     datetime_string = time.strftime("%Y/%m/%d %H:%M:%S", datetime_object.timetuple())
+    #     value = get_monitor_value(mn, datetime_string, param_name, data_type, type)
+    #     key = param_name + '_' + data_type
+    #     report_hour_value[key] = value
+    #     report_value[x] = report_hour_value
 
     return report_value

@@ -107,9 +107,14 @@ def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
                                                              param_name,
                                                              data_type)
         standard = get_station_standard(mn, param_name)
+        if standard:
+            standard_text = standard['text']
+        else:
+            standard_text = '-'
+
         report_dict = {'param_name': param_name,
                        'abnormal_data_list': abnormal_data_list,
-                       'standard_text': standard['text']}
+                       'standard_text': standard_text}
         report_list.append(report_dict)
 
     # strptime将格式字符串转换为datetime对象
@@ -167,7 +172,7 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
 
     mn_list = ['45007760002801', '45007760003001', '45007760002007']
 
-    monitor_data_num_dict_list = []
+    multi_report_list = []
 
     for mn in mn_list:
         monitor_data_num_dict = {}
@@ -187,7 +192,7 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
                                                                    param_name,
                                                                    data_type)
 
-            report_dict = {'station_name': t_station,
+            report_dict = {'station_name': t_station.name,
                            'param_name': param_name,
                            'abnormal_data_dict': abnormal_data_dict,
                            'mn': mn}
@@ -195,7 +200,7 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
 
             # monitor_data_num_dict["station_name"] = t_station.name
             # monitor_data_num_dict_list.append(monitor_data_num_dict)
-
+        multi_report_list.append(report_list)
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
@@ -205,6 +210,6 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
                                'start_date_string': start_date_string,
                                'end_date_string': end_date_string,
                                'type': '小时',
-                               'report_list': report_list}
+                               'multi_report_list': multi_report_list}
     )
 

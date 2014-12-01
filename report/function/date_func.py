@@ -2,7 +2,7 @@ from datetime import datetime
 
 __author__ = 'GoTop'
 
-#一下函数暂时未用
+#以下函数暂时未用
 
 
 #4、将字符串转换成datetime类型

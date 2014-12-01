@@ -27,7 +27,7 @@ def water_daily_report_view(request, date):
         # t_station = T_All_station.objects.using('DB_baise').get(pk=mn)
         # daily_report_value['station_name'] = t_station.station_name
 
-        daily_report_row = report_func.get_daily_report_func(mn, date, type='day')
+        daily_report_row = report_func.get_daily_report_func(mn, date, table_type='day')
 
         daily_report_list.append(daily_report_row)
     return render_to_response('water_daily_report.html',
@@ -125,7 +125,7 @@ def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
                               {'station_name': t_station.name,
                                'start_datetime': start_date_object,
                                'end_datetime': end_date_object,
-                               'type': '小时',
+                               'table_type': '小时',
                                'report_list': report_list}
     )
 
@@ -164,7 +164,7 @@ def count_abnormal_data_view(request, mn, start_date_string, end_date_string):
     )
 
 
-def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
+def count_multi_abnormal_data_view(request, start_date_string, end_date_string, table_type):
     """
     统计指定监控点位mn_list从start_date至end_date，指定监控因子列表中的param_name_list，
     和数据类型data_type（ZsAvg）的超标数
@@ -185,12 +185,14 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
             param_name_list = ['SO2', 'NOx']
             data_type = 'ZsAvg'
 
+        #单个监控点位的统计数据
         report_list = []
         for param_name in param_name_list:
             abnormal_data_dict = abnormal_func.count_abnormal_data(mn, start_date_string,
                                                                    end_date_string,
                                                                    param_name,
-                                                                   data_type)
+                                                                   data_type,
+                                                                   table_type)
 
             report_dict = {'station_name': t_station.name,
                            'param_name': param_name,
@@ -200,6 +202,7 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
 
             # monitor_data_num_dict["station_name"] = t_station.name
             # monitor_data_num_dict_list.append(monitor_data_num_dict)
+        #多个监控点位的统计数据
         multi_report_list.append(report_list)
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
@@ -213,3 +216,56 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string):
                                'multi_report_list': multi_report_list}
     )
 
+
+def station_data_view(request, mn, start_date_string, end_date_string, table_type):
+    """
+    获取mn监控点位从start_date_string, end_date_string的table_type表（日数据或者小时数据）中的监控数据
+    """
+    multi_report_list = []
+    monitor_data_num_dict = {}
+    t_station = Station.objects.get(station_id=mn)
+
+    if t_station.type == '废水':
+        param_name_list = ['CODcr', 'NH']
+        data_type = 'Avg'
+    elif t_station.type == '废气':
+        param_name_list = ['SO2', 'NOx']
+        data_type = 'ZsAvg'
+
+    #单个监控点位的统计数据
+    report_list = []
+
+    start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
+    end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+    for param_name in param_name_list:
+
+        #todo 2014-12-1 改用每次获取一个监控因子数据，组合为一列数据的方法
+        report_func.get_water_day_data_func()
+
+
+        data_dict = report_func.get_range_monitor_value(mn,
+                                                        start_date_object,
+                                                        end_date_object,
+                                                        param_name,
+                                                        data_type,
+                                                        table_type)
+        report_dict = {'station_name': t_station.name,
+                       'param_name': param_name,
+                       'data_dict': data_dict,
+                       'mn': mn}
+        report_list.append(report_dict)
+
+    #多个监控点位的统计数据
+    multi_report_list.append(report_list)
+
+    start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
+    end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+
+    return render_to_response('station_data_report.html',
+                              {'start_date_object': start_date_object,
+                               'end_date_object': end_date_object,
+                               'start_date_string': start_date_string,
+                               'end_date_string': end_date_string,
+                               'type': '小时',
+                               'multi_report_list': multi_report_list}
+    )

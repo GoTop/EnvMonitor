@@ -19,21 +19,26 @@ def dict_fetch_all(cursor):
     ]
 
 
-def get_monitor_value(mn, date, param_name, data_type, type):
-    '''
+def get_monitor_value(mn, date, param_name, data_type, table_type):
+    """
     获取废水监测点位mn的date当天指定类型data_type（平均值Avg，或累计值Cou）
-    和指定监测因子param_name的小时或日数据（由day_or_hour(day或hour)设置）
-    '''
+    和指定监测因子param_name的小时或日数据（由table_type(day或hour)设置）
+
+    只返回一个单独的数值
+
+    如果是获取日数据，date的格式必须是 "%Y%m%d"
+    如果是获取小时数据，date的格式必须是 "%Y/%m/%d %H:%M:%S"
+    """
     param_code = get_param_code(param_name)
 
     # 根据day_or_hour选择数据库中的日数据表或者小时数据表
-    if type == 'day':
+    if table_type == 'day':
         table_name = 'Day_' + mn
         #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
         datetime_tuple = time.strptime(date, "%Y%m%d")
         # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
         date = time.strftime("%Y/%m/%d %H:%M:%S", datetime_tuple)
-    elif type == 'hour':
+    elif table_type == 'hour':
         table_name = 'Hour_' + mn
         #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
         datetime_tuple = time.strptime(date, "%Y/%m/%d %H:%M:%S")
@@ -56,20 +61,20 @@ def get_monitor_value(mn, date, param_name, data_type, type):
     return round(dict[0]['dValue'], 2)
 
 
-def get_water_day_data_func(mn, date, type):
+def get_water_day_data_func(mn, date, table_type):
     '''
     获取废水监测点位mn的date当天的小时或日数据（COD和NH的平均值，累计排放量，pH值和流量）
     小时或日数据（由day_or_hour(day或hour)设置）
     '''
-    CODcr_Avg_value = get_monitor_value(mn, date, param_name='CODcr', data_type='Avg', type=type)
-    CODcr_Cou_value = get_monitor_value(mn, date, param_name='CODcr', data_type='Cou', type=type)
+    CODcr_Avg_value = get_monitor_value(mn, date, param_name='CODcr', data_type='Avg', table_type=table_type)
+    CODcr_Cou_value = get_monitor_value(mn, date, param_name='CODcr', data_type='Cou', table_type=table_type)
 
-    NH_Avg_value = get_monitor_value(mn, date, param_name='NH', data_type='Avg', type=type)
-    NH_Cou_value = get_monitor_value(mn, date, param_name='NH', data_type='Cou', type=type)
+    NH_Avg_value = get_monitor_value(mn, date, param_name='NH', data_type='Avg', table_type=table_type)
+    NH_Cou_value = get_monitor_value(mn, date, param_name='NH', data_type='Cou', table_type=table_type)
 
-    pH_Avg_day_value = get_monitor_value(mn, date, param_name='pH', data_type='Avg', type=type)
+    pH_Avg_day_value = get_monitor_value(mn, date, param_name='pH', data_type='Avg', table_type=table_type)
     volume_of_water_Cou_value = get_monitor_value(mn, date, param_name='volume_of_water',
-                                                  data_type='Cou', type=type)
+                                                  data_type='Cou', table_type=table_type)
     daily_report_value = {'CODcr_Avg': CODcr_Avg_value,
                           'CODcr_Cou': CODcr_Cou_value,
                           'NH_Avg': NH_Avg_value,
@@ -106,7 +111,7 @@ def get_water_day_data_func(mn, date, type):
     return daily_report_value
 
 
-def get_gas_day_data_func(mn, date, type):
+def get_gas_day_data_func(mn, date, table_type):
     '''
     获取气监测点位mn的date当天的小时或日数据（SO2和NOx的平均值，累计排放量，流量）
     小时或日数据（由day_or_hour(day或hour)设置）
@@ -123,14 +128,14 @@ def get_gas_day_data_func(mn, date, type):
     #         report_value[key] =  value
 
 
-    SO2_Avg_value = get_monitor_value(mn, date, param_name='SO2', data_type='Avg', type=type)
-    SO2_Cou_value = get_monitor_value(mn, date, param_name='SO2', data_type='Cou', type=type)
+    SO2_Avg_value = get_monitor_value(mn, date, param_name='SO2', data_type='Avg', table_type=table_type)
+    SO2_Cou_value = get_monitor_value(mn, date, param_name='SO2', data_type='Cou', table_type=table_type)
 
-    NOx_Avg_value = get_monitor_value(mn, date, param_name='NOx', data_type='Avg', type=type)
-    NOx_Cou_value = get_monitor_value(mn, date, param_name='NOx', data_type='Cou', type=type)
+    NOx_Avg_value = get_monitor_value(mn, date, param_name='NOx', data_type='Avg', table_type=table_type)
+    NOx_Cou_value = get_monitor_value(mn, date, param_name='NOx', data_type='Cou', table_type=table_type)
 
     volume_of_gas_Cou_value = get_monitor_value(mn, date, param_name='volume_of_gas',
-                                                data_type='Cou', type=type)
+                                                data_type='Cou', table_type=table_type)
     daily_report_value = {'SO2_Avg': SO2_Avg_value,
                           'SO2_Cou': SO2_Cou_value,
                           'NOx_Avg': NOx_Avg_value,
@@ -165,7 +170,7 @@ def get_gas_day_data_func(mn, date, type):
     return daily_report_value
 
 
-def get_daily_report_func(mn, date, type):
+def get_daily_report_func(mn, date, table_type):
     '''
     获取企业mn每日的日数据，以便按报表显示
 
@@ -175,7 +180,7 @@ def get_daily_report_func(mn, date, type):
     # 判断该检测点位是水还是气
     #t_station_kind为监测类型编码，32为水，35为气
     if t_station.t_station_kind.kind_id == 32:
-        daily_report_value = get_water_day_data_func(mn, date, type='day')
+        daily_report_value = get_water_day_data_func(mn, date, table_type='day')
 
         # #获取排污标准的通用方法，暂时不用
         # param_name_list = {'CODcr', 'NH'}
@@ -194,7 +199,7 @@ def get_daily_report_func(mn, date, type):
         #             daily_report_value[param_name_abnormal] = True
 
     elif t_station.t_station_kind.kind_id == 35:
-        daily_report_value = get_gas_day_data_func(mn, date, type='day')
+        daily_report_value = get_gas_day_data_func(mn, date, table_type='day')
 
     daily_report_value['station_name'] = t_station.station_name
     return daily_report_value
@@ -216,7 +221,7 @@ def get_water_hour_data_report_func(mn, date):
     report_list = []
     for x in range(24):
         report_row = {}
-        report_row = get_water_day_data_func(mn, datetime_string, type='hour')
+        report_row = get_water_day_data_func(mn, datetime_string, table_type='hour')
         report_row['monitor_date'] = datetime_string
         report_list.append(report_row)
 
@@ -226,22 +231,22 @@ def get_water_hour_data_report_func(mn, date):
     return report_list
 
 
-def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type, type):
+def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type, table_type):
     '''
     一个简便功能函数，可以方便地获取监测点位mn的date的多个因子和数据类型的小时或日数据
 
     param_name_list：监控因子列表
     data_type_list：数据类型列表：Avg或Cou
-    type(day或hour):小时或日数据
+    table_type(day或hour):根据该参数选择小时或日数据的表
 
     return：返回的数组中，key为类似COD_Avg这样的格式
     '''
 
     # 根据type选择数据库中的日数据表或者小时数据表
     #格式化start_date和end_date
-    if type == 'day':
+    if table_type == 'day':
         table_name = 'Day_' + mn
-    elif type == 'hour':
+    elif table_type == 'hour':
         table_name = 'Hour_' + mn
 
     start_date_string = datetime.datetime.strftime(start_date_object, '%Y/%m/%d %H:%M:%S')

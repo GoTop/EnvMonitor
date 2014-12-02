@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from __future__ import absolute_import
 import company.function.standard as standard_func
 from company.models import Station
+from report.function import monitor_value
 import report.function.report_func as report_func
 from report.models import AbnormalData
 import time, datetime
@@ -42,14 +43,14 @@ def get_abnormal_data(mn, start_date_string, end_date_string, param_name, data_t
 
     #data_type_list = ['ZsAvg']
     #获取小时均值数据
-    type = 'hour'
+    table_type = 'hour'
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
     #获取该时段的在线监控数值
-    monitor_data_dict = report_func.get_range_monitor_value(mn, start_date_object, end_date_object, param_name,
-                                                            data_type, type)
+    monitor_data_dict = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object, param_name,
+                                                            data_type, table_type)
 
     abnormal_data_list = []
     standard = standard_func.get_station_standard(mn, param_name)
@@ -58,7 +59,7 @@ def get_abnormal_data(mn, start_date_string, end_date_string, param_name, data_t
 
     #生成类似COD_Avg，pH_Cou 之类的key名
     key = param_name + '_' + data_type
-    for monitor_data in monitor_data_dict[key]:
+    for monitor_data in monitor_data_dict:
 
         if standard:
             if (is_abnormal_by_standard(monitor_data['dValue'], standard['standard_max'], standard['standard_min'])):
@@ -88,7 +89,7 @@ def count_abnormal_data(mn, start_date_string, end_date_string, param_name, data
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
-    monitor_data_dict = report_func.get_range_monitor_value(mn, start_date_object, end_date_object,
+    monitor_data_dict = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
                                                             param_name, data_type, table_type)
 
     monitor_data_num_dict = {}
@@ -97,18 +98,18 @@ def count_abnormal_data(mn, start_date_string, end_date_string, param_name, data
     key = param_name + '_' + data_type
 
     standard = standard_func.get_station_standard(mn, param_name)
-    if key in monitor_data_dict.keys():
-        #构造一个key名，类似COD_Avg_num，并赋值
-        monitor_data_num_dict[key + '_total_num'] = len(monitor_data_dict[key])
-        for monitor_data in monitor_data_dict[key]:
-            if standard:
-                #if (is_abnormal(mn, monitor_data['dValue'], param_name)):
-                if (
-                is_abnormal_by_standard(monitor_data['dValue'], standard['standard_max'], standard['standard_min'])):
-                    abnormal_data_num = abnormal_data_num + 1
-            else:
-                abnormal_data_num = False
-        monitor_data_num_dict[key + '_abnormal_num'] = abnormal_data_num
+
+    #构造一个key名，类似COD_Avg_num，并赋值
+    monitor_data_num_dict[key + '_total_num'] = len(monitor_data_dict)
+    for monitor_data in monitor_data_dict:
+        if standard:
+            #if (is_abnormal(mn, monitor_data['dValue'], param_name)):
+            if (
+            is_abnormal_by_standard(monitor_data['dValue'], standard['standard_max'], standard['standard_min'])):
+                abnormal_data_num = abnormal_data_num + 1
+        else:
+            abnormal_data_num = False
+    monitor_data_num_dict[key + '_abnormal_num'] = abnormal_data_num
 
     return monitor_data_num_dict
 

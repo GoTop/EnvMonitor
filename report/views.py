@@ -1,12 +1,20 @@
 # coding=utf-8
 from __future__ import unicode_literals
+
+import datetime
+
 from django.shortcuts import render_to_response
+
 from company.function.standard import get_station_standard
 from company.models import T_All_station, Station
+from report.function import date_func
+from report.function import monitor_value
+from report.function.date_func import get_time_range_list
+from report.function.monitor_value import get_range_monitor_value
 import report.function.report_func as report_func
 import report.function.abnormal_func as abnormal_func
 
-import datetime
+
 
 # Create your views here.
 def water_daily_report_view(request, date):
@@ -237,23 +245,37 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+
+    step = datetime.timedelta(hours=1)
+    time_range_list = date_func.get_time_range_list(start_date_object, end_date_object, step,
+                                                    format='%Y%m%d%H%M%S')
+
     for param_name in param_name_list:
+        #todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
+        #report_func.get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type, table_type)
 
-        #todo 2014-12-1 改用每次获取一个监控因子数据，组合为一列数据的方法
-        report_func.get_water_day_data_func()
 
 
-        data_dict = report_func.get_range_monitor_value(mn,
+        monitor_data_list = monitor_value.get_range_monitor_value(mn,
                                                         start_date_object,
                                                         end_date_object,
                                                         param_name,
                                                         data_type,
                                                         table_type)
+
+        key = param_name + '_' + data_type
+        report_value[key] = monitor_data_list
+
+        for time in time_range_list:
+            time_range_list
+
         report_dict = {'station_name': t_station.name,
                        'param_name': param_name,
                        'data_dict': data_dict,
                        'mn': mn}
         report_list.append(report_dict)
+
+
 
     #多个监控点位的统计数据
     multi_report_list.append(report_list)

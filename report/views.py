@@ -228,6 +228,11 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
 def station_data_view(request, mn, start_date_string, end_date_string, table_type):
     """
     获取mn监控点位从start_date_string, end_date_string的table_type表（日数据或者小时数据）中的监控数据
+    :param request:
+    :param mn:
+    :param start_date_string:
+    :param end_date_string:
+    :param table_type:
     """
     multi_report_list = []
     monitor_data_num_dict = {}
@@ -249,7 +254,7 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     step = datetime.timedelta(hours=1)
     time_range_list = date_func.get_time_range_list(start_date_object, end_date_object, step,
                                                     format='%Y%m%d%H%M%S')
-
+    report_row = {}
     for param_name in param_name_list:
         #todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
         #report_func.get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type, table_type)
@@ -264,21 +269,27 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
                                                         table_type)
 
         key = param_name + '_' + data_type
-        report_value[key] = monitor_data_list
 
         for time in time_range_list:
-            time_range_list
+            #report_row[time][key] = '-'
+            report_row = {time: {key: '-'}}
+            for monitor_data in monitor_data_list:
+                monitor_data_datetime = monitor_data['DataTime'].strftime("%Y%m%d%H%M%S")
+                if time == monitor_data_datetime :
+                    report_row[time][key] = monitor_data['dValue']
+                    break
 
-        report_dict = {'station_name': t_station.name,
-                       'param_name': param_name,
-                       'data_dict': data_dict,
-                       'mn': mn}
-        report_list.append(report_dict)
+
+        # report_dict = {'station_name': t_station.name,
+        #                'param_name': param_name,
+        #                'data_dict': data_dict,
+        #                'mn': mn}
+        # report_list.append(report_dict)
 
 
 
     #多个监控点位的统计数据
-    multi_report_list.append(report_list)
+    # multi_report_list.append(report_list)
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")

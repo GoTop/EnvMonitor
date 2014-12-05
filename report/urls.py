@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^(?P<mn>\d{14})/(?P<date>\d{8})/$', views.company_water_day_report_view, name='station_day_report_url'),
 
     #监控点位的某一段时间内的报表报表（可以通过    table_type设置显示显示小时数据还是日数据）
-    # http://127.0.0.1:8000/report/station_data/day/45007760002007/20140101000000/20140331000000
+    # http://127.0.0.1:8000/report/station_data/day/45007760002007/20140101000000/20140131000000
     url(r'^station_data/(?P<table_type>(day|hour))/(?P<mn>\d{14})/(?P<start_date_string>\d{14})/(?P<end_date_string>\d{14})/$',
         views.station_data_view, name='station_data_url'),
 

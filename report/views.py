@@ -193,7 +193,7 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
             param_name_list = ['SO2', 'NOx']
             data_type = 'ZsAvg'
 
-        #单个监控点位的统计数据
+        # 单个监控点位的统计数据
         report_list = []
         for param_name in param_name_list:
             abnormal_data_dict = abnormal_func.count_abnormal_data(mn, start_date_string,
@@ -210,7 +210,7 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
 
             # monitor_data_num_dict["station_name"] = t_station.name
             # monitor_data_num_dict_list.append(monitor_data_num_dict)
-        #多个监控点位的统计数据
+        # 多个监控点位的统计数据
         multi_report_list.append(report_list)
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
@@ -245,7 +245,7 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
         param_name_list = ['SO2', 'NOx']
         data_type = 'ZsAvg'
 
-    #单个监控点位的统计数据
+    # 单个监控点位的统计数据
     report_list = []
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
@@ -254,9 +254,13 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     step = datetime.timedelta(hours=24)
     time_range_list = date_func.get_time_range_list(start_date_object, end_date_object, step, format='%Y%m%d%H%M%S')
 
-    #新建一个report_table字典，以time_range_list为key
-    report_table = {}
-    report_table = report_table.fromkeys(time_range_list,{})
+    #如果使用 report_table = report_table.fromkeys(time_range_list, {})
+    #会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
+    report_table = {k:{} for k in time_range_list}
+
+
+    # report_table = {'20140101000000': {},
+    #                 '20140102000000': {}}
 
     for param_name in param_name_list:
         #todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
@@ -267,35 +271,19 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
 
         report_row = {}
         for time in time_range_list:
-            #report_row[time][key] = '-'
+
             report_single_param = {key: '-'}
+            #report_row = report_table.get(time)
+            report_row = report_table[time].copy()
             report_row.update(report_single_param)
 
             for monitor_data in monitor_data_list:
                 monitor_data_datetime = monitor_data['DataTime'].strftime("%Y%m%d%H%M%S")
                 if time == monitor_data_datetime:
                     report_single_param = {key: monitor_data['dValue']}
-                    #report_single_param[time][key] = monitor_data['dValue']
                     report_row.update(report_single_param)
-                    report_table[time].update({report_row})
+                    report_table[time] = report_row
                     break
-            #else在 while和for 正常循环完成之后执行，和直接写在 while和for 之后没有区别，
-            #但是如果用break结束循环之后else就不会执行了。
-            #https://github.com/chuhades/notes/issues/1
-            else:
-                continue
-
-
-                # report_dict = {'station_name': t_station.name,
-                #                'param_name': param_name,
-                #                'data_dict': data_dict,
-                #                'mn': mn}
-                # report_list.append(report_dict)
-
-
-
-    #多个监控点位的统计数据
-    # multi_report_list.append(report_list)
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")

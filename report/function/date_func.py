@@ -1,4 +1,5 @@
 # coding=utf-8
+from __future__ import unicode_literals
 import datetime
 
 __author__ = 'GoTop'
@@ -84,6 +85,6 @@ def get_time_range_list(start_datetime_object, stop_datetime_object, step, forma
     t = start_datetime_object
     li = []
     while t < stop_datetime_object:
-        li.append(datetime.datetime.strftime(t, format))
+        li.append(datetime.datetime.strftime(t, format).decode('utf-8'))
         t += step
     return li

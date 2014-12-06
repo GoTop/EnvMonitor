@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>{{ datetime|date:"Y年m月d日" }}监控{{ type }}报表</title>
+    <title>{{ station_name }}废气监控{{ type }}数据报表({{ start_date_object|date:"Y-m-d" }}至{{ end_date_object|date:"Y-m-d" }})</title>
 </head>
 <body>
 
@@ -93,7 +93,7 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>{{ datetime|date:"Y年m月d日" }}国控企业废气监控{{ type }}报表</h2>
+            <h2>{{ station_name }}废气监控{{ type }}数据报表({{ start_date_object|date:"Y-m-d" }}至{{ end_date_object|date:"Y-m-d" }})</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
@@ -115,18 +115,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for daily_report in daily_report_list %}
+                {% for key, report_row in report_table.items %}
                     <tr>
-                        <td>{{ daily_report.station_name }}</td>
-                        <td>{{ daily_report.SO2_Avg }}</td>
-                        <td>{{ daily_report.SO2_Cou }}</td>
-                        <td>{{ daily_report.NOx_Avg }}</td>
-                        <td>{{ daily_report.NOx_Cou }}</td>
-                        <td>{{ daily_report.volume_of_gas_Cou }}</td>
-                        <td>{{ daily_report.SO2_standard }}</td>
-                        <td>{{ daily_report.NOx_standard }}</td>
+                        <td>{{ key }}</td>
+                        <td>{{ report_row.SO2_ZsAvg }}</td>
+                        <td>{{ report_row.SO2_Cou }}</td>
+                        <td>{{ report_row.NOx_ZsAvg }}</td>
+                        <td>{{ report_row.NOx_Cou }}</td>
+                        <td>{{ report_row.volume_of_gas_Cou }}</td>
                     </tr>
                 {% endfor %}
+                <tr>
+                    <td></td>
+                    <td>{{ standard.SO2.text }}</td>
+                    <td></td>
+                    <td>{{ standard.NOx.text }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </div>

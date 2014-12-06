@@ -17,6 +17,9 @@ import report.function.abnormal_func as abnormal_func
 
 
 # Create your views here.
+from report.function.utility import merge
+
+
 def water_daily_report_view(request, date):
     """
     所有废水排放点位的当天日数据报表
@@ -261,13 +264,13 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     time_range_list = date_func.get_time_range_list(start_date_object, end_date_object, step, format='%Y%m%d%H%M%S')
 
     # 如果使用 report_table = report_table.fromkeys(time_range_list, {})
-    #会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
+    # 会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
     report_table = {k: {} for k in time_range_list}
 
-    #获取监控因子数据
+    # 获取监控因子数据
     for param_name in param_name_list:
         for data_type in data_type_list:
-            #todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
+            # todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
             monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
                                                                       param_name, data_type, table_type)
 
@@ -287,15 +290,25 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
                         report_row.update(report_single_param)
                         report_table[time].update(report_row)
                         break
-    #获取流量数据
+
     monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
                                                               volume_param_name, volume_data_type, table_type)
 
     interval_second = 3600 * 24
-    get_format_monitor_data(mn, param_name=volume_param_name, data_type=volume_data_type, table_type,
-                            start_date_object,end_date_object,interval_second)
+
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+
+    # 获取流量数据
+    volume_data_table = get_format_monitor_data(mn, volume_param_name, volume_data_type, table_type,
+                                                start_date_object, end_date_object, interval_second)
+
+    report_table = merge(report_table, volume_data_table)
+    report_table1 = sorted(report_table.items(), key=lambda x: x[0])
+
+    standard = {}
+    for param_name in param_name_list:
+        standard.update({param_name: get_station_standard(mn, param_name)})
 
     if table_type == 'hour':
         type = '小时'
@@ -308,12 +321,24 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
                                'start_date_string': start_date_string,
                                'end_date_string': end_date_string,
                                'type': type,
-                               'report_table': report_table}
+                               'report_table': report_table1,
+                               'standard': standard}
     )
 
 
 def get_format_monitor_data(mn, param_name, data_type, table_type, start_date_object, end_date_object,
                             interval_second):
+    """
+    将获取数据库中一个时间段指定监控因子，指定数据类型的监控数据做成一个函数
+    :param mn:
+    :param param_name:
+    :param data_type:
+    :param table_type:
+    :param start_date_object:
+    :param end_date_object:
+    :param interval_second:
+    :return:
+    """
     step = datetime.timedelta(seconds=interval_second)
     time_range_list = date_func.get_time_range_list(start_date_object, end_date_object, step, format='%Y%m%d%H%M%S')
 
@@ -321,8 +346,8 @@ def get_format_monitor_data(mn, param_name, data_type, table_type, start_date_ob
     # 会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
     report_table = {k: {} for k in time_range_list}
 
-    #获取监控因子数据
-    #todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
+    # 获取监控因子数据
+    # todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
     monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
                                                               param_name, data_type, table_type)
 
@@ -343,3 +368,4 @@ def get_format_monitor_data(mn, param_name, data_type, table_type, start_date_ob
                 report_table[time].update(report_row)
                 break
     return report_table
+

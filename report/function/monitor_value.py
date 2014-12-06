@@ -24,6 +24,11 @@ def get_single_monitor_value(mn, date, param_name, data_type, table_type):
     只返回一个单独的数值
 
     如果是获取日数据，date的格式必须是 "%Y%m%d"
+    :param mn:
+    :param date:
+    :param param_name: param_name的定义在get_param_code(param_name)函数中查看
+    :param data_type:
+    :param table_type:
     如果是获取小时数据，date的格式必须是 "%Y/%m/%d %H:%M:%S"
     """
     param_code = get_param_code(param_name)
@@ -62,7 +67,7 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, 
     一个简便功能函数，可以方便地获取监测点位mn的date的多个因子和数据类型的小时或日数据
 
     param_name_list：监控因子列表
-    data_type_list：数据类型列表：Avg或Cou
+    data_type：数据类型列表：Avg,ZsAvg,Min,Max,ZsMin,ZsMax,Cou
     table_type(day或hour):根据该参数选择小时或日数据的表
 
     return：返回的数组中，key为类似COD_Avg这样的格式

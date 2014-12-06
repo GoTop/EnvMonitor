@@ -1,5 +1,5 @@
 #coding=utf-8
-from __future__ import unicode_literals
+#from __future__ import unicode_literals
 
 __author__ = 'GoTop'
 
@@ -92,25 +92,9 @@ s = '[22001] [Microsoft][SQL Native Client][SQL Server]\xbd\xab\xbd\xd8\xb6\xcf\
 s = "[42S02] [Microsoft][SQL Native Client][SQL Server]\xb6\xd4\xcf\xf3\xc3\xfb  'Company' \xce\xde\xd0\xa7\xa1\xa3 (208) (SQLExecDirectW)"
 s = "[42000] [Microsoft][SQL Native Client][SQL Server]'Avg' \xb8\xbd\xbd\xfc\xd3\xd0\xd3\xef\xb7\xa8\xb4\xed\xce\xf3\xa1\xa3 (102) (SQLExecDirectW)"
 
-s = "[42S02] [Microsoft][SQL Native Client][SQL Server]\xb6\xd4\xcf\xf3\xc3\xfb  'T_Superscale' \xce\xde\xd0\xa7\xa1\xa3 (208) (SQLExecDirectW); [42000] [Microsoft][SQL Native Client][SQL Server]\xce\xb4\xc4\xdc\xd7\xbc\xb1\xb8\xd3\xef\xbe\xe4\xa1\xa3 (8180)"
-#print s.decode('gbk')
+s = "[42000] [Microsoft][SQL Native Client][SQL Server]'ZsAvg' \xb8\xbd\xbd\xfc\xd3\xd0\xd3\xef\xb7\xa8\xb4\xed\xce\xf3\xa1\xa3 (102) (SQLExecDirectW)"
+print s.decode('gbk')
 
-
-report_row = {}
-report_single_param_so2 = {'so2': 200}
-report_single_param_nox = {'nox': 100}
-
-report_row.update(report_single_param_so2)
-report_row.update(report_single_param_nox)
-
-report_table = {'20140101000000': {},
-                '20140102000000': {}}
-time = '20140102000000'
-report_table[time].update(report_row)
-#time = '20140102000000'
-#report_table[time].update(report_row)
-#report_table.update(report_row)
-print(report_table)
 
 
 

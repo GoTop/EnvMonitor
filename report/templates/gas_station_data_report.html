@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>统计异常监控数据个数</title>
+    <title>{{ station_name }}废气监控{{ type }}数据报表({{ start_date_object|date:"Y-m-d" }}至{{ end_date_object|date:"Y-m-d" }})</title>
 </head>
 <body>
 
@@ -73,7 +73,7 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Link</a></li>
-                    <li class="dropdown">
+                    <li class="dropdown">gas_daily_report.html
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
@@ -93,54 +93,62 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>统计异常监控{{ type }}数据个数</h2>
+            <h2>{{ station_name }}废气监控{{ type }}数据报表({{ start_date_object|date:"Y-m-d" }}至{{ end_date_object|date:"Y-m-d" }})</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
                 <tr>
                     <th>监控点位</th>
-                    <th>时间</th>
-                    <th>COD总条数</th>
-                    <th>COD异常条数</th>
-                    <th>NH总条数</th>
-                    <th>NH异常条数</th>
-                    <th>SO2总条数</th>
-                    <th>SO2异常条数</th>
-                    <th>NOx总条数</th>
-                    <th>NOx异常条数</th>
-
+                    <th>SO2[Avg]</th>
+                    <th>SO2[ZsAvg]</th>
+                    <th>SO2[Cou]</th>
+                    <th>氮氧化物[Avg]</th>
+                    <th>氮氧化物[ZsAvg]</th>
+                    <th>氮氧化物[Cou]</th>
+                    <th>标态流量[Cou]</th>
+                </tr>
+                <tr>
+                    <th>单位</th>
+                    <th>(mg/l)</th>
+                    <th>(mg/l)</th>
+                    <th>(Kg)</th>
+                    <th>(mg/l)</th>
+                    <th>(mg/l)</th>
+                    <th>(Kg)</th>
+                    <th>M3</th>
                 </tr>
                 </thead>
                 <tbody>
+                {% for datetime, report_row in report_table %}
+                    <tr>
+                        <td>
+                            {% if table_type == "hour" %}
+                                {{ datetime|date:"Y-m-d H:i" }}
+                            {% endif %}
 
-                {% for report_list in multi_report_list %}
-                    {% for report_dict in report_list %}
-                        <tr>
-                            <td>{{ report_dict.station_name }}</td>
-                            <td>{{ start_date_object|date:"Y-m-d H:i:s" }}至{{ end_date_object|date:"Y-m-d H:i:s" }}</td>
-
-                            <td><a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.CODcr_Avg_total_num }}</a></td>
-                            <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.CODcr_Avg_abnormal_num }}</a>
-                            </td>
-                            <td>{{ report_dict.abnormal_data_dict.abnormal_data_dict.NH_Avg_total_num }}</td>
-                            <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.NH_Avg_abnormal_num }}</a>
-                            </td>
-                            <td><a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.SO2_ZsAvg_total_num }}</a></td>
-                            <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.SO2_ZsAvg_abnormal_num }}</a>
-                            </td>
-                            <td>
-                                <a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.NOx_ZsAvg_total_num }}</a>
-                            </td>
-                            <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.NOx_ZsAvg_abnormal_num }}</a>
-                            </td>
-
-                        </tr>
-                    {% endfor %}
+                            {% if table_type == "day" %}
+                                {{ datetime|date:"Y-m-d" }}
+                            {% endif %}
+                        </td>
+                        <td>{{ report_row.SO2_Avg|floatformat:2 }}</td>
+                        <td>{{ report_row.SO2_ZsAvg|floatformat:2 }}</td>
+                        <td>{{ report_row.SO2_Cou|floatformat:2 }}</td>
+                        <td>{{ report_row.NOx_Avg|floatformat:2 }}</td>
+                        <td>{{ report_row.NOx_ZsAvg|floatformat:2 }}</td>
+                        <td>{{ report_row.NOx_Cou|floatformat:2 }}</td>
+                        <td>{{ report_row.volume_of_gas_Cou|floatformat:2 }}</td>
+                    </tr>
                 {% endfor %}
+                <tr>
+                    <td>标准</td>
+                    <td>{{ standard.SO2.text }}</td>
+                    <td>{{ standard.SO2.text }}</td>
+                    <td></td>
+                    <td>{{ standard.NOx.text }}</td>
+                    <td>{{ standard.NOx.text }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </div>

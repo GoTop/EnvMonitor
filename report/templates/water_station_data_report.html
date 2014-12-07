@@ -28,7 +28,7 @@
         }
     </style>
 
-    <title>获取异常监控数据结果</title>
+    <title>{{ station_name }}废水监控{{ type }}数据报表({{ start_date_object|date:"Y-m-d" }}至{{ end_date_object|date:"Y-m-d" }})</title>
 </head>
 <body>
 
@@ -73,7 +73,7 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Link</a></li>
-                    <li class="dropdown">
+                    <li class="dropdown">gas_daily_report.html
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
@@ -93,44 +93,53 @@
 
     <div id='content' class='row-fluid'>
         <div class='span12 main'>
-            <h2>获取异常监控数据结果</h2>
+            <h2>{{ station_name }}废气监控{{ type }}数据报表({{ start_date_object|date:"Y-m-d" }}至{{ end_date_object|date:"Y-m-d" }})</h2>
 
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
                 <tr>
                     <th>监控点位</th>
-                    <th>时间</th>
-                    <th>监测因子</th>
-                    <th>数据类型</th>
-                    <th>监测数值</th>
-                    <th>标准</th>
-
+                    <th>COD[Avg]</th>
+                    <th>COD[Cou]</th>
+                    <th>氨氮[Avg]</th>
+                    <th>氨氮[Cou]</th>
+                    <th>流量[Cou]</th>
                 </tr>
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>单位</th>
                     <th>(mg/l)</th>
+                    <th>kg</th>
                     <th>(mg/l)</th>
+                    <th>kg</th>
+                    <th>M3</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for report_dict in report_list %}
-                    {% for abnormal_data in report_dict.abnormal_data_list %}
-                        <tr>
-                            <td>{{ station_name }}</td>
-                            <td>{{ abnormal_data.data_time|date:"Y-m-d H:i:s" }}</td>
-                            <td>{{ report_dict.param_name }}</td>
-                            <td>{{ abnormal_data.data_type }}</td>
-                            <td>{{ abnormal_data.original_value }}</td>
-                            <td>{{ report_dict.standard_text }}</td>
-                        </tr>
-                    {% endfor %}
+                {% for datetime, report_row in report_table %}
                     <tr>
-                        <td colspan="6">-----------------------------------------------------------------------------</td>
+                        <td>{% if table_type == "hour" %}
+                                {{ datetime|date:"Y-m-d H:i" }}
+                            {% endif %}
+
+                            {% if table_type == "day" %}
+                                {{ datetime|date:"Y-m-d" }}
+                            {% endif %}
+                        </td>
+                        <td>{{ report_row.CODcr_Avg|floatformat:2 }}</td>
+                        <td>{{ report_row.CODcr_Cou|floatformat:2 }}</td>
+                        <td>{{ report_row.NH_Avg|floatformat:2 }}</td>
+                        <td>{{ report_row.NH_Cou|floatformat:2 }}</td>
+                        <td>{{ report_row.volume_of_water_Cou|floatformat:2 }}</td>
                     </tr>
                 {% endfor %}
+                <tr>
+                    <td>标准</td>
+                    <td>{{ standard.CODcr.text }}</td>
+                    <td></td>
+                    <td>{{ standard.NH.text }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </div>

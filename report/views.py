@@ -132,7 +132,7 @@ def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
-    return render_to_response('get_abmornal_date_result.html',
+    return render_to_response('abmornal_data.html',
                               {'station_name': t_station.name,
                                'start_datetime': start_date_object,
                                'end_datetime': end_date_object,
@@ -218,12 +218,19 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
 
+    if table_type == 'hour':
+        type = '小时'
+    elif table_type == 'day':
+        type = '日'
+
+
     return render_to_response('count_multi_abnormal_data.html',
                               {'start_date_object': start_date_object,
                                'end_date_object': end_date_object,
                                'start_date_string': start_date_string,
                                'end_date_string': end_date_string,
-                               'type': '小时',
+                               'type': type,
+                               'table_type': table_type,
                                'multi_report_list': multi_report_list}
     )
 
@@ -237,59 +244,31 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     :param end_date_string:
     :param table_type:
     """
-    multi_report_list = []
-    monitor_data_num_dict = {}
     t_station = Station.objects.get(station_id=mn)
 
     # param_name的定义在get_param_code(param_name)函数中查看
     if t_station.type == '废水':
         param_name_list = ['CODcr', 'NH']
-        data_type_list = ['Avg','ZsAvg', 'Cou']
+        data_type_list = ['Avg', 'ZsAvg', 'Cou']
         volume_param_name = 'volume_of_water'
         volume_data_type = 'Cou'
+        template_name = "water_station_data_report.html"
     elif t_station.type == '废气':
         param_name_list = ['SO2', 'NOx']
-        data_type_list = ['Avg','ZsAvg', 'Cou']
+        data_type_list = ['Avg', 'ZsAvg', 'Cou']
         volume_param_name = 'volume_of_gas'
         volume_data_type = 'Cou'
-
-
-    # start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
-    # end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
-    #
-    # step = datetime.timedelta(hours=24)
-    # time_range_list = get_time_range_list(start_date_object, end_date_object, step, format='%Y%m%d%H%M%S')
-    #
-    # # 如果使用 report_table = report_table.fromkeys(time_range_list, {})
-    # # 会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
-    # report_table = {k: {} for k in time_range_list}
-
-    # 获取监控因子数据
-    # for param_name in param_name_list:
-    #     for data_type in data_type_list:
-    #         # todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
-    #         monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
-    #                                                                   param_name, data_type, table_type)
-    #
-    #         key = param_name + '_' + data_type
-    #
-    #         report_row = {}
-    #         for time in time_range_list:
-    #
-    #             report_single_param = {key: '-'}
-    #             report_row.update(report_single_param)
-    #             report_table[time].update(report_row)
-    #
-    #             for monitor_data in monitor_data_list:
-    #                 monitor_data_datetime = monitor_data['DataTime'].strftime("%Y%m%d%H%M%S")
-    #                 if time == monitor_data_datetime:
-    #                     report_single_param = {key: monitor_data['dValue']}
-    #                     report_row.update(report_single_param)
-    #                     report_table[time].update(report_row)
-    #                     break
+        template_name = "gas_station_data_report.html"
 
     report_table = {}
-    interval_second = 3600 * 24
+
+    if table_type == 'hour':
+        type = '小时'
+        interval_second = 3600
+    elif table_type == 'day':
+        type = '日'
+        interval_second = 3600 * 24
+
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
@@ -300,7 +279,7 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     for param_name in param_name_list:
         for data_type in data_type_list:
             param_data_table = get_format_monitor_data(mn, param_name, data_type, table_type,
-                                                start_date_object, end_date_object, interval_second)
+                                                       start_date_object, end_date_object, interval_second)
             report_table = merge(report_table, param_data_table)
 
     report_table = merge(report_table, volume_data_table)
@@ -310,17 +289,14 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     for param_name in param_name_list:
         standard.update({param_name: get_station_standard(mn, param_name)})
 
-    if table_type == 'hour':
-        type = '小时'
-    elif table_type == 'day':
-        type = '日'
-    return render_to_response('station_data_report.html',
+    return render_to_response(template_name,
                               {'station_name': t_station.name,
                                'start_date_object': start_date_object,
                                'end_date_object': end_date_object,
                                'start_date_string': start_date_string,
                                'end_date_string': end_date_string,
                                'type': type,
+                               'table_type': table_type,
                                'report_table': report_table,
                                'standard': standard}
     )

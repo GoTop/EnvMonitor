@@ -14,7 +14,7 @@ urlpatterns = [
     #废水监控点位的date日报表
     url(r'^(?P<mn>\d{14})/(?P<date>\d{8})/$', views.company_water_day_report_view, name='station_day_report_url'),
 
-    #监控点位的某一段时间内的报表报表（可以通过    table_type设置显示显示小时数据还是日数据）
+    #监控点位的某一段时间内的报表报表（可以通过table_type设置显示显示小时数据还是日数据）
     # http://127.0.0.1:8000/report/station_data/day/45007760002007/20140101000000/20140131000000
     url(r'^station_data/(?P<table_type>(day|hour))/(?P<mn>\d{14})/(?P<start_date_string>\d{14})/(?P<end_date_string>\d{14})/$',
         views.station_data_view, name='station_data_url'),
@@ -32,7 +32,7 @@ urlpatterns = [
 
     #统计指定监控点位mn_list从start_date至end_date，指定监控因子列表中的param_name_list，
     #和数据类型data_type（ZsAvg）的超标数
-    # 127.0.0.1:8000/report/count_multi_abnormal_data/20140201000000/20140301000000/
+    # 127.0.0.1:8000/report/count_multi_abnormal_data/day/20140201000000/20140301000000/
     url(
         r'^count_multi_abnormal_data/(?P<start_date_string>\d{14})/(?P<end_date_string>\d{14})/(?P<table_type>(day|hour))$',
         views.count_multi_abnormal_data_view),

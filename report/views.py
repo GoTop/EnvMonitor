@@ -10,7 +10,7 @@ from company.models import T_All_station, Station
 from report.function import date_func
 from report.function import monitor_value
 from report.function.date_func import get_time_range_list
-from report.function.monitor_value import get_range_monitor_value
+from report.function.monitor_value import get_range_monitor_value, get_format_monitor_data
 import report.function.report_func as report_func
 import report.function.abnormal_func as abnormal_func
 
@@ -244,56 +244,51 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     # param_name的定义在get_param_code(param_name)函数中查看
     if t_station.type == '废水':
         param_name_list = ['CODcr', 'NH']
-        data_type_list = ['Avg', 'Cou']
+        data_type_list = ['Avg','ZsAvg', 'Cou']
         volume_param_name = 'volume_of_water'
         volume_data_type = 'Cou'
     elif t_station.type == '废气':
         param_name_list = ['SO2', 'NOx']
-        data_type_list = ['ZsAvg', 'Cou']
+        data_type_list = ['Avg','ZsAvg', 'Cou']
         volume_param_name = 'volume_of_gas'
         volume_data_type = 'Cou'
 
 
-    # 单个监控点位的统计数据
-    report_list = []
-
-    start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
-    end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
-
-    step = datetime.timedelta(hours=24)
-    time_range_list = date_func.get_time_range_list(start_date_object, end_date_object, step, format='%Y%m%d%H%M%S')
-
-    # 如果使用 report_table = report_table.fromkeys(time_range_list, {})
-    # 会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
-    report_table = {k: {} for k in time_range_list}
+    # start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
+    # end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")
+    #
+    # step = datetime.timedelta(hours=24)
+    # time_range_list = get_time_range_list(start_date_object, end_date_object, step, format='%Y%m%d%H%M%S')
+    #
+    # # 如果使用 report_table = report_table.fromkeys(time_range_list, {})
+    # # 会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
+    # report_table = {k: {} for k in time_range_list}
 
     # 获取监控因子数据
-    for param_name in param_name_list:
-        for data_type in data_type_list:
-            # todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
-            monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
-                                                                      param_name, data_type, table_type)
+    # for param_name in param_name_list:
+    #     for data_type in data_type_list:
+    #         # todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
+    #         monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
+    #                                                                   param_name, data_type, table_type)
+    #
+    #         key = param_name + '_' + data_type
+    #
+    #         report_row = {}
+    #         for time in time_range_list:
+    #
+    #             report_single_param = {key: '-'}
+    #             report_row.update(report_single_param)
+    #             report_table[time].update(report_row)
+    #
+    #             for monitor_data in monitor_data_list:
+    #                 monitor_data_datetime = monitor_data['DataTime'].strftime("%Y%m%d%H%M%S")
+    #                 if time == monitor_data_datetime:
+    #                     report_single_param = {key: monitor_data['dValue']}
+    #                     report_row.update(report_single_param)
+    #                     report_table[time].update(report_row)
+    #                     break
 
-            key = param_name + '_' + data_type
-
-            report_row = {}
-            for time in time_range_list:
-
-                report_single_param = {key: '-'}
-                report_row.update(report_single_param)
-                report_table[time].update(report_row)
-
-                for monitor_data in monitor_data_list:
-                    monitor_data_datetime = monitor_data['DataTime'].strftime("%Y%m%d%H%M%S")
-                    if time == monitor_data_datetime:
-                        report_single_param = {key: monitor_data['dValue']}
-                        report_row.update(report_single_param)
-                        report_table[time].update(report_row)
-                        break
-
-    monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
-                                                              volume_param_name, volume_data_type, table_type)
-
+    report_table = {}
     interval_second = 3600 * 24
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
@@ -302,9 +297,14 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     # 获取流量数据
     volume_data_table = get_format_monitor_data(mn, volume_param_name, volume_data_type, table_type,
                                                 start_date_object, end_date_object, interval_second)
+    for param_name in param_name_list:
+        for data_type in data_type_list:
+            param_data_table = get_format_monitor_data(mn, param_name, data_type, table_type,
+                                                start_date_object, end_date_object, interval_second)
+            report_table = merge(report_table, param_data_table)
 
     report_table = merge(report_table, volume_data_table)
-    report_table1 = sorted(report_table.items(), key=lambda x: x[0])
+    report_table = sorted(report_table.items(), key=lambda x: x[0])
 
     standard = {}
     for param_name in param_name_list:
@@ -321,51 +321,9 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
                                'start_date_string': start_date_string,
                                'end_date_string': end_date_string,
                                'type': type,
-                               'report_table': report_table1,
+                               'report_table': report_table,
                                'standard': standard}
     )
 
 
-def get_format_monitor_data(mn, param_name, data_type, table_type, start_date_object, end_date_object,
-                            interval_second):
-    """
-    将获取数据库中一个时间段指定监控因子，指定数据类型的监控数据做成一个函数
-    :param mn:
-    :param param_name:
-    :param data_type:
-    :param table_type:
-    :param start_date_object:
-    :param end_date_object:
-    :param interval_second:
-    :return:
-    """
-    step = datetime.timedelta(seconds=interval_second)
-    time_range_list = date_func.get_time_range_list(start_date_object, end_date_object, step, format='%Y%m%d%H%M%S')
-
-    # 如果使用 report_table = report_table.fromkeys(time_range_list, {})
-    # 会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
-    report_table = {k: {} for k in time_range_list}
-
-    # 获取监控因子数据
-    # todo 2014-12-1 改用每次获取一个监控因子监控数据，组合为报表中一行数据的方法
-    monitor_data_list = monitor_value.get_range_monitor_value(mn, start_date_object, end_date_object,
-                                                              param_name, data_type, table_type)
-
-    key = param_name + '_' + data_type
-
-    report_row = {}
-    for time in time_range_list:
-
-        report_single_param = {key: '-'}
-        report_row.update(report_single_param)
-        report_table[time].update(report_row)
-
-        for monitor_data in monitor_data_list:
-            monitor_data_datetime = monitor_data['DataTime'].strftime("%Y%m%d%H%M%S")
-            if time == monitor_data_datetime:
-                report_single_param = {key: monitor_data['dValue']}
-                report_row.update(report_single_param)
-                report_table[time].update(report_row)
-                break
-    return report_table
 

@@ -66,7 +66,6 @@ INSTALLED_APPS = (
     'company',
     'report',
     'statistics',
-    'testapp',
 
 )
 
@@ -101,7 +100,9 @@ DATABASES = {
 LANGUAGE_CODE = 'zh-CN'
 DEFAULT_CHARSET = 'utf-8'
 
-TIME_ZONE = 'UTC'
+#https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TIME_ZONE
+
+TIME_ZONE = 'Asia/Chongqing'
 
 USE_I18N = True
 

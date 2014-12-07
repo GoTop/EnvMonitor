@@ -1,8 +1,10 @@
 # coding=utf-8
 from __future__ import unicode_literals
+from django.utils import timezone
 from company.function.standard import get_param_code
 import time, datetime
 from django.db import connections
+from report.function.date_func import get_time_range_list
 
 __author__ = 'GoTop'
 
@@ -36,20 +38,20 @@ def get_single_monitor_value(mn, date, param_name, data_type, table_type):
     # 根据day_or_hour选择数据库中的日数据表或者小时数据表
     if table_type == 'day':
         table_name = 'Day_' + mn
-        #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
+        # strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
         datetime_tuple = time.strptime(date, "%Y%m%d")
         # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
         date = time.strftime("%Y/%m/%d %H:%M:%S", datetime_tuple)
     elif table_type == 'hour':
         table_name = 'Hour_' + mn
-        #strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
+        # strptime() 函数根据指定的格式把一个时间字符串解析为时间元组
         datetime_tuple = time.strptime(date, "%Y/%m/%d %H:%M:%S")
         # time strftime() 函数接收以时间元组，并返回以可读字符串表示的当地时间，格式由参数format决定
         date = time.strftime("%Y/%m/%d %H:%M:%S", datetime_tuple)
     param = (table_name, mn, param_code, data_type, date)
     cursor = connections['DB_baise'].cursor()
 
-    #因为在DB_baise数据库里，每个监测点位的日数据表名称都不一样（类似Day_45007760002801）
+    # 因为在DB_baise数据库里，每个监测点位的日数据表名称都不一样（类似Day_45007760002801）
     #所以只能用构造SQL语句的方式进行查询
     query = '''SELECT * FROM %s
                 WHERE StationID = '%s'
@@ -61,6 +63,7 @@ def get_single_monitor_value(mn, date, param_name, data_type, table_type):
     dict = dict_fetch_all(cursor)
     #row = cursor.fetchall()
     return round(dict[0]['dValue'], 2)
+
 
 def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, data_type, table_type):
     '''
@@ -74,7 +77,7 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, 
     '''
 
     # 根据type选择数据库中的日数据表或者小时数据表
-    #格式化start_date和end_date
+    # 格式化start_date和end_date
     if table_type == 'day':
         table_name = 'Day_' + mn
     elif table_type == 'hour':
@@ -118,5 +121,49 @@ def get_range_monitor_value(mn, start_date_object, end_date_object, param_name, 
     #     key = param_name + '_' + data_type
     #     report_hour_value[key] = value
     #     report_value[x] = report_hour_value
-    #todo 修改为直接返回值，有些函数要跟着修改
     return dict
+
+
+def get_format_monitor_data(mn, param_name, data_type, table_type, start_date_object, end_date_object,
+                            interval_second):
+    """
+    将获取数据库中一个时间段指定监控因子，指定数据类型的监控数据做成一个函数
+    :param mn:
+    :param param_name:
+    :param data_type:
+    :param table_type:
+    :param start_date_object:
+    :param end_date_object:
+    :param interval_second:
+    :return:
+    """
+    step = datetime.timedelta(seconds=interval_second)
+    time_range_list = get_time_range_list(start_date_object, end_date_object, step)
+
+    # 如果使用 report_table = report_table.fromkeys(time_range_list, {})
+    # 会导致每一个report_table的item的值均指向使用相同存储空间，导致对任意一个item的赋值，就是对所有item赋值的
+    report_table = {k: {} for k in time_range_list}
+
+    # 获取监控因子数据
+    # 改用每次获取一个监控因子某一时间段的所有监控数据，组合为报表中一行数据的方法
+    monitor_data_list = get_range_monitor_value(mn, start_date_object, end_date_object,
+                                                param_name, data_type, table_type)
+
+    key = param_name + '_' + data_type
+
+    report_row = {}
+    for time in time_range_list:
+
+        report_single_param = {key: '-'}
+        report_row.update(report_single_param)
+        report_table[time].update(report_row)
+
+        for monitor_data in monitor_data_list:
+            monitor_data_datetime = monitor_data['DataTime'].replace(tzinfo=None)
+            #.strftime("%Y%m%d%H%M%S")
+            if time == monitor_data_datetime:
+                report_single_param = {key: monitor_data['dValue']}
+                report_row.update(report_single_param)
+                report_table[time].update(report_row)
+                break
+    return report_table

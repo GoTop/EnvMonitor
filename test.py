@@ -92,7 +92,7 @@ s = '[22001] [Microsoft][SQL Native Client][SQL Server]\xbd\xab\xbd\xd8\xb6\xcf\
 s = "[42S02] [Microsoft][SQL Native Client][SQL Server]\xb6\xd4\xcf\xf3\xc3\xfb  'Company' \xce\xde\xd0\xa7\xa1\xa3 (208) (SQLExecDirectW)"
 s = "[42000] [Microsoft][SQL Native Client][SQL Server]'Avg' \xb8\xbd\xbd\xfc\xd3\xd0\xd3\xef\xb7\xa8\xb4\xed\xce\xf3\xa1\xa3 (102) (SQLExecDirectW)"
 
-s = "[42000] [Microsoft][SQL Native Client][SQL Server]'ZsAvg' \xb8\xbd\xbd\xfc\xd3\xd0\xd3\xef\xb7\xa8\xb4\xed\xce\xf3\xa1\xa3 (102) (SQLExecDirectW)"
+s =  '\xbe\xdc\xbe\xf8\xb7\xc3\xce\xca\xa1\xa3'
 print s.decode('gbk')
 
 

@@ -4,7 +4,7 @@ from django.utils import timezone
 from company.function.standard import get_param_code
 import time, datetime
 from django.db import connections
-from report.function.date_func import get_time_range_list
+from date_func import get_time_range_list
 
 __author__ = 'GoTop'
 

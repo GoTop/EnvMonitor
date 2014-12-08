@@ -1,4 +1,4 @@
-
+# coding=utf-8
 #!/usr/bin/env python
 
 """\
@@ -32,12 +32,20 @@ def main():
     modem = GsmModem(PORT, BAUDRATE, smsReceivedCallbackFunc=handleSms)
     modem.smsTextMode = False
     modem.connect(PIN)
+
+    modem.write('AT+CMGF=0')
+    modem.write('AT+CSCS="UCS2"')
+    modem.write('AT+CSMP = 17,167,0,8')
+    #modem.write('AT+CMGS=\"+8618978609910\"')
+
+
+    modem.sendSms("+8618978609910", "你好", waitForDeliveryReport=False, deliveryTimeout=15)
     print('Waiting for SMS message...')
-    try:
-        modem.rxThread.join(
-            2 ** 31)  # Specify a (huge) timeout so that it essentially blocks indefinitely, but still receives CTRL+C interrupt signal
-    finally:
-        modem.close();
+    # try:
+    #     modem.rxThread.join(
+    #         2 ** 31)  # Specify a (huge) timeout so that it essentially blocks indefinitely, but still receives CTRL+C interrupt signal
+    # finally:
+    #     modem.close();
 
 
 if __name__ == '__main__':

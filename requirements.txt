@@ -1,0 +1,16 @@
+Django==1.6.1
+colander==1.0
+django-pyodbc==0.2.3
+iso8601==0.1.10
+mechanize==0.2.5
+nose==1.3.4
+phonenumbers==7.0.1
+pyodbc==3.0.7
+pyserial==2.7
+pysms==0.2
+python-messaging==0.5.12
+six==1.8.0
+smspdu==1.0
+translationstring==1.3
+virtualenv==1.9.1
+virtualenvwrapper-win==1.1.5

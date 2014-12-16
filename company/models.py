@@ -38,7 +38,23 @@ class Manufacturer(models.Model):
     def __unicode__(self):
         return self.remark
 
-
+class District(models.Model):
+    #监测点位
+    DISTRICT_CHOICES = (
+        ('右江区', '右江区'),
+        ('田阳', '田阳'),
+        ('田东', '田东'),
+        ('平果', '平果'),
+        ('德保', '德保'),
+        ('靖西', '靖西'),
+        ('那坡', '那坡'),
+        ('凌云', '凌云'),
+        ('乐业', '乐业'),
+        ('田林', '田林'),
+        ('隆林', '隆林'),
+        ('西林', '西林'),
+    )
+    name = models.CharField(max_length=6, choices=DISTRICT_CHOICES)
 
 class Company(models.Model):
     #企业信息
@@ -77,7 +93,9 @@ class Company(models.Model):
     #企业名称
     name = models.CharField(max_length=50, unique=True)  # Field name made lowercase.
     #地区
-    district = models.CharField(max_length=6, choices=DISTRICT_CHOICES)
+    #district = models.CharField(max_length=6, choices=DISTRICT_CHOICES)
+    district = models.ForeignKey(District, blank=True, null=True)
+
     #联系电话
     tel = models.CharField(max_length=30, blank=True)  # Field name made lowercase.
     #组织机构代码
@@ -300,3 +318,7 @@ class NationSuprevise(models.Model):
         db_table = 'NationSuprevise'
         verbose_name = '国控信息'
         verbose_name_plural = '国控信息'
+
+class StationList(models.Model):
+    station = models.ForeignKey('Station')  # Field name made lowercase.
+    datetime = models.DateTimeField( blank=True)

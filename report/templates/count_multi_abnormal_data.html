@@ -101,13 +101,13 @@
                     <th>监控点位</th>
                     <th>时间</th>
                     <th>COD总条数</th>
-                    <th>COD异常条数</th>
+                    <th>COD有效条数</th>
                     <th>NH总条数</th>
-                    <th>NH异常条数</th>
+                    <th>NH有效条数</th>
                     <th>SO2总条数</th>
-                    <th>SO2异常条数</th>
+                    <th>SO2有效条数</th>
                     <th>NOx总条数</th>
-                    <th>NOx异常条数</th>
+                    <th>NOx有效条数</th>
 
                 </tr>
                 </thead>
@@ -117,25 +117,45 @@
                     {% for report_dict in report_list %}
                         <tr>
                             <td>{{ report_dict.station_name }}</td>
+
                             <td>{{ start_date_object|date:"Y-m-d H:i:s" }}至{{ end_date_object|date:"Y-m-d H:i:s" }}</td>
 
-                            <td><a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.CODcr_Avg_total_num }}</a></td>
                             <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.CODcr_Avg_abnormal_num }}</a>
+                                <a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.CODcr_Avg_total_num }}</a>
                             </td>
-                            <td>{{ report_dict.abnormal_data_dict.abnormal_data_dict.NH_Avg_total_num }}</td>
+
                             <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.NH_Avg_abnormal_num }}</a>
+                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.CODcr_Avg_valid_num }}</a>
                             </td>
-                            <td><a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.SO2_ZsAvg_total_num }}</a></td>
+
                             <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.SO2_ZsAvg_abnormal_num }}</a>
+                                <a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.NH_Avg_total_num }}</a>
+                            </td>
+
+                            <td>
+                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.NH_Avg_valid_num }}</a>
+                            </td>
+
+                            <td>
+                                <a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.SO2_Avg_total_num }}</a>
+                            </td>
+
+                            <td>
+                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.SO2_Avg_valid_num }}</a>
                             </td>
                             <td>
-                                <a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.NOx_ZsAvg_total_num }}</a>
+                                <a href="{% url 'station_data_url' table_type report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.NOx_Avg_total_num }}</a>
                             </td>
                             <td>
-                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">{{ report_dict.abnormal_data_dict.NOx_ZsAvg_abnormal_num }}</a>
+                                <a href="{% url 'get_abnormal_data' report_dict.mn start_date_string end_date_string %}">
+                                    {{ report_dict.abnormal_data_dict.NOx_Avg_valid_num }}</a>
                             </td>
 
                         </tr>

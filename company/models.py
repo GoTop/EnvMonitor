@@ -93,8 +93,8 @@ class Company(models.Model):
     #企业名称
     name = models.CharField(max_length=50, unique=True)  # Field name made lowercase.
     #地区
-    #district = models.CharField(max_length=6, choices=DISTRICT_CHOICES)
-    district = models.ForeignKey(District, blank=True, null=True)
+    district = models.CharField(max_length=6, choices=DISTRICT_CHOICES)
+    #district = models.ForeignKey(District, blank=True, null=True)
 
     #联系电话
     tel = models.CharField(max_length=30, blank=True)  # Field name made lowercase.

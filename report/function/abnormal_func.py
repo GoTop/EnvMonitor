@@ -111,6 +111,8 @@ def count_abnormal_data(mn, start_date_string, end_date_string, param_name, data
             abnormal_data_num = False
     monitor_data_num_dict[key + '_abnormal_num'] = abnormal_data_num
 
+    monitor_data_num_dict[key + '_valid_num'] =  len(monitor_data_dict) -abnormal_data_num
+
     return monitor_data_num_dict
 
 

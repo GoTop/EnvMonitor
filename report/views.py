@@ -183,6 +183,8 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
 
     mn_list = ['45007760002801', '45007760003001', '45007760002007']
 
+
+
     multi_report_list = []
 
     for mn in mn_list:
@@ -194,7 +196,7 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
             data_type = 'Avg'
         elif t_station.type == '废气':
             param_name_list = ['SO2', 'NOx']
-            data_type = 'ZsAvg'
+            data_type = 'Avg'
 
         # 单个监控点位的统计数据
         report_list = []
@@ -222,7 +224,6 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
         type = '小时'
     elif table_type == 'day':
         type = '日'
-
 
     return render_to_response('count_multi_abnormal_data.html',
                               {'start_date_object': start_date_object,
@@ -268,7 +269,6 @@ def station_data_view(request, mn, start_date_string, end_date_string, table_typ
     elif table_type == 'day':
         type = '日'
         interval_second = 3600 * 24
-
 
     start_date_object = datetime.datetime.strptime(start_date_string, "%Y%m%d%H%M%S")
     end_date_object = datetime.datetime.strptime(end_date_string, "%Y%m%d%H%M%S")

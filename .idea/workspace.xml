@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d123c28c-aad3-498f-ab22-a7f8cafca0b5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/company/function/old_standard.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/function/abnormal_func.py" afterPath="$PROJECT_DIR$/report/function/abnormal_func.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html" afterPath="$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/company/models.py" afterPath="$PROJECT_DIR$/company/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/function/monitor_value.py" afterPath="$PROJECT_DIR$/report/function/monitor_value.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test3.py" afterPath="$PROJECT_DIR$/test3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/urls.py" afterPath="$PROJECT_DIR$/report/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/views.py" afterPath="$PROJECT_DIR$/report/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -23,7 +23,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EnvMonitor$test.coverage" NAME="test Coverage Results" MODIFIED="1418791468071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EnvMonitor$test.coverage" NAME="test Coverage Results" MODIFIED="1419069509488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EnvMonitor$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1418112132718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EnvMonitor$Test__test1.coverage" NAME="Test: test1 Coverage Results" MODIFIED="1416991086432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
@@ -39,37 +39,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+      <file leaf-file-name="old_standard.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/company/function/old_standard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="0" selection-start="7001" selection-end="7001" vertical-scroll-proportion="0.0" vertical-offset="2288" max-vertical-offset="3420">
-              <folding />
+            <state line="114" column="10" selection-start="3577" selection-end="3577" vertical-scroll-proportion="0.0" vertical-offset="1828" max-vertical-offset="3580">
+              <folding>
+                <element signature="e#15#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test3.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test3.py">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/report/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="10" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="740">
-              <folding />
+            <state line="105" column="7" selection-start="0" selection-end="13202" vertical-scroll-proportion="0.5762195" vertical-offset="1722" max-vertical-offset="7020">
+              <folding>
+                <element signature="e#15#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://E:/Python27/Lib/site-packages/messaging/__init__.py">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/company/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="180">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://E:/Python27/Lib/site-packages/messaging/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="6" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="5460">
+            <state line="67" column="16" selection-start="1926" selection-end="1926" vertical-scroll-proportion="0.0" vertical-offset="644" max-vertical-offset="1540">
               <folding />
             </state>
           </provider>
@@ -78,53 +73,40 @@
       <file leaf-file-name="test2.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="12" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.0" vertical-offset="1375" max-vertical-offset="1860">
+            <state line="77" column="12" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.0" vertical-offset="1022" max-vertical-offset="1740">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="submit.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://E:/Python27/Lib/site-packages/messaging/sms/submit.py">
+      <file leaf-file-name="standard.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/company/function/standard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="8" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="6720">
+            <state line="98" column="9" selection-start="3163" selection-end="3163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2380">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_gsm_encoding.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://E:/Python27/Lib/site-packages/messaging/test/test_gsm_encoding.py">
+      <file leaf-file-name="monitor_value.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/report/function/monitor_value.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="39" selection-start="6937" selection-end="6944" vertical-scroll-proportion="0.0" vertical-offset="4320" max-vertical-offset="5460">
-              <folding />
+            <state line="137" column="12" selection-start="4419" selection-end="4419" vertical-scroll-proportion="0.0" vertical-offset="2218" max-vertical-offset="3420">
+              <folding>
+                <marker date="1419054731092" expanded="true" signature="1808:1972" placeholder="SELECT * FRO..missing_value..." />
+                <marker date="1419054731092" expanded="true" signature="3154:3356" placeholder="SELECT * FRO..missing_value..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_sms.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://E:/Python27/Lib/site-packages/messaging/test/test_sms.py">
+      <file leaf-file-name="abnormal_func.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="315" column="78" selection-start="11423" selection-end="11423" vertical-scroll-proportion="0.7174349" vertical-offset="5942" max-vertical-offset="9740">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/report/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="23" selection-start="6493" selection-end="6493" vertical-scroll-proportion="0.0" vertical-offset="3460" max-vertical-offset="6220">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="count_multi_abnormal_data.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="41" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="3540">
-              <folding />
+            <state line="35" column="20" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="3780">
+              <folding>
+                <element signature="e#15#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,8 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/company/templates/company/station_list.html" />
-        <option value="$PROJECT_DIR$/company/templates/all_station.html" />
         <option value="$PROJECT_DIR$/company/function/string.py" />
         <option value="$PROJECT_DIR$/report/templates/water_day_report.html" />
         <option value="$PROJECT_DIR$/report/function/report.py" />
@@ -185,19 +165,21 @@
         <option value="$PROJECT_DIR$/statistics/views.py" />
         <option value="$PROJECT_DIR$/report/function/report_func.py" />
         <option value="$PROJECT_DIR$/report/function/date_func.py" />
-        <option value="$PROJECT_DIR$/report/urls.py" />
-        <option value="$PROJECT_DIR$/report/function/monitor_value.py" />
         <option value="E:/Python27/Lib/site-packages/messaging/test/test_sms.py" />
         <option value="E:/Python27/Lib/site-packages/messaging/sms/submit.py" />
         <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/EnvMonitor/local_settings.py" />
         <option value="$PROJECT_DIR$/company/models.py" />
+        <option value="$PROJECT_DIR$/test3.py" />
+        <option value="$PROJECT_DIR$/report/function/mn_list.py" />
+        <option value="$PROJECT_DIR$/report/function/monitor_value.py" />
+        <option value="$PROJECT_DIR$/report/urls.py" />
+        <option value="$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html" />
         <option value="$PROJECT_DIR$/report/function/abnormal_func.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/company/function/old_standard.py" />
         <option value="$PROJECT_DIR$/report/views.py" />
-        <option value="$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html" />
-        <option value="$PROJECT_DIR$/test3.py" />
       </list>
     </option>
   </component>
@@ -256,11 +238,393 @@
               <option name="myItemId" value="EnvMonitor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="EnvMonitor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="encodings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messaging" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messaging" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsgiref" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.7.2 virtualenv at E:\VirtualEnvs\EnvMonitor &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python27" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="function" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="function" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EnvMonitor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="EnvMonitor" />
@@ -319,7 +683,7 @@
       <recent name="E:\django-project\EnvMonitor\testapp\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Django server.EnvMonitor">
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="Test: test1" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -842,7 +1206,11 @@
       <created>1418723622108</created>
       <updated>1418723622108</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="初步完成统计减排监察系数中国控企业自动监控数据每月接收到的有效和达标数据的功能">
+      <created>1419042829276</created>
+      <updated>1419042829276</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -869,46 +1237,46 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20475562" sideWeight="0.43741935" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55217963" sideWeight="0.43741935" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37912813" sideWeight="0.5619355" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283871" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22193548" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17290322" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16387096" sideWeight="0.52035624" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29590487" sideWeight="0.6812903" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1683871" sideWeight="0.47964376" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41347423" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3923382" sideWeight="0.6812903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38441214" sideWeight="0.3548387" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14266843" sideWeight="0.6451613" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28137386" sideWeight="0.43741935" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1683871" sideWeight="0.47964376" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28137386" sideWeight="0.43741935" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283871" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11096774" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26387095" sideWeight="0.52035624" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09114927" sideWeight="0.6451613" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38441214" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17806451" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3709239" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55217963" sideWeight="0.43741935" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11548913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37912813" sideWeight="0.5619355" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22193548" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5298913" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46331522" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47554347" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41347423" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41083223" sideWeight="0.6812903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38441214" sideWeight="0.3548387" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1683871" sideWeight="0.47964376" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28137386" sideWeight="0.43741935" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283871" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14129032" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11096774" sideWeight="0.45719844" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1567742" sideWeight="0.5424837" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4660326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14" sideWeight="0.52035624" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14266843" sideWeight="0.6451613" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -923,7 +1291,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="导出DB_baise数据库中的表结构对应的model代码2014-5- 19下午" />
     <MESSAGE value="添加获取异常数据的功能 2014-6-9下午" />
     <MESSAGE value="添加获取异常数据的功能2 2014-6-10上午" />
     <MESSAGE value="修改显示company list_view的功能 2014-6-24下午" />
@@ -948,7 +1315,8 @@
     <MESSAGE value="获取一段时间范围内的监控数据，遍历之后取出对应时间的监测值" />
     <MESSAGE value="修改获取一段时间内的监控数据，然后将其组合为一个用于模板的dict的功能" />
     <MESSAGE value="测试发送中文短信的代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试发送中文短信的代码" />
+    <MESSAGE value="初步完成统计减排监察系数中国控企业自动监控数据每月接收到的有效和达标数据的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="初步完成统计减排监察系数中国控企业自动监控数据每月接收到的有效和达标数据的功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -970,22 +1338,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/report/views.py</url>
-          <line>303</line>
+          <line>343</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/report/views.py</url>
-          <line>297</line>
+          <line>337</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/report/views.py</url>
-          <line>294</line>
+          <line>334</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/report/views.py</url>
-          <line>282</line>
+          <line>322</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1010,77 +1378,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/report/views.py</url>
-          <line>227</line>
+          <line>267</line>
           <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/report/views.py</url>
+          <line>241</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/report/views.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/report/function/abnormal_func.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/report/function/monitor_value.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="123" />
+      <option name="time" value="132" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/report/templates/water_daily_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="23" selection-start="4684" selection-end="4684" vertical-scroll-proportion="0.2768166" vertical-offset="2280" max-vertical-offset="3000" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/wsgiref/handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="24" selection-start="3107" selection-end="3107" vertical-scroll-proportion="0.6386768" vertical-offset="1469" max-vertical-offset="9000" />
-      </provider>
-    </entry>
-    <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/django/core/handlers/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="0" selection-start="7193" selection-end="7193" vertical-scroll-proportion="0.33333334" vertical-offset="3689" max-vertical-offset="4140" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/function/date_func.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="73" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="2000" />
-      </provider>
-    </entry>
-    <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/gsmmodem/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2300" />
-      </provider>
-    </entry>
-    <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/gsmmodem/compat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="40" selection-start="5087" selection-end="5087" vertical-scroll-proportion="-0.4213483" vertical-offset="2400" max-vertical-offset="5580" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/pysms/tests/najdisi_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="15" selection-start="455" selection-end="455" vertical-scroll-proportion="0.72639227" vertical-offset="0" max-vertical-offset="4720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/function/monitor_value.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3500" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/function/report_func.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="9" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3900" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/pysms/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504" />
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/pysms/tests/sms_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="45" selection-start="673" selection-end="673" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="980" />
-      </provider>
-    </entry>
     <entry file="file://E:/Python27/Lib/site-packages/pysms/providers/gsm_modem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2640" />
@@ -1207,83 +1535,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EnvMonitor/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="20" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.0" vertical-offset="1076" max-vertical-offset="2760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnvMonitor/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="54" selection-start="1495" selection-end="1534" vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1260" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="31" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="860" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="0" selection-start="4703" selection-end="4703" vertical-scroll-proportion="0.0" vertical-offset="1860" max-vertical-offset="2660" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="41" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="3540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="23" selection-start="6493" selection-end="6493" vertical-scroll-proportion="0.0" vertical-offset="3093" max-vertical-offset="5960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="0" selection-start="7001" selection-end="7001" vertical-scroll-proportion="0.0" vertical-offset="2288" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="10" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/messaging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/messaging/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="6" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5400">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="12" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.0" vertical-offset="1375" max-vertical-offset="1860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Python27/Lib/site-packages/messaging/sms/submit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="8" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="6500">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://E:/Python27/Lib/site-packages/messaging/test/test_gsm_encoding.py">
@@ -1295,8 +1554,178 @@
     </entry>
     <entry file="file://E:/Python27/Lib/site-packages/messaging/test/test_sms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="315" column="78" selection-start="11423" selection-end="11423" vertical-scroll-proportion="0.7174349" vertical-offset="5942" max-vertical-offset="9740">
+        <state line="317" column="0" selection-start="11471" selection-end="11471" vertical-scroll-proportion="0.55898875" vertical-offset="5942" max-vertical-offset="9740">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/messaging/sms/submit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="8" selection-start="670" selection-end="670" vertical-scroll-proportion="-0.3034483" vertical-offset="440" max-vertical-offset="6500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/messaging/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="6" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/site-packages/messaging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08275862" vertical-offset="0" max-vertical-offset="725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="10" selection-start="68" selection-end="68" vertical-scroll-proportion="0.089655176" vertical-offset="15" max-vertical-offset="740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/function/utility.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="7" selection-start="221" selection-end="221" vertical-scroll-proportion="0.27586207" vertical-offset="0" max-vertical-offset="725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnvMonitor/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="27" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.4880478" vertical-offset="535" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="0" selection-start="4475" selection-end="4475" vertical-scroll-proportion="0.33167082" vertical-offset="1787" max-vertical-offset="5580">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/site-packages/django/core/handlers/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="205" column="0" selection-start="7193" selection-end="7193" vertical-scroll-proportion="0.33333334" vertical-offset="3682" max-vertical-offset="4140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/wsgiref/handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="0" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.33333334" vertical-offset="1462" max-vertical-offset="9000">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python27/Lib/wsgiref/simple_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="0" selection-start="3834" selection-end="3834" vertical-scroll-proportion="0.76811594" vertical-offset="2162" max-vertical-offset="3180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/VirtualEnvs/EnvMonitor/Lib/encodings/utf_8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="233" selection-end="233" vertical-scroll-proportion="0.33333334" vertical-offset="162" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="18" selection-start="3678" selection-end="3692" vertical-scroll-proportion="0.5586207" vertical-offset="1235" max-vertical-offset="1960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/templates/count_multi_abnormal_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="33" selection-start="5221" selection-end="5221" vertical-scroll-proportion="-0.3505747" vertical-offset="2844" max-vertical-offset="3540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="48" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.6137931" vertical-offset="135" max-vertical-offset="860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="21" selection-start="5051" selection-end="5051" vertical-scroll-proportion="0.32970452" vertical-offset="1688" max-vertical-offset="3400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/function/convert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="42" selection-start="6115" selection-end="6115" vertical-scroll-proportion="0.45884147" vertical-offset="3079" max-vertical-offset="6320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/function/old_standard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="10" selection-start="3577" selection-end="3577" vertical-scroll-proportion="0.0" vertical-offset="1828" max-vertical-offset="3580">
+          <folding>
+            <element signature="e#15#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="12" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.0" vertical-offset="1022" max-vertical-offset="1740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/function/monitor_value.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="12" selection-start="4419" selection-end="4419" vertical-scroll-proportion="0.0" vertical-offset="2218" max-vertical-offset="3420">
+          <folding>
+            <marker date="1419054731092" expanded="true" signature="1808:1972" placeholder="SELECT * FRO..missing_value..." />
+            <marker date="1419054731092" expanded="true" signature="3154:3356" placeholder="SELECT * FRO..missing_value..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/function/standard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="9" selection-start="3163" selection-end="3163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/function/abnormal_func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="20" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="3780">
+          <folding>
+            <element signature="e#15#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="16" selection-start="1926" selection-end="1926" vertical-scroll-proportion="0.0" vertical-offset="815" max-vertical-offset="1540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="7" selection-start="0" selection-end="13202" vertical-scroll-proportion="0.5762195" vertical-offset="1722" max-vertical-offset="7020">
+          <folding>
+            <element signature="e#15#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

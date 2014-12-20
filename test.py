@@ -92,8 +92,7 @@ s = '[22001] [Microsoft][SQL Native Client][SQL Server]\xbd\xab\xbd\xd8\xb6\xcf\
 s = "[42S02] [Microsoft][SQL Native Client][SQL Server]\xb6\xd4\xcf\xf3\xc3\xfb  'Company' \xce\xde\xd0\xa7\xa1\xa3 (208) (SQLExecDirectW)"
 s = "[42000] [Microsoft][SQL Native Client][SQL Server]'Avg' \xb8\xbd\xbd\xfc\xd3\xd0\xd3\xef\xb7\xa8\xb4\xed\xce\xf3\xa1\xa3 (102) (SQLExecDirectW)"
 
-s =  "[42000] [Microsoft][SQL Native Client][SQL Server]\xbe\xdc\xbe\xf8\xc1\xcb\xb6\xd4\xb6\xd4\xcf\xf3 'django_session' (\xca\xfd\xbe\xdd\xbf\xe2 'EnvMonitor'\xa3\xac\xbc\xdc\xb9\xb9 'dbo')\xb5\xc4 SELECT \xc8\xa8\xcf\xde\xa1\xa3 (229) (SQLExecDirectW)"
-
+s =  "\u53bf\u533a"
 print s.decode('gbk')
 
 mn_list = ['45007760000201',

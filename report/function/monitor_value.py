@@ -159,6 +159,7 @@ def get_format_monitor_data(mn, param_name, data_type, table_type, start_date_ob
         report_table[time].update(report_row)
 
         for monitor_data in monitor_data_list:
+            #Datetime中offset-naive与offset-aware时间的计算
             monitor_data_datetime = monitor_data['DataTime'].replace(tzinfo=None)
             #.strftime("%Y%m%d%H%M%S")
             if time == monitor_data_datetime:

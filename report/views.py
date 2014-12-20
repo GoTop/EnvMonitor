@@ -4,12 +4,14 @@ from __future__ import unicode_literals
 import datetime
 
 from django.shortcuts import render_to_response
+from company.function.old_standard import get_old_standard
 
 from company.function.standard import get_station_standard
 from company.models import T_All_station, Station
 from report.function import date_func
 from report.function import monitor_value
 from report.function.date_func import get_time_range_list
+
 from report.function.monitor_value import get_range_monitor_value, get_format_monitor_data
 import report.function.report_func as report_func
 import report.function.abnormal_func as abnormal_func
@@ -93,7 +95,7 @@ def company_water_day_report_view(request, mn, date):
     )
 
 
-def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
+def get_abnormal_data_view(request, mn, start_date_string, end_date_string, table_type):
     """
     获取指定mn的监控点位在start_date_string, end_date_string之间的异常在线监控数据
     :param request:
@@ -109,18 +111,30 @@ def get_abnormal_data_view(request, mn, start_date_string, end_date_string):
         data_type = 'Avg'
     elif t_station.type == '废气':
         param_name_list = ['SO2', 'NOx']
-        data_type = 'ZsAvg'
+        data_type = 'Avg'
+
+    old_standard_info = get_old_standard(mn)
 
     report_list = []
     for param_name in param_name_list:
         abnormal_data_list = abnormal_func.get_abnormal_data(mn, start_date_string,
                                                              end_date_string,
                                                              param_name,
-                                                             data_type)
+                                                             data_type,
+                                                             table_type,
+                                                             old_standard_info)
+        #再加上现在使用的标准
         standard = get_station_standard(mn, param_name)
+
         if standard:
-            standard_text = standard['text']
+            if old_standard_info:
+                #如果设置了旧标准，则先注明旧标准
+                standard_text = old_standard_info['old_standard'][param_name]['text'] + ', ' + standard['text']
+            else:
+                #否则直接使用数据库中的标准
+                standard_text = standard['text']
         else:
+            #在数据库中查不到标准则使用 - 来表示
             standard_text = '-'
 
         report_dict = {'param_name': param_name,
@@ -181,10 +195,32 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
     和数据类型data_type（ZsAvg）的超标数
     """
 
-    mn_list = ['45007760002801', '45007760003001', '45007760002007']
+    mn_list = ['45007760002801', '45007760003001','45007760002007', '45007760002601' ]
 
-
-
+    # mn_list = ['45007760000201',
+    #            '45007760000801',
+    #            '45007760001401',
+    #            '45007760001601',
+    #            '45007760001701',
+    #            '45007760000401',
+    #            '45007760005001',
+    #
+    #            '45007760002004',
+    #            '45007760002005',
+    #            '45007760002006',
+    #            '45007760002501',
+    #            '45007760002502',
+    #            '45007760002503',
+    #            '45007760002504',
+    #            '45007760002505',
+    #
+    #            '45007760004402',
+    #            '45007760001303',
+    #            '45007760004402',
+    #            '45007760001901',
+    #            '45007760002007',
+    #            '45007760002008',
+    # ]
     multi_report_list = []
 
     for mn in mn_list:
@@ -198,6 +234,8 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
             param_name_list = ['SO2', 'NOx']
             data_type = 'Avg'
 
+        old_standard_info = get_old_standard(mn)
+
         # 单个监控点位的统计数据
         report_list = []
         for param_name in param_name_list:
@@ -205,7 +243,9 @@ def count_multi_abnormal_data_view(request, start_date_string, end_date_string, 
                                                                    end_date_string,
                                                                    param_name,
                                                                    data_type,
-                                                                   table_type)
+                                                                   table_type,
+                                                                   old_standard_info,
+                                                                   False)
 
             report_dict = {'station_name': t_station.name,
                            'param_name': param_name,

@@ -22,7 +22,7 @@ urlpatterns = [
 
     #获取某一时间段内，超标的具体时间和数值
     # http://127.0.0.1:8000/report/get_abnormal_data/45007760002007/20140302000000/20140302230000/
-    url(r'^get_abnormal_data/(?P<mn>\d{14})/(?P<start_date_string>\d{14})/(?P<end_date_string>\d{14})/$',
+    url(r'^get_abnormal_data/(?P<mn>\d{14})/(?P<start_date_string>\d{14})/(?P<end_date_string>\d{14})/(?P<table_type>(day|hour))$',
         views.get_abnormal_data_view, name='get_abnormal_data'),
 
     #统计指定监控点位mn从start_date至end_date，指定监控因子列表中的param_name_list，
